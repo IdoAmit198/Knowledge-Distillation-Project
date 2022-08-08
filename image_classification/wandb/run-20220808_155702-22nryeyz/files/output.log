@@ -1,0 +1,30 @@
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+  0%|                                                                                                             | 0/194 [00:03<?, ?it/s]
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 70, in <module>
+    best_val_acc=best_val_acc
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 37, in train
+    _log_uncertainty("train", samples_certainties)
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 208, in _log_uncertainty
+    ece = uncertainty_metrics.ECE_calc(sorted_samples_certainties)
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/utils/uncertainty_metrics.py", line 148, in ECE_calc
+    bin_indices = samples_certainties[0] <= bin_upper.to(samples_certainties[0].device) & samples_certainties[0] > bin_lower.to(samples_certainties[0].device)
+RuntimeError: cbitand is only supported for integer type tensors at /opt/conda/conda-bld/pytorch_1579022034529/work/aten/src/THC/generic/THCTensorMathPointwise.cu:12
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 70, in <module>
+    best_val_acc=best_val_acc
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 37, in train
+    _log_uncertainty("train", samples_certainties)
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 208, in _log_uncertainty
+    ece = uncertainty_metrics.ECE_calc(sorted_samples_certainties)
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/utils/uncertainty_metrics.py", line 148, in ECE_calc
+    bin_indices = samples_certainties[0] <= bin_upper.to(samples_certainties[0].device) & samples_certainties[0] > bin_lower.to(samples_certainties[0].device)
+RuntimeError: cbitand is only supported for integer type tensors at /opt/conda/conda-bld/pytorch_1579022034529/work/aten/src/THC/generic/THCTensorMathPointwise.cu:12

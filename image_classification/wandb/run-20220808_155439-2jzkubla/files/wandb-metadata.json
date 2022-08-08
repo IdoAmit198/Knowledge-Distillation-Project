@@ -1,0 +1,33 @@
+{
+    "os": "Linux-4.15.0-167-generic-x86_64-with-debian-buster-sid",
+    "python": "3.6.13",
+    "heartbeatAt": "2022-08-08T12:54:42.335268",
+    "startedAt": "2022-08-08T12:54:39.615715",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 3,
+    "cpu_count": 64,
+    "cuda": "10.2.89",
+    "args": [
+        "-d",
+        "imagewoof",
+        "-m",
+        "resnet10",
+        "-e",
+        "2",
+        "-s",
+        "0"
+    ],
+    "state": "running",
+    "program": "experiments/no_teacher.py",
+    "codePath": "image_classification/experiments/no_teacher.py",
+    "git": {
+        "remote": "https://github.com/IvLabs/stagewise-knowledge-distillation.git",
+        "commit": "6e5bd8fc827e4342a79c2e7e3e8a8cbd403fe8b7"
+    },
+    "email": null,
+    "root": "/home/ido.amit/stagewise-knowledge-distillation",
+    "host": "lambda1",
+    "username": "ido.amit",
+    "executable": "/home/ido.amit/miniconda3/envs/skd/bin/python3"
+}

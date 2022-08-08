@@ -1,0 +1,162 @@
+2022-08-08 15:16:29,636 INFO    MainThread:17618 [internal.py:wandb_internal():93] W&B internal server running at pid: 17618, started at: 2022-08-08 15:16:29.634652
+2022-08-08 15:16:29,637 INFO    WriterThread:17618 [datastore.py:open_for_write():75] open: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/run-26qocbq0.wandb
+2022-08-08 15:16:29,640 DEBUG   SenderThread:17618 [sender.py:send():236] send: header
+2022-08-08 15:16:29,640 DEBUG   SenderThread:17618 [sender.py:send():236] send: run
+2022-08-08 15:16:30,048 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: check_version
+2022-08-08 15:16:30,050 INFO    SenderThread:17618 [dir_watcher.py:__init__():216] watching files in: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files
+2022-08-08 15:16:30,050 INFO    SenderThread:17618 [sender.py:_start_run_threads():818] run started: 26qocbq0 with start time 1659960988
+2022-08-08 15:16:30,050 DEBUG   SenderThread:17618 [sender.py:send():236] send: summary
+2022-08-08 15:16:30,057 INFO    SenderThread:17618 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-08 15:16:30,057 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: check_version
+2022-08-08 15:16:30,362 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: run_start
+2022-08-08 15:16:30,369 DEBUG   HandlerThread:17618 [meta.py:__init__():35] meta init
+2022-08-08 15:16:30,370 DEBUG   HandlerThread:17618 [meta.py:__init__():49] meta init done
+2022-08-08 15:16:30,370 DEBUG   HandlerThread:17618 [meta.py:probe():209] probe
+2022-08-08 15:16:30,381 DEBUG   HandlerThread:17618 [meta.py:_setup_git():199] setup git
+2022-08-08 15:16:30,409 DEBUG   HandlerThread:17618 [meta.py:_setup_git():206] setup git done
+2022-08-08 15:16:30,409 DEBUG   HandlerThread:17618 [meta.py:_save_pip():53] save pip
+2022-08-08 15:16:30,412 DEBUG   HandlerThread:17618 [meta.py:_save_pip():67] save pip done
+2022-08-08 15:16:30,412 DEBUG   HandlerThread:17618 [meta.py:_save_conda():74] save conda
+2022-08-08 15:16:31,054 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/conda-environment.yaml
+2022-08-08 15:16:31,055 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/wandb-summary.json
+2022-08-08 15:16:31,055 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/requirements.txt
+2022-08-08 15:16:32,938 DEBUG   HandlerThread:17618 [meta.py:_save_conda():84] save conda done
+2022-08-08 15:16:32,938 DEBUG   HandlerThread:17618 [meta.py:probe():247] probe done
+2022-08-08 15:16:32,947 DEBUG   SenderThread:17618 [sender.py:send():236] send: files
+2022-08-08 15:16:32,947 INFO    SenderThread:17618 [sender.py:_save_file():952] saving file wandb-metadata.json with policy now
+2022-08-08 15:16:32,958 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-08 15:16:32,958 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: stop_status
+2022-08-08 15:16:33,056 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/conda-environment.yaml
+2022-08-08 15:16:33,056 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/wandb-metadata.json
+2022-08-08 15:16:33,057 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/output.log
+2022-08-08 15:16:33,307 DEBUG   SenderThread:17618 [sender.py:send():236] send: telemetry
+2022-08-08 15:16:33,887 INFO    Thread-11 :17618 [upload_job.py:push():138] Uploaded file /tmp/tmplx571ue1wandb/2zpdrwzs-wandb-metadata.json
+2022-08-08 15:16:35,068 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/output.log
+2022-08-08 15:16:39,073 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/output.log
+2022-08-08 15:16:40,891 DEBUG   SenderThread:17618 [sender.py:send():236] send: telemetry
+2022-08-08 15:16:43,008 DEBUG   SenderThread:17618 [sender.py:send():236] send: exit
+2022-08-08 15:16:43,008 INFO    SenderThread:17618 [sender.py:send_exit():372] handling exit code: 1
+2022-08-08 15:16:43,009 INFO    SenderThread:17618 [sender.py:send_exit():374] handling runtime: 12
+2022-08-08 15:16:43,009 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:43,012 INFO    SenderThread:17618 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-08 15:16:43,012 INFO    SenderThread:17618 [sender.py:send_exit():380] send defer
+2022-08-08 15:16:43,013 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:43,014 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:43,014 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 0
+2022-08-08 15:16:43,014 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:43,014 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 0
+2022-08-08 15:16:43,014 INFO    SenderThread:17618 [sender.py:transition_state():393] send defer: 1
+2022-08-08 15:16:43,015 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:43,015 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 1
+2022-08-08 15:16:43,078 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/wandb-summary.json
+2022-08-08 15:16:43,078 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/output.log
+2022-08-08 15:16:43,166 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:43,167 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 1
+2022-08-08 15:16:43,167 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:43,167 INFO    SenderThread:17618 [sender.py:transition_state():393] send defer: 2
+2022-08-08 15:16:43,167 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:43,169 DEBUG   SenderThread:17618 [sender.py:send():236] send: stats
+2022-08-08 15:16:43,170 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:43,170 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 2
+2022-08-08 15:16:43,170 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:43,170 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 2
+2022-08-08 15:16:43,171 INFO    SenderThread:17618 [sender.py:transition_state():393] send defer: 3
+2022-08-08 15:16:43,171 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:43,171 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 3
+2022-08-08 15:16:43,171 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:43,171 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 3
+2022-08-08 15:16:43,171 INFO    SenderThread:17618 [sender.py:transition_state():393] send defer: 4
+2022-08-08 15:16:43,172 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:43,172 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 4
+2022-08-08 15:16:43,172 DEBUG   SenderThread:17618 [sender.py:send():236] send: summary
+2022-08-08 15:16:43,176 INFO    SenderThread:17618 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-08 15:16:43,176 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:43,176 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 4
+2022-08-08 15:16:43,176 INFO    SenderThread:17618 [sender.py:transition_state():393] send defer: 5
+2022-08-08 15:16:43,177 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:43,177 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 5
+2022-08-08 15:16:43,177 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:43,177 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 5
+2022-08-08 15:16:43,271 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:43,602 INFO    SenderThread:17618 [sender.py:transition_state():393] send defer: 6
+2022-08-08 15:16:43,602 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:43,603 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:43,603 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 6
+2022-08-08 15:16:43,604 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:43,604 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 6
+2022-08-08 15:16:43,604 INFO    SenderThread:17618 [dir_watcher.py:finish():353] shutting down directory watcher
+2022-08-08 15:16:43,705 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:44,079 INFO    Thread-7  :17618 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/config.yaml
+2022-08-08 15:16:44,080 INFO    SenderThread:17618 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/wandb-summary.json
+2022-08-08 15:16:44,080 INFO    SenderThread:17618 [dir_watcher.py:finish():383] scan: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files
+2022-08-08 15:16:44,081 INFO    SenderThread:17618 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/conda-environment.yaml conda-environment.yaml
+2022-08-08 15:16:44,081 INFO    SenderThread:17618 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/wandb-summary.json wandb-summary.json
+2022-08-08 15:16:44,088 INFO    SenderThread:17618 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/wandb-metadata.json wandb-metadata.json
+2022-08-08 15:16:44,089 INFO    SenderThread:17618 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/output.log output.log
+2022-08-08 15:16:44,090 INFO    SenderThread:17618 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/config.yaml config.yaml
+2022-08-08 15:16:44,090 INFO    SenderThread:17618 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/requirements.txt requirements.txt
+2022-08-08 15:16:44,133 INFO    SenderThread:17618 [sender.py:transition_state():393] send defer: 7
+2022-08-08 15:16:44,134 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:44,140 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:44,140 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 7
+2022-08-08 15:16:44,140 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:44,140 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 7
+2022-08-08 15:16:44,140 INFO    SenderThread:17618 [file_pusher.py:finish():171] shutting down file pusher
+2022-08-08 15:16:44,237 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:44,238 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:44,340 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:44,341 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:44,443 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:44,444 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:44,548 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:44,548 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:44,651 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:44,651 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:44,754 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:44,754 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:44,857 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:44,857 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:44,960 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:44,960 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:45,063 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:45,063 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:45,077 INFO    Thread-12 :17618 [upload_job.py:push():138] Uploaded file /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/conda-environment.yaml
+2022-08-08 15:16:45,093 INFO    Thread-15 :17618 [upload_job.py:push():138] Uploaded file /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/config.yaml
+2022-08-08 15:16:45,118 INFO    Thread-13 :17618 [upload_job.py:push():138] Uploaded file /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/wandb-summary.json
+2022-08-08 15:16:45,130 INFO    Thread-14 :17618 [upload_job.py:push():138] Uploaded file /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/output.log
+2022-08-08 15:16:45,164 INFO    Thread-16 :17618 [upload_job.py:push():138] Uploaded file /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/files/requirements.txt
+2022-08-08 15:16:45,166 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:45,166 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:45,269 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:45,269 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:45,365 INFO    Thread-6  :17618 [sender.py:transition_state():393] send defer: 8
+2022-08-08 15:16:45,366 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:45,366 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 8
+2022-08-08 15:16:45,366 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:45,367 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 8
+2022-08-08 15:16:45,372 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:45,735 INFO    SenderThread:17618 [sender.py:transition_state():393] send defer: 9
+2022-08-08 15:16:45,736 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:45,737 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:45,738 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 9
+2022-08-08 15:16:45,738 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:45,738 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 9
+2022-08-08 15:16:45,739 INFO    SenderThread:17618 [sender.py:transition_state():393] send defer: 10
+2022-08-08 15:16:45,740 DEBUG   SenderThread:17618 [sender.py:send():236] send: final
+2022-08-08 15:16:45,741 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 15:16:45,741 DEBUG   SenderThread:17618 [sender.py:send():236] send: footer
+2022-08-08 15:16:45,742 INFO    HandlerThread:17618 [handler.py:handle_request_defer():163] handle defer: 10
+2022-08-08 15:16:45,742 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: defer
+2022-08-08 15:16:45,742 INFO    SenderThread:17618 [sender.py:send_request_defer():389] handle sender defer: 10
+2022-08-08 15:16:45,839 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 15:16:45,840 DEBUG   SenderThread:17618 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 15:16:45,840 INFO    SenderThread:17618 [file_pusher.py:join():176] waiting for file pusher
+2022-08-08 15:16:47,588 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: sampled_history
+2022-08-08 15:16:47,590 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: get_summary
+2022-08-08 15:16:47,591 DEBUG   HandlerThread:17618 [handler.py:handle_request():140] handle_request: shutdown
+2022-08-08 15:16:47,592 INFO    HandlerThread:17618 [handler.py:finish():806] shutting down handler
+2022-08-08 15:16:47,742 INFO    WriterThread:17618 [datastore.py:close():279] close: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_151628-26qocbq0/run-26qocbq0.wandb
+2022-08-08 15:16:48,485 INFO    SenderThread:17618 [sender.py:finish():1114] shutting down sender
+2022-08-08 15:16:48,485 INFO    SenderThread:17618 [file_pusher.py:finish():171] shutting down file pusher
+2022-08-08 15:16:48,485 INFO    SenderThread:17618 [file_pusher.py:join():176] waiting for file pusher
+2022-08-08 15:16:48,488 INFO    MainThread:17618 [internal.py:handle_exit():80] Internal process exited

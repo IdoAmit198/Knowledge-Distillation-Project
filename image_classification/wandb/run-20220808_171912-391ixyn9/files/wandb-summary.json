@@ -1,0 +1,1 @@
+{"confidence_statistics/confidence_mean_train": 0.1546044647693634, "confidence_statistics/confidence_median_train": 0.15309619903564453, "confidence_statistics/confidence_gini_train": 0.06711920350790024, "ranking/auroc_train": 0.6638078902229846, "_timestamp": 1659968378, "_runtime": 26, "_step": 13, "_wandb": {"runtime": 25}}

@@ -1,0 +1,26 @@
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+  0%|                                                                                           | 0/194 [00:04<?, ?it/s]
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 70, in <module>
+    best_val_acc=best_val_acc
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 34, in train
+    samples_certainties = get_samples_certainties(y_pred, labels)
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 183, in get_samples_certainties
+    samples_certainties = torch.stack([confidence, correctness], dim=1)
+RuntimeError: Expected object of scalar type Float but got scalar type Bool for sequence element 1 in sequence argument at position #1 'tensors'
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 70, in <module>
+    best_val_acc=best_val_acc
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 34, in train
+    samples_certainties = get_samples_certainties(y_pred, labels)
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 183, in get_samples_certainties
+    samples_certainties = torch.stack([confidence, correctness], dim=1)
+RuntimeError: Expected object of scalar type Float but got scalar type Bool for sequence element 1 in sequence argument at position #1 'tensors'

@@ -1,0 +1,162 @@
+2022-08-08 14:59:18,197 INFO    MainThread:9865 [internal.py:wandb_internal():93] W&B internal server running at pid: 9865, started at: 2022-08-08 14:59:18.195816
+2022-08-08 14:59:18,199 INFO    WriterThread:9865 [datastore.py:open_for_write():75] open: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/run-24cbnvyl.wandb
+2022-08-08 14:59:18,204 DEBUG   SenderThread:9865 [sender.py:send():236] send: header
+2022-08-08 14:59:18,205 DEBUG   SenderThread:9865 [sender.py:send():236] send: run
+2022-08-08 14:59:18,682 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: check_version
+2022-08-08 14:59:18,691 INFO    SenderThread:9865 [dir_watcher.py:__init__():216] watching files in: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files
+2022-08-08 14:59:18,692 INFO    SenderThread:9865 [sender.py:_start_run_threads():818] run started: 24cbnvyl with start time 1659959955
+2022-08-08 14:59:18,692 DEBUG   SenderThread:9865 [sender.py:send():236] send: summary
+2022-08-08 14:59:18,695 INFO    SenderThread:9865 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-08 14:59:18,696 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: check_version
+2022-08-08 14:59:19,085 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: run_start
+2022-08-08 14:59:19,151 DEBUG   HandlerThread:9865 [meta.py:__init__():35] meta init
+2022-08-08 14:59:19,151 DEBUG   HandlerThread:9865 [meta.py:__init__():49] meta init done
+2022-08-08 14:59:19,151 DEBUG   HandlerThread:9865 [meta.py:probe():209] probe
+2022-08-08 14:59:19,186 DEBUG   HandlerThread:9865 [meta.py:_setup_git():199] setup git
+2022-08-08 14:59:19,223 DEBUG   HandlerThread:9865 [meta.py:_setup_git():206] setup git done
+2022-08-08 14:59:19,223 DEBUG   HandlerThread:9865 [meta.py:_save_pip():53] save pip
+2022-08-08 14:59:19,225 DEBUG   HandlerThread:9865 [meta.py:_save_pip():67] save pip done
+2022-08-08 14:59:19,225 DEBUG   HandlerThread:9865 [meta.py:_save_conda():74] save conda
+2022-08-08 14:59:19,698 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/wandb-summary.json
+2022-08-08 14:59:19,698 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/requirements.txt
+2022-08-08 14:59:19,699 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/conda-environment.yaml
+2022-08-08 14:59:24,814 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/conda-environment.yaml
+2022-08-08 14:59:24,838 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/output.log
+2022-08-08 14:59:24,922 DEBUG   HandlerThread:9865 [meta.py:_save_conda():84] save conda done
+2022-08-08 14:59:24,922 DEBUG   HandlerThread:9865 [meta.py:probe():247] probe done
+2022-08-08 14:59:25,101 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-08 14:59:25,103 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: stop_status
+2022-08-08 14:59:25,476 DEBUG   SenderThread:9865 [sender.py:send():236] send: telemetry
+2022-08-08 14:59:25,477 DEBUG   SenderThread:9865 [sender.py:send():236] send: files
+2022-08-08 14:59:25,477 INFO    SenderThread:9865 [sender.py:_save_file():952] saving file wandb-metadata.json with policy now
+2022-08-08 14:59:25,815 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/wandb-metadata.json
+2022-08-08 14:59:26,464 INFO    Thread-11 :9865 [upload_job.py:push():138] Uploaded file /tmp/tmpga6bt8b4wandb/25ye67vc-wandb-metadata.json
+2022-08-08 14:59:28,935 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/output.log
+2022-08-08 14:59:33,083 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/output.log
+2022-08-08 14:59:35,453 DEBUG   SenderThread:9865 [sender.py:send():236] send: telemetry
+2022-08-08 14:59:37,181 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/output.log
+2022-08-08 14:59:37,728 DEBUG   SenderThread:9865 [sender.py:send():236] send: exit
+2022-08-08 14:59:37,728 INFO    SenderThread:9865 [sender.py:send_exit():372] handling exit code: 1
+2022-08-08 14:59:37,729 INFO    SenderThread:9865 [sender.py:send_exit():374] handling runtime: 18
+2022-08-08 14:59:37,729 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:37,733 INFO    SenderThread:9865 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-08 14:59:37,733 INFO    SenderThread:9865 [sender.py:send_exit():380] send defer
+2022-08-08 14:59:37,733 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:37,735 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:37,735 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 0
+2022-08-08 14:59:37,736 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:37,736 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 0
+2022-08-08 14:59:37,736 INFO    SenderThread:9865 [sender.py:transition_state():393] send defer: 1
+2022-08-08 14:59:37,737 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:37,737 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 1
+2022-08-08 14:59:37,839 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:37,839 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 1
+2022-08-08 14:59:37,839 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:37,839 INFO    SenderThread:9865 [sender.py:transition_state():393] send defer: 2
+2022-08-08 14:59:37,840 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:37,842 DEBUG   SenderThread:9865 [sender.py:send():236] send: stats
+2022-08-08 14:59:37,842 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:37,843 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 2
+2022-08-08 14:59:37,844 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:37,844 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 2
+2022-08-08 14:59:37,844 INFO    SenderThread:9865 [sender.py:transition_state():393] send defer: 3
+2022-08-08 14:59:37,844 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:37,844 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 3
+2022-08-08 14:59:37,845 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:37,845 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 3
+2022-08-08 14:59:37,845 INFO    SenderThread:9865 [sender.py:transition_state():393] send defer: 4
+2022-08-08 14:59:37,845 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:37,845 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 4
+2022-08-08 14:59:37,846 DEBUG   SenderThread:9865 [sender.py:send():236] send: summary
+2022-08-08 14:59:37,851 INFO    SenderThread:9865 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-08 14:59:37,852 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:37,852 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 4
+2022-08-08 14:59:37,852 INFO    SenderThread:9865 [sender.py:transition_state():393] send defer: 5
+2022-08-08 14:59:37,852 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:37,852 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 5
+2022-08-08 14:59:37,853 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:37,853 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 5
+2022-08-08 14:59:37,945 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:38,181 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/wandb-summary.json
+2022-08-08 14:59:38,182 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/output.log
+2022-08-08 14:59:38,428 INFO    SenderThread:9865 [sender.py:transition_state():393] send defer: 6
+2022-08-08 14:59:38,428 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:38,430 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:38,430 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 6
+2022-08-08 14:59:38,431 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:38,431 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 6
+2022-08-08 14:59:38,431 INFO    SenderThread:9865 [dir_watcher.py:finish():353] shutting down directory watcher
+2022-08-08 14:59:38,533 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:39,182 INFO    Thread-7  :9865 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/config.yaml
+2022-08-08 14:59:39,184 INFO    SenderThread:9865 [dir_watcher.py:finish():383] scan: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files
+2022-08-08 14:59:39,184 INFO    SenderThread:9865 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/conda-environment.yaml conda-environment.yaml
+2022-08-08 14:59:39,184 INFO    SenderThread:9865 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/wandb-summary.json wandb-summary.json
+2022-08-08 14:59:39,192 INFO    SenderThread:9865 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/wandb-metadata.json wandb-metadata.json
+2022-08-08 14:59:39,192 INFO    SenderThread:9865 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/output.log output.log
+2022-08-08 14:59:39,193 INFO    SenderThread:9865 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/config.yaml config.yaml
+2022-08-08 14:59:39,197 INFO    SenderThread:9865 [dir_watcher.py:finish():397] scan save: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/requirements.txt requirements.txt
+2022-08-08 14:59:39,269 INFO    SenderThread:9865 [sender.py:transition_state():393] send defer: 7
+2022-08-08 14:59:39,270 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:39,271 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:39,271 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 7
+2022-08-08 14:59:39,272 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:39,272 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 7
+2022-08-08 14:59:39,272 INFO    SenderThread:9865 [file_pusher.py:finish():171] shutting down file pusher
+2022-08-08 14:59:39,373 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:39,374 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:39,477 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:39,478 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:39,581 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:39,582 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:39,684 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:39,684 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:39,786 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:39,786 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:39,889 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:39,889 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:39,992 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:39,992 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:40,095 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:40,095 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:40,112 INFO    Thread-12 :9865 [upload_job.py:push():138] Uploaded file /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/conda-environment.yaml
+2022-08-08 14:59:40,199 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:40,199 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:40,218 INFO    Thread-13 :9865 [upload_job.py:push():138] Uploaded file /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/wandb-summary.json
+2022-08-08 14:59:40,253 INFO    Thread-15 :9865 [upload_job.py:push():138] Uploaded file /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/config.yaml
+2022-08-08 14:59:40,260 INFO    Thread-14 :9865 [upload_job.py:push():138] Uploaded file /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/output.log
+2022-08-08 14:59:40,279 INFO    Thread-16 :9865 [upload_job.py:push():138] Uploaded file /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/files/requirements.txt
+2022-08-08 14:59:40,303 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:40,303 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:40,407 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:40,407 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:40,480 INFO    Thread-6  :9865 [sender.py:transition_state():393] send defer: 8
+2022-08-08 14:59:40,481 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:40,481 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 8
+2022-08-08 14:59:40,481 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:40,482 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 8
+2022-08-08 14:59:40,510 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:40,693 INFO    SenderThread:9865 [sender.py:transition_state():393] send defer: 9
+2022-08-08 14:59:40,693 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:40,694 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:40,694 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 9
+2022-08-08 14:59:40,695 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:40,695 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 9
+2022-08-08 14:59:40,695 INFO    SenderThread:9865 [sender.py:transition_state():393] send defer: 10
+2022-08-08 14:59:40,698 DEBUG   SenderThread:9865 [sender.py:send():236] send: final
+2022-08-08 14:59:40,698 DEBUG   SenderThread:9865 [sender.py:send():236] send: footer
+2022-08-08 14:59:40,698 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: defer
+2022-08-08 14:59:40,698 INFO    HandlerThread:9865 [handler.py:handle_request_defer():163] handle defer: 10
+2022-08-08 14:59:40,699 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: defer
+2022-08-08 14:59:40,699 INFO    SenderThread:9865 [sender.py:send_request_defer():389] handle sender defer: 10
+2022-08-08 14:59:40,798 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-08 14:59:40,798 DEBUG   SenderThread:9865 [sender.py:send_request():250] send_request: poll_exit
+2022-08-08 14:59:40,799 INFO    SenderThread:9865 [file_pusher.py:join():176] waiting for file pusher
+2022-08-08 14:59:41,661 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: sampled_history
+2022-08-08 14:59:41,662 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: get_summary
+2022-08-08 14:59:41,664 DEBUG   HandlerThread:9865 [handler.py:handle_request():140] handle_request: shutdown
+2022-08-08 14:59:41,664 INFO    HandlerThread:9865 [handler.py:finish():806] shutting down handler
+2022-08-08 14:59:41,698 INFO    WriterThread:9865 [datastore.py:close():279] close: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_145915-24cbnvyl/run-24cbnvyl.wandb
+2022-08-08 14:59:42,557 INFO    SenderThread:9865 [sender.py:finish():1114] shutting down sender
+2022-08-08 14:59:42,557 INFO    SenderThread:9865 [file_pusher.py:finish():171] shutting down file pusher
+2022-08-08 14:59:42,558 INFO    SenderThread:9865 [file_pusher.py:join():176] waiting for file pusher
+2022-08-08 14:59:42,561 INFO    MainThread:9865 [internal.py:handle_exit():80] Internal process exited

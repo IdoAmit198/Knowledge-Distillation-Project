@@ -1,0 +1,70 @@
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+Epoch 1/2:   8%|####9                                                       | 16/194 [00:22<04:07,  1.39s/it, loss=2.26]
+Process Process-3:
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/linecache.py", line 47, in getlines
+    return updatecache(filename, module_globals)
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/linecache.py", line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/tokenize.py", line 452, in open
+    buffer = _builtin_open(filename, 'rb')
+KeyboardInterrupt
+Original exception was:
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 70, in <module>
+    best_val_acc=best_val_acc
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 19, in train
+    for images, labels in loop:
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/site-packages/tqdm/std.py", line 1195, in __iter__
+    for obj in iterable:
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/basic_data.py", line 75, in __iter__
+    for b in self.dl: yield self.proc_batch(b)
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 841, in _next_data
+    idx, data = self._get_data()
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 798, in _get_data
+    success, data = self._try_get_data()
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 761, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/queue.py", line 173, in get
+Traceback (most recent call last):
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/multiprocessing/process.py", line 261, in _bootstrap
+    util._exit_function()
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/multiprocessing/util.py", line 322, in _exit_function
+    _run_finalizers()
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/multiprocessing/util.py", line 262, in _run_finalizers
+    finalizer()
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/multiprocessing/queues.py", line 191, in _finalize_join
+    thread.join()
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/threading.py", line 1056, in join
+    self._wait_for_tstate_lock()
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/threading.py", line 1074, in _wait_for_tstate_lock
+    self._stop()
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/threading.py", line 985, in _stop
+    assert not lock.locked()
+KeyboardInterrupt
+    self.not_empty.wait(remaining)
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/threading.py", line 299, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

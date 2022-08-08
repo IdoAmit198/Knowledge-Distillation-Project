@@ -1,0 +1,51 @@
+2022-08-08 16:16:16,396 INFO    MainThread:21475 [internal.py:wandb_internal():93] W&B internal server running at pid: 21475, started at: 2022-08-08 16:16:16.395520
+2022-08-08 16:16:16,398 INFO    WriterThread:21475 [datastore.py:open_for_write():75] open: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_161615-11by6v9m/run-11by6v9m.wandb
+2022-08-08 16:16:16,401 DEBUG   SenderThread:21475 [sender.py:send():236] send: header
+2022-08-08 16:16:16,401 DEBUG   SenderThread:21475 [sender.py:send():236] send: run
+2022-08-08 16:16:16,785 DEBUG   HandlerThread:21475 [handler.py:handle_request():140] handle_request: check_version
+2022-08-08 16:16:16,786 INFO    SenderThread:21475 [dir_watcher.py:__init__():216] watching files in: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_161615-11by6v9m/files
+2022-08-08 16:16:16,786 INFO    SenderThread:21475 [sender.py:_start_run_threads():818] run started: 11by6v9m with start time 1659964575
+2022-08-08 16:16:16,787 DEBUG   SenderThread:21475 [sender.py:send():236] send: summary
+2022-08-08 16:16:16,790 INFO    SenderThread:21475 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-08 16:16:16,791 DEBUG   SenderThread:21475 [sender.py:send_request():250] send_request: check_version
+2022-08-08 16:16:17,139 DEBUG   HandlerThread:21475 [handler.py:handle_request():140] handle_request: run_start
+2022-08-08 16:16:17,146 DEBUG   HandlerThread:21475 [meta.py:__init__():35] meta init
+2022-08-08 16:16:17,146 DEBUG   HandlerThread:21475 [meta.py:__init__():49] meta init done
+2022-08-08 16:16:17,147 DEBUG   HandlerThread:21475 [meta.py:probe():209] probe
+2022-08-08 16:16:17,177 DEBUG   HandlerThread:21475 [meta.py:_setup_git():199] setup git
+2022-08-08 16:16:17,209 DEBUG   HandlerThread:21475 [meta.py:_setup_git():206] setup git done
+2022-08-08 16:16:17,209 DEBUG   HandlerThread:21475 [meta.py:_save_pip():53] save pip
+2022-08-08 16:16:17,213 DEBUG   HandlerThread:21475 [meta.py:_save_pip():67] save pip done
+2022-08-08 16:16:17,213 DEBUG   HandlerThread:21475 [meta.py:_save_conda():74] save conda
+2022-08-08 16:16:17,790 INFO    Thread-7  :21475 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_161615-11by6v9m/files/conda-environment.yaml
+2022-08-08 16:16:17,791 INFO    Thread-7  :21475 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_161615-11by6v9m/files/wandb-summary.json
+2022-08-08 16:16:17,791 INFO    Thread-7  :21475 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_161615-11by6v9m/files/requirements.txt
+2022-08-08 16:16:19,795 INFO    Thread-7  :21475 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_161615-11by6v9m/files/conda-environment.yaml
+2022-08-08 16:16:19,808 DEBUG   HandlerThread:21475 [meta.py:_save_conda():84] save conda done
+2022-08-08 16:16:19,808 DEBUG   HandlerThread:21475 [meta.py:probe():247] probe done
+2022-08-08 16:16:19,815 DEBUG   SenderThread:21475 [sender.py:send():236] send: files
+2022-08-08 16:16:19,816 INFO    SenderThread:21475 [sender.py:_save_file():952] saving file wandb-metadata.json with policy now
+2022-08-08 16:16:19,825 DEBUG   HandlerThread:21475 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-08 16:16:19,826 DEBUG   SenderThread:21475 [sender.py:send_request():250] send_request: stop_status
+2022-08-08 16:16:20,193 DEBUG   SenderThread:21475 [sender.py:send():236] send: telemetry
+2022-08-08 16:16:20,766 INFO    Thread-11 :21475 [upload_job.py:push():138] Uploaded file /tmp/tmp6lxv59k6wandb/20ye3gee-wandb-metadata.json
+2022-08-08 16:16:20,796 INFO    Thread-7  :21475 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_161615-11by6v9m/files/output.log
+2022-08-08 16:16:20,796 INFO    Thread-7  :21475 [dir_watcher.py:_on_file_created():269] file/dir created: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_161615-11by6v9m/files/wandb-metadata.json
+2022-08-08 16:16:22,798 INFO    Thread-7  :21475 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_161615-11by6v9m/files/output.log
+2022-08-08 16:16:26,813 INFO    Thread-7  :21475 [dir_watcher.py:_on_file_modified():286] file/dir modified: /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_161615-11by6v9m/files/output.log
+2022-08-08 16:16:26,815 DEBUG   HandlerThread:21475 [handler.py:handle_request():140] handle_request: partial_history
+2022-08-08 16:16:26,817 DEBUG   SenderThread:21475 [sender.py:send():236] send: history
+2022-08-08 16:16:26,817 DEBUG   SenderThread:21475 [sender.py:send():236] send: summary
+2022-08-08 16:16:26,821 INFO    SenderThread:21475 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-08 16:16:26,829 DEBUG   HandlerThread:21475 [handler.py:handle_request():140] handle_request: partial_history
+2022-08-08 16:16:26,830 DEBUG   SenderThread:21475 [sender.py:send():236] send: history
+2022-08-08 16:16:26,831 DEBUG   SenderThread:21475 [sender.py:send():236] send: summary
+2022-08-08 16:16:26,832 DEBUG   HandlerThread:21475 [handler.py:handle_request():140] handle_request: partial_history
+2022-08-08 16:16:26,834 INFO    SenderThread:21475 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-08 16:16:26,835 DEBUG   SenderThread:21475 [sender.py:send():236] send: history
+2022-08-08 16:16:26,835 DEBUG   SenderThread:21475 [sender.py:send():236] send: summary
+2022-08-08 16:16:26,838 INFO    SenderThread:21475 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-08 16:16:26,840 DEBUG   HandlerThread:21475 [handler.py:handle_request():140] handle_request: partial_history
+2022-08-08 16:16:26,842 DEBUG   SenderThread:21475 [sender.py:send():236] send: history
+2022-08-08 16:16:26,842 DEBUG   SenderThread:21475 [sender.py:send():236] send: summary
+2022-08-08 16:16:26,846 INFO    SenderThread:21475 [sender.py:_save_file():952] saving file wandb-summary.json with policy end

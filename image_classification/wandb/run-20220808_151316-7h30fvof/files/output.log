@@ -1,0 +1,26 @@
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+  0%|                                                                                           | 0/194 [00:05<?, ?it/s]
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 70, in <module>
+    best_val_acc=best_val_acc
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 36, in train
+    _log_uncertainty("train", samples_certainties)
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 198, in _log_uncertainty
+    uncertainty_metrics.confidence_mean(sorted_samples_certainties), rank_zero_only=True)
+NameError: name 'uncertainty_metrics' is not defined
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 70, in <module>
+    best_val_acc=best_val_acc
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 36, in train
+    _log_uncertainty("train", samples_certainties)
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 198, in _log_uncertainty
+    uncertainty_metrics.confidence_mean(sorted_samples_certainties), rank_zero_only=True)
+NameError: name 'uncertainty_metrics' is not defined

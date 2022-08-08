@@ -1,0 +1,30 @@
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+----------------------------------------------------------
+Image (3, 375, 500)
+----------------------------------------------------------
+  0%|                                                                                                             | 0/194 [00:03<?, ?it/s]
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 70, in <module>
+    best_val_acc=best_val_acc
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 37, in train
+    _log_uncertainty("train", samples_certainties)
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 203, in _log_uncertainty
+    uncertainty_metrics.gini(sorted_samples_certainties)})
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/utils/uncertainty_metrics.py", line 35, in gini
+    if torch.amin(array) < 0:
+AttributeError: module 'torch' has no attribute 'amin'
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 70, in <module>
+    best_val_acc=best_val_acc
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 37, in train
+    _log_uncertainty("train", samples_certainties)
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/experiments/trainer.py", line 203, in _log_uncertainty
+    uncertainty_metrics.gini(sorted_samples_certainties)})
+  File "/home/ido.amit/stagewise-knowledge-distillation/image_classification/utils/uncertainty_metrics.py", line 35, in gini
+    if torch.amin(array) < 0:
+AttributeError: module 'torch' has no attribute 'amin'

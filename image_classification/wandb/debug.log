@@ -1,0 +1,50 @@
+2022-08-08 17:32:12,949 INFO    MainThread:25747 [wandb_setup.py:_flush():76] Configure stats pid to 25747
+2022-08-08 17:32:12,950 INFO    MainThread:25747 [wandb_setup.py:_flush():76] Loading settings from /home/ido.amit/.config/wandb/settings
+2022-08-08 17:32:12,950 INFO    MainThread:25747 [wandb_setup.py:_flush():76] Loading settings from /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/settings
+2022-08-08 17:32:12,950 INFO    MainThread:25747 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2022-08-08 17:32:12,950 INFO    MainThread:25747 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/no_teacher.py', 'program': 'experiments/no_teacher.py'}
+2022-08-08 17:32:12,950 INFO    MainThread:25747 [wandb_init.py:_log_setup():461] Logging user logs to /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_173212-1r1pgx3w/logs/debug.log
+2022-08-08 17:32:12,950 INFO    MainThread:25747 [wandb_init.py:_log_setup():462] Logging internal logs to /home/ido.amit/stagewise-knowledge-distillation/image_classification/wandb/run-20220808_173212-1r1pgx3w/logs/debug-internal.log
+2022-08-08 17:32:12,951 INFO    MainThread:25747 [wandb_init.py:init():495] calling init triggers
+2022-08-08 17:32:12,951 INFO    MainThread:25747 [wandb_init.py:init():499] wandb.init called with sweep_config: {}
+config: {}
+2022-08-08 17:32:12,952 INFO    MainThread:25747 [wandb_init.py:init():548] starting backend
+2022-08-08 17:32:12,952 INFO    MainThread:25747 [backend.py:_multiprocessing_setup():99] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-08-08 17:32:12,968 INFO    MainThread:25747 [backend.py:ensure_launched():217] starting backend process...
+2022-08-08 17:32:12,977 INFO    MainThread:25747 [backend.py:ensure_launched():222] started backend process with pid: 25794
+2022-08-08 17:32:12,979 INFO    MainThread:25747 [wandb_init.py:init():558] backend started and connected
+2022-08-08 17:32:12,990 INFO    MainThread:25747 [wandb_init.py:init():634] updated telemetry
+2022-08-08 17:32:13,034 INFO    MainThread:25747 [wandb_init.py:init():666] communicating run to backend with 30 second timeout
+2022-08-08 17:32:15,888 INFO    MainThread:25747 [wandb_run.py:_on_init():1919] communicating current version
+2022-08-08 17:32:16,175 INFO    MainThread:25747 [wandb_run.py:_on_init():1923] got version response upgrade_message: "wandb version 0.13.1 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-08-08 17:32:16,176 INFO    MainThread:25747 [wandb_init.py:init():700] starting run threads in backend
+2022-08-08 17:32:19,558 INFO    MainThread:25747 [wandb_run.py:_console_start():1893] atexit reg
+2022-08-08 17:32:19,562 INFO    MainThread:25747 [wandb_run.py:_redirect():1766] redirect: SettingsConsole.REDIRECT
+2022-08-08 17:32:19,563 INFO    MainThread:25747 [wandb_run.py:_redirect():1771] Redirecting console.
+2022-08-08 17:32:19,566 INFO    MainThread:25747 [wandb_run.py:_redirect():1827] Redirects installed.
+2022-08-08 17:32:19,566 INFO    MainThread:25747 [wandb_init.py:init():732] run started, returning control to user process
+2022-08-08 17:40:36,586 INFO    MainThread:25747 [wandb_run.py:_atexit_cleanup():1862] got exitcode: 0
+2022-08-08 17:40:36,593 INFO    MainThread:25747 [wandb_run.py:_restore():1834] restore
+2022-08-08 17:40:37,641 INFO    MainThread:25747 [wandb_run.py:_restore():1834] restore
+2022-08-08 17:40:42,186 ERROR   MainThread:25747 [wandb_run.py:_atexit_cleanup():1883] Problem finishing run
+Traceback (most recent call last):
+  File "/home/ido.amit/.local/lib/python3.6/site-packages/wandb/sdk/wandb_run.py", line 1871, in _atexit_cleanup
+    self._on_finish()
+  File "/home/ido.amit/.local/lib/python3.6/site-packages/wandb/sdk/wandb_run.py", line 1972, in _on_finish
+    self._console_stop()  # TODO: there's a race here with jupyter console logging
+  File "/home/ido.amit/.local/lib/python3.6/site-packages/wandb/sdk/wandb_run.py", line 1911, in _console_stop
+    self._restore()
+  File "/home/ido.amit/.local/lib/python3.6/site-packages/wandb/sdk/wandb_run.py", line 1838, in _restore
+    self._out_redir.uninstall()
+  File "/home/ido.amit/.local/lib/python3.6/site-packages/wandb/sdk/lib/redirect.py", line 740, in uninstall
+    self._emulator_write_thread.join(timeout=5)
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/threading.py", line 1060, in join
+    self._wait_for_tstate_lock(timeout=max(timeout, 0))
+  File "/home/ido.amit/miniconda3/envs/skd/lib/python3.6/threading.py", line 1072, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+  File "/home/ido.amit/.local/lib/python3.6/site-packages/wandb/sdk/lib/redirect.py", line 642, in handler
+    self.handle_window_size_change()
+  File "/home/ido.amit/.local/lib/python3.6/site-packages/wandb/sdk/lib/redirect.py", line 673, in handle_window_size_change
+    fcntl.ioctl(fd, termios.TIOCSWINSZ, win_size)
+OSError: [Errno 9] Bad file descriptor
