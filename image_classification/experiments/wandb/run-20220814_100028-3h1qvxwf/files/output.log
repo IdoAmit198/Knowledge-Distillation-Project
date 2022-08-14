@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/data_block.py", line 594, in _check_kwargs
+    try: x.apply_tfms(tfms, **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/image.py", line 123, in apply_tfms
+    else: x = tfm(x)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/image.py", line 524, in __call__
+    return self.tfm(x, *args, **{**self.resolved, **kwargs}) if self.do_run else x
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/image.py", line 470, in __call__
+    if args: return self.calc(*args, **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/image.py", line 475, in calc
+    if self._wrap: return getattr(x, self._wrap)(self.func, *args, **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/image.py", line 183, in affine
+    self.affine_mat = self.affine_mat @ m
+RuntimeError: expected scalar type Float but found Double
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "no_teacher.py", line 42, in <module>
+    percentage=args.percentage)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/datasets/dataset.py", line 28, in get_dataset
+    return ImageDataBunch.from_folder(path, train='train', valid=val, bs=batch_size, size=sz, ds_tfms=tfms, classes=classes).normalize(stats)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/data.py", line 111, in from_folder
+    return cls.create_from_ll(src, test=test, **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/data.py", line 97, in create_from_ll
+    mode=mode, tfm_y=tfm_y)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/data_block.py", line 505, in transform
+    self.train.transform(tfms[0], **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/data_block.py", line 724, in transform
+    _check_kwargs(self.x, tfms, **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/data_block.py", line 596, in _check_kwargs
+    raise Exception(f"It's not possible to apply those transforms to your dataset:\n {e}")
+Exception: It's not possible to apply those transforms to your dataset:
+ expected scalar type Float but found Double
+Traceback (most recent call last):
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/data_block.py", line 594, in _check_kwargs
+    try: x.apply_tfms(tfms, **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/image.py", line 123, in apply_tfms
+    else: x = tfm(x)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/image.py", line 524, in __call__
+    return self.tfm(x, *args, **{**self.resolved, **kwargs}) if self.do_run else x
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/image.py", line 470, in __call__
+    if args: return self.calc(*args, **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/image.py", line 475, in calc
+    if self._wrap: return getattr(x, self._wrap)(self.func, *args, **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/image.py", line 183, in affine
+    self.affine_mat = self.affine_mat @ m
+RuntimeError: expected scalar type Float but found Double
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "no_teacher.py", line 42, in <module>
+    percentage=args.percentage)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/datasets/dataset.py", line 28, in get_dataset
+    return ImageDataBunch.from_folder(path, train='train', valid=val, bs=batch_size, size=sz, ds_tfms=tfms, classes=classes).normalize(stats)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/data.py", line 111, in from_folder
+    return cls.create_from_ll(src, test=test, **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/vision/data.py", line 97, in create_from_ll
+    mode=mode, tfm_y=tfm_y)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/data_block.py", line 505, in transform
+    self.train.transform(tfms[0], **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/data_block.py", line 724, in transform
+    _check_kwargs(self.x, tfms, **kwargs)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/data_block.py", line 596, in _check_kwargs
+    raise Exception(f"It's not possible to apply those transforms to your dataset:\n {e}")
+Exception: It's not possible to apply those transforms to your dataset:
+ expected scalar type Float but found Double

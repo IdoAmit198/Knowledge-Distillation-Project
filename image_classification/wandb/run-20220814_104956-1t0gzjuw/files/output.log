@@ -1,0 +1,26 @@
+
+
+
+Epoch 1/2:   2%|██▏                                                                                                                                        | 3/194 [00:07<07:36,  2.39s/it, loss=2.34]
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 69, in <module>
+    best_val_acc=best_val_acc
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 103, in train
+    samples_certainties = get_samples_certainties(all_y_pred, all_labels)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 207, in get_samples_certainties
+    correctness = probs.argmax(dim=1) == labels
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/tensor.py", line 28, in wrapped
+    return f(*args, **kwargs)
+RuntimeError: The size of tensor a (64) must match the size of tensor b (192) at non-singleton dimension 0
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 69, in <module>
+    best_val_acc=best_val_acc
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 103, in train
+    samples_certainties = get_samples_certainties(all_y_pred, all_labels)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 207, in get_samples_certainties
+    correctness = probs.argmax(dim=1) == labels
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/tensor.py", line 28, in wrapped
+    return f(*args, **kwargs)
+RuntimeError: The size of tensor a (64) must match the size of tensor b (192) at non-singleton dimension 0
+all_y_pred shape: torch.Size([64, 30])
+all_labels shape: torch.Size([192])

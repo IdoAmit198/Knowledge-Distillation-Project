@@ -1,0 +1,59 @@
+
+
+Epoch 1/2:   1%|█▍                                                                                                                                          | 2/194 [00:03<04:51,  1.52s/it, loss=2.4]
+torch.Size([64, 10])
+torch.Size([64, 10])
+
+Epoch 1/2:   2%|██▏                                                                                                                                        | 3/194 [00:05<04:40,  1.47s/it, loss=2.34]
+torch.Size([64, 10])
+
+Epoch 1/2:   3%|███▌                                                                                                                                       | 5/194 [00:07<03:45,  1.19s/it, loss=2.38]
+torch.Size([64, 10])
+
+Epoch 1/2:   4%|█████▊                                                                                                                                      | 8/194 [00:09<02:56,  1.05it/s, loss=2.4]
+Epoch 1/2:   5%|██████▍                                                                                                                                    | 9/194 [00:11<03:51,  1.25s/it, loss=2.38]
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 69, in <module>
+    best_val_acc=best_val_acc
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 23, in train
+    for images, labels in loop:
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/tqdm/std.py", line 1195, in __iter__
+    for obj in iterable:
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/basic_data.py", line 75, in __iter__
+    for b in self.dl: yield self.proc_batch(b)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 841, in _next_data
+    idx, data = self._get_data()
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 798, in _get_data
+    success, data = self._try_get_data()
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 761, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/queue.py", line 173, in get
+    self.not_empty.wait(remaining)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/threading.py", line 299, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 69, in <module>
+    best_val_acc=best_val_acc
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 23, in train
+    for images, labels in loop:
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/tqdm/std.py", line 1195, in __iter__
+    for obj in iterable:
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/fastai/basic_data.py", line 75, in __iter__
+    for b in self.dl: yield self.proc_batch(b)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 841, in _next_data
+    idx, data = self._get_data()
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 798, in _get_data
+    success, data = self._try_get_data()
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 761, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/queue.py", line 173, in get
+    self.not_empty.wait(remaining)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/threading.py", line 299, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+torch.Size([64, 10])

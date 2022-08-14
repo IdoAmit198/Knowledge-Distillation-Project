@@ -1,0 +1,55 @@
+
+
+
+
+Epoch 1/2:   2%|██▏                                                                                                                                        | 3/194 [00:08<08:55,  2.80s/it, loss=2.34]
+all_y_pred shape: torch.Size([192, 10])
+all_labels shape: torch.Size([192])
+n_d: 3342.0
+n_s: 3840.0
+n_d: 566.0
+n_s: 970.0
+n_d: 242.0
+n_s: 6.0
+/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/utils/uncertainty_metrics.py:84: RuntimeWarning: invalid value encountered in double_scalars
+  results['gamma'] = (n_s - n_d) / (n_s + n_d)
+/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/utils/uncertainty_metrics.py:85: RuntimeWarning: invalid value encountered in double_scalars
+  results['AUROC'] = (n_s) / (n_s + n_d)
+n_d: 88.0
+n_s: 38.0
+n_d: 0.0
+n_s: 0
+n_d: 0.0
+n_s: 0
+n_d: 0.0
+n_s: 0
+n_d: 0.0
+n_s: 0
+n_d: 0.0
+n_s: 0
+higher valid acc obtained: 10.2
+
+
+Epoch 2/2:   2%|██▏                                                                                                                                        | 3/194 [00:04<04:56,  1.55s/it, loss=2.35]
+all_y_pred shape: torch.Size([192, 10])
+all_labels shape: torch.Size([192])
+n_d: 3670.0
+
+Epoch 2/2:   2%|██▏                                                                                                                                        | 3/194 [00:07<07:47,  2.45s/it, loss=2.35]
+n_d: 532.0
+n_s: 634.0
+n_d: 386.0
+n_s: 1564.0
+n_d: 168.0
+n_s: 198.0
+n_d: 148.0
+n_s: 218.0
+n_d: 1096.0
+n_s: 304.0
+n_d: 0.0
+n_s: 0
+n_d: 802.0
+n_s: 278.0
+n_d: 46.0
+n_s: 56.0
+higher valid acc obtained: 13.4

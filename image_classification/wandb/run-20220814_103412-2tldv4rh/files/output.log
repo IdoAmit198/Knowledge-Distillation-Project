@@ -1,0 +1,122 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1/2: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 194/194 [03:22<00:00,  1.04s/it, loss=1.98]
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 69, in <module>
+    best_val_acc=best_val_acc
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 95, in train
+    # all_y_pred = torch.cat((y_pred_list), dim=-1)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 199, in get_samples_certainties
+    probs = F.softmax(preds, dim=1)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/tensor.py", line 28, in wrapped
+    return f(*args, **kwargs)
+RuntimeError: The size of tensor a (64) must match the size of tensor b (12416) at non-singleton dimension 0
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 69, in <module>
+    best_val_acc=best_val_acc
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 95, in train
+    # all_y_pred = torch.cat((y_pred_list), dim=-1)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 199, in get_samples_certainties
+    probs = F.softmax(preds, dim=1)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/site-packages/torch/tensor.py", line 28, in wrapped
+    return f(*args, **kwargs)
+RuntimeError: The size of tensor a (64) must match the size of tensor b (12416) at non-singleton dimension 0

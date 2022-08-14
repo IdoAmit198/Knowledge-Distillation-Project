@@ -1,0 +1,26 @@
+
+
+
+Epoch 1/2:   2%|██▏                                                                                                                                        | 3/194 [00:07<07:40,  2.41s/it, loss=2.34]
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 69, in <module>
+    best_val_acc=best_val_acc
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 104, in train
+    _log_uncertainty("train", samples_certainties)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 215, in _log_uncertainty
+    gamma_correlation = uncertainty_metrics.gamma_correlation(sorted_samples_certainties, sort=False)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/utils/uncertainty_metrics.py", line 61, in gamma_correlation
+    incorrect_after_me[i] = incorrect_after_me[i + 1] + (1 - int(samples_certainties[i + 1][1]))
+ValueError: only one element tensors can be converted to Python scalars
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 69, in <module>
+    best_val_acc=best_val_acc
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 104, in train
+    _log_uncertainty("train", samples_certainties)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 215, in _log_uncertainty
+    gamma_correlation = uncertainty_metrics.gamma_correlation(sorted_samples_certainties, sort=False)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/utils/uncertainty_metrics.py", line 61, in gamma_correlation
+    incorrect_after_me[i] = incorrect_after_me[i + 1] + (1 - int(samples_certainties[i + 1][1]))
+ValueError: only one element tensors can be converted to Python scalars
+all_y_pred shape: torch.Size([64, 10, 3])
+all_labels shape: torch.Size([64, 3])

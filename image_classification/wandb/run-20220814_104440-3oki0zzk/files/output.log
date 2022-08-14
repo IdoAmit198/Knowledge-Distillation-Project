@@ -1,0 +1,14 @@
+
+  0%|                                                                                                                                                                         | 0/194 [00:03<?, ?it/s]
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 69, in <module>
+    best_val_acc=best_val_acc
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 23, in train
+    for idx, images, labels in enumerate(loop):
+ValueError: not enough values to unpack (expected 3, got 2)
+Traceback (most recent call last):
+  File "experiments/no_teacher.py", line 69, in <module>
+    best_val_acc=best_val_acc
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 23, in train
+    for idx, images, labels in enumerate(loop):
+ValueError: not enough values to unpack (expected 3, got 2)

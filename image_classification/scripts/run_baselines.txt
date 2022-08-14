@@ -1,0 +1,3 @@
+sbatch -c 2 --gres=gpu:1 -o output_files/simultaneous.out -J simultaneous scripts/run_simultaneous.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/hinton.out -J hinton scripts/run_hinton.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/no_teacher.out -J no_teacher  scripts/run_noteacher.sh

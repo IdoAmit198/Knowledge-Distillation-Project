@@ -1,0 +1,24 @@
+2022-08-14 11:42:01,487 INFO    StreamThr :13723 [internal.py:wandb_internal():93] W&B internal server running at pid: 13723, started at: 2022-08-14 11:42:01.482380
+2022-08-14 11:42:01,489 DEBUG   HandlerThread:13723 [handler.py:handle_request():141] handle_request: status
+2022-08-14 11:42:01,500 DEBUG   SenderThread:13723 [sender.py:send_request():316] send_request: status
+2022-08-14 11:42:01,502 DEBUG   SenderThread:13723 [sender.py:send():302] send: header
+2022-08-14 11:42:01,502 INFO    WriterThread:13723 [datastore.py:open_for_write():75] open: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20220814_114201-2c2dmp8d/run-2c2dmp8d.wandb
+2022-08-14 11:42:01,751 DEBUG   SenderThread:13723 [sender.py:send():302] send: run
+2022-08-14 11:42:02,587 DEBUG   HandlerThread:13723 [handler.py:handle_request():141] handle_request: check_version
+2022-08-14 11:42:02,597 INFO    SenderThread:13723 [dir_watcher.py:__init__():216] watching files in: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20220814_114201-2c2dmp8d/files
+2022-08-14 11:42:02,598 INFO    SenderThread:13723 [sender.py:_start_run_threads():916] run started: 2c2dmp8d with start time 1660466521.47522
+2022-08-14 11:42:02,598 DEBUG   SenderThread:13723 [sender.py:send():302] send: summary
+2022-08-14 11:42:02,600 INFO    SenderThread:13723 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2022-08-14 11:42:02,600 DEBUG   SenderThread:13723 [sender.py:send_request():316] send_request: check_version
+2022-08-14 11:42:02,940 DEBUG   HandlerThread:13723 [handler.py:handle_request():141] handle_request: run_start
+2022-08-14 11:42:02,949 DEBUG   HandlerThread:13723 [meta.py:__init__():35] meta init
+2022-08-14 11:42:02,950 DEBUG   HandlerThread:13723 [meta.py:__init__():50] meta init done
+2022-08-14 11:42:02,950 DEBUG   HandlerThread:13723 [meta.py:probe():216] probe
+2022-08-14 11:42:02,973 DEBUG   HandlerThread:13723 [meta.py:_setup_git():206] setup git
+2022-08-14 11:42:03,009 DEBUG   HandlerThread:13723 [meta.py:_setup_git():213] setup git done
+2022-08-14 11:42:03,009 DEBUG   HandlerThread:13723 [meta.py:_save_pip():54] save pip
+2022-08-14 11:42:03,012 DEBUG   HandlerThread:13723 [meta.py:_save_pip():68] save pip done
+2022-08-14 11:42:03,012 DEBUG   HandlerThread:13723 [meta.py:_save_conda():75] save conda
+2022-08-14 11:42:03,643 INFO    Thread-12 :13723 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20220814_114201-2c2dmp8d/files/requirements.txt
+2022-08-14 11:42:03,643 INFO    Thread-12 :13723 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20220814_114201-2c2dmp8d/files/conda-environment.yaml
+2022-08-14 11:42:03,644 INFO    Thread-12 :13723 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20220814_114201-2c2dmp8d/files/wandb-summary.json

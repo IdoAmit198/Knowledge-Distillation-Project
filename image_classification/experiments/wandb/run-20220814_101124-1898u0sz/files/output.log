@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "no_teacher.py", line 54, in <module>
+    savename = get_savename(hyper_params, experiment=expt)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/utils/utils.py", line 78, in get_savename
+    parent = realpath.relative_to(current_path)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/pathlib.py", line 874, in relative_to
+    .format(str(self), str(formatted)))
+ValueError: '/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/utils' does not start with '/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments'
+Traceback (most recent call last):
+  File "no_teacher.py", line 54, in <module>
+    savename = get_savename(hyper_params, experiment=expt)
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/utils/utils.py", line 78, in get_savename
+    parent = realpath.relative_to(current_path)
+  File "/home/shanigoren/miniconda3/envs/skd/lib/python3.6/pathlib.py", line 874, in relative_to
+    .format(str(self), str(formatted)))
+ValueError: '/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/utils' does not start with '/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments'
