@@ -8,7 +8,20 @@ from image_classification.utils.utils import *
 from image_classification.utils import *
 import wandb
 
+from datetime import date, datetime
+
+
 def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_function2, optimizer, hyper_params, epoch, savename, best_val_acc, expt=None):
+    now = datetime.now()
+    current_time = now.strftime("%H:%M")
+    today = date.today().strftime("%d/%m")
+    wandb.init(
+    project="our-awesome-project",
+    # group=f"{hyper_params.experiment}",
+    name= f"{hyper_params['experiment']}-{hyper_params['model']}-{hyper_params['num_epochs']} epochs-{today}-{current_time}",
+    config=hyper_params)
+    config = wandb.config
+    
     loop = tqdm(data.train_dl)
     max_val_acc = best_val_acc
     gpu = hyper_params['gpu']
@@ -18,7 +31,12 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
         teacher.eval()
         teacher = teacher.to(gpu)
     trn = list()
+    y_pred_train_list = []
+    labels_train_list = []
     for images, labels in loop:
+        # if idx == 3:
+        #     break
+
         if gpu != 'cpu':
             images = torch.autograd.Variable(images).to(gpu).float()
             labels = torch.autograd.Variable(labels).to(gpu)
@@ -28,13 +46,15 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
         
         ## y_pred is logits. duh. 
         y_pred = student(images)
+        # print(y_pred.shape)
+        y_pred_train_list.append(y_pred)
+        labels_train_list.append(labels)
         ## CODE WE CHANGED
         # print(f"y_pred = {y_pred}")
         # print(f"y_pred shape is {y_pred.shape}")
         # print(f"y_pred sum is {torch.sum(y_pred)}")
 
-        samples_certainties = get_samples_certainties(y_pred, labels)
-        _log_uncertainty("train", samples_certainties)
+        
         ## ENF OF CODE WE CHANGED
 
         if teacher is not None:
@@ -86,7 +106,14 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
 
         loop.set_description('Epoch {}/{}'.format(epoch + 1, hyper_params['num_epochs']))
         loop.set_postfix(loss=loss.item())
-
+    
+    all_y_pred_train = torch.cat(y_pred_train_list)
+    all_labels_train = torch.cat(labels_train_list)
+    # print(f'all_y_pred shape: {all_y_pred.shape}')
+    # print(f'all_labels shape: {all_labels.shape}')
+    samples_certainties = get_samples_certainties(all_y_pred_train, all_labels_train)
+    _log_uncertainty("train", samples_certainties)
+    
     train_loss = (sum(trn) / len(trn))
 
     student.eval()
@@ -94,6 +121,9 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
     with torch.no_grad():
         correct = 0
         total = 0
+
+        y_pred_val_list = []
+        labels_val_list = []
         for _, (images, labels) in enumerate(data.valid_dl):
             if gpu != 'cpu':
                 images = torch.autograd.Variable(images).to(gpu).float()
@@ -103,11 +133,9 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
                 labels = torch.autograd.Variable(labels)
 
             y_pred = student(images)
-
-            ###
-            samples_certainties = get_samples_certainties(y_pred, labels)
-            _log_uncertainty("val", samples_certainties)
-            ###
+            
+            y_pred_val_list.append(y_pred)
+            labels_val_list.append(labels)
 
             if teacher is not None:
               soft_targets = teacher(images)
@@ -157,6 +185,11 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
 
             val.append(loss.item())
 
+    all_y_pred_val = torch.cat(y_pred_val_list)
+    all_labels_val = torch.cat(labels_val_list)
+    samples_certainties = get_samples_certainties(all_y_pred_val, all_labels_val)
+    _log_uncertainty("val", samples_certainties)
+
     val_loss = (sum(val) / len(val))
     if total > 0:
         val_acc = correct / total
@@ -182,6 +215,7 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
             max_val_acc = val_acc * 100
             torch.save(student.state_dict(), savename)
 
+    wandb.log({"train loss": train_loss, "val loss": val_loss, 'val accuracy': val_acc, 'epoch':epoch})
     return student, train_loss, val_loss, val_acc, max_val_acc
 
 ### NEW FUNCTION

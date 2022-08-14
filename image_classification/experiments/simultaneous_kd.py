@@ -32,6 +32,7 @@ hyper_params = {
     "seed": args.seed,
     "percentage":args.percentage,
     "gpu": args.gpu,
+    "experiment": "Simultaneous"
 }
 
 data = get_dataset(dataset=hyper_params['dataset'],

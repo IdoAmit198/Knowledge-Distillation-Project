@@ -10,13 +10,10 @@ from image_classification.datasets.dataset import get_dataset
 from image_classification.utils.utils import *
 from image_classification.models.custom_resnet import *
 from trainer import *
-import wandb
-
 
 args = get_args(description='No Teacher', mode='train')
 expt = 'no-teacher'
 
-wandb.init(project="our-awesome-project")
 
 torch.manual_seed(args.seed)
 if args.gpu != 'cpu':
@@ -34,7 +31,8 @@ hyper_params = {
     "learning_rate": 1e-4,
     "seed": args.seed,
     "percentage":args.percentage,
-    "gpu": args.gpu
+    "gpu": args.gpu,
+    "experiment": "No Teacher"
 }
 
 data = get_dataset(dataset=hyper_params['dataset'],
@@ -68,7 +66,7 @@ for epoch in range(hyper_params['num_epochs']):
                                                                 savename=savename,
                                                                 best_val_acc=best_val_acc
                                                                 )
-    wandb.log({"train loss": train_loss, "val loss": val_loss, 'val accuracy': val_acc, 'epoch':epoch})
+    
 
     if args.api_key:
         experiment.log_metric("train_loss", train_loss)

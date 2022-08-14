@@ -34,7 +34,8 @@ hyper_params = {
     "temperature" : 20,
     "alpha" : 0.2,
     "weight_decay": 5e-4,
-    "stage":0
+    "stage":0,
+    "experiment": "Hinton"
 }
 
 data = get_dataset(dataset=hyper_params['dataset'],
