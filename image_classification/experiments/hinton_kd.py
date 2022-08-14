@@ -26,7 +26,7 @@ hyper_params = {
     "num_classes": 10,
     "batch_size": 64,
     "num_epochs": args.epoch,
-    "learning_rate": 1e-4,
+    "learning_rate": 1e-3 if args.learning_rate is None else args.learning_rate,
     "momentum": 0.9,
     "seed": args.seed,
     "percentage":args.percentage,
@@ -57,9 +57,11 @@ if args.api_key:
     experiment.log_parameters(hyper_params)
 
 savename = get_savename(hyper_params, experiment=expt)
-optimizer = torch.optim.SGD(net.parameters(), lr=hyper_params["learning_rate"], momentum=hyper_params["momentum"], weight_decay=hyper_params["weight_decay"])
+# optimizer = torch.optim.SGD(net.parameters(), lr=hyper_params["learning_rate"], momentum=hyper_params["momentum"], weight_decay=hyper_params["weight_decay"])
+optimizer = torch.optim.Adam(net.parameters(), lr=hyper_params["learning_rate"])
 
-loss_function = nn.KLDivLoss(reduction='mean')
+# loss_function = nn.KLDivLoss(reduction='mean')
+loss_function = nn.CrossEntropyLoss()
 loss_function2 = nn.CrossEntropyLoss()
 best_val_loss = 100
 for epoch in range(hyper_params["num_epochs"]):
