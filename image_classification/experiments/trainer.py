@@ -112,7 +112,7 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
     # print(f'all_y_pred shape: {all_y_pred.shape}')
     # print(f'all_labels shape: {all_labels.shape}')
     samples_certainties = get_samples_certainties(all_y_pred_train, all_labels_train)
-    _log_uncertainty("train", samples_certainties)
+    _log_uncertainty("train", samples_certainties, epoch)
     
     train_loss = (sum(trn) / len(trn))
 
@@ -188,7 +188,7 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
     all_y_pred_val = torch.cat(y_pred_val_list)
     all_labels_val = torch.cat(labels_val_list)
     samples_certainties = get_samples_certainties(all_y_pred_val, all_labels_val)
-    _log_uncertainty("val", samples_certainties)
+    _log_uncertainty("val", samples_certainties, epoch)
 
     val_loss = (sum(val) / len(val))
     if total > 0:
@@ -226,7 +226,7 @@ def get_samples_certainties(preds, labels):
         samples_certainties = torch.stack([confidence, correctness.float()], dim=1)
         return samples_certainties
 
-def _log_uncertainty(log_title, samples_certainties):
+def _log_uncertainty(log_title, samples_certainties, epoch):
     with torch.no_grad():
         indices_sorting_by_confidence = torch.argsort(samples_certainties[:, 0], descending=True)
         sorted_samples_certainties = samples_certainties[indices_sorting_by_confidence]
@@ -234,10 +234,9 @@ def _log_uncertainty(log_title, samples_certainties):
         wandb.log({f'confidence_statistics/confidence_mean_{log_title}':uncertainty_metrics.confidence_mean(sorted_samples_certainties),
                 f'confidence_statistics/confidence_median_{log_title}':uncertainty_metrics.confidence_median(sorted_samples_certainties),
                 f'confidence_statistics/confidence_gini_{log_title}':uncertainty_metrics.gini(sorted_samples_certainties),
-                f'ranking/auroc_{log_title}':gamma_correlation['AUROC']})
-        ##TODO: Veirfy to get it work later
+                f'ranking/auroc_{log_title}':gamma_correlation['AUROC'], 'epoch':epoch})
         ece = uncertainty_metrics.ECE_calc(sorted_samples_certainties)
         wandb.log({f'ece/ece_{log_title}':
-                 ece[0]})
+                 ece[0],'epoch':epoch})
         wandb.log({f'ece/mce_{log_title}':
-                 ece[1]})
+                 ece[1], 'epoch':epoch})

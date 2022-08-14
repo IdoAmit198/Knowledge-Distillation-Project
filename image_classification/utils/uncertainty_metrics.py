@@ -79,6 +79,8 @@ def gamma_correlation(samples_certainties, sort=True):
             n_s += i - incorrect_before_me
 
     results = {}
+    # print(f'n_d: {n_d}')
+    # print(f'n_s: {n_s}')
     results['gamma'] = (n_s - n_d) / (n_s + n_d)
     results['AUROC'] = (n_s) / (n_s + n_d)
     results['n_s'] = n_s
