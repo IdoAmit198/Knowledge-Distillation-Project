@@ -50,7 +50,7 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
         ## y_pred is logits. duh. 
         y_pred = student(images)
         # print(y_pred.shape)
-        y_pred_train_list.append(y_pred)
+        y_pred_train_list.append(F.softmax(y_pred, dim = 1))
         labels_train_list.append(labels)
         ## CODE WE CHANGED
         # print(f"y_pred = {y_pred}")
@@ -58,7 +58,7 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
         # print(f"y_pred sum is {torch.sum(y_pred)}")
 
         
-        ## ENF OF CODE WE CHANGED
+        ## END OF CODE WE CHANGED
 
         if teacher is not None:
             soft_targets = teacher(images)
@@ -73,16 +73,17 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
             ALPHA = hyper_params['alpha']
             
             soft_targets = F.softmax(soft_targets/TEMP,dim=1)
-            print(f"hinton soft targets is:")
-            print(soft_targets)
-            print(f"and hinton soft targets shape is {soft_targets.shape}")
-            print(f"y_pred shape is {y_pred.shape}")
+            # print(f"hinton soft targets is:")
+            # print(soft_targets)
+            # print(f"and hinton soft targets shape is {soft_targets.shape}")
+            # print(f"y_pred shape is {y_pred.shape}")
 
-            # distillation_loss = loss_function(F.softmax(y_pred/TEMP,dim=1),soft_targets)*(1-ALPHA)*TEMP*TEMP 
-            # std_loss = loss_function2(F.softmax(y_pred,dim=1),labels)*(ALPHA)
-            # loss = distillation_loss + std_loss
-            distillation_loss = our_cross_entropy(F.softmax(y_pred/TEMP,dim=1),soft_targets)*(1-ALPHA)*TEMP*TEMP 
-            std_loss = our_cross_entropy(F.softmax(y_pred,dim=1),labels)*(ALPHA)
+            distillation_loss = loss_function(F.softmax(y_pred/TEMP,dim=1),soft_targets)*(1-ALPHA)*TEMP*TEMP 
+            print(f"distillation loss: {distillation_loss}")
+            std_loss = loss_function2(F.softmax(y_pred,dim=1),labels)*(ALPHA)
+            print(f"std loss: {std_loss}")
+            # distillation_loss = our_cross_entropy(F.softmax(y_pred/TEMP,dim=1),soft_targets)*(1-ALPHA)*TEMP*TEMP 
+            # std_loss = our_cross_entropy(F.softmax(y_pred,dim=1),labels)*(ALPHA)
             loss = distillation_loss + std_loss
 
 
@@ -146,7 +147,7 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
 
             y_pred = student(images)
             
-            y_pred_val_list.append(y_pred)
+            y_pred_val_list.append(F.softmax(y_pred, dim = 1))
             labels_val_list.append(labels)
 
             if teacher is not None:

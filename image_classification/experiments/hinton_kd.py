@@ -60,8 +60,8 @@ savename = get_savename(hyper_params, experiment=expt)
 # optimizer = torch.optim.SGD(net.parameters(), lr=hyper_params["learning_rate"], momentum=hyper_params["momentum"], weight_decay=hyper_params["weight_decay"])
 optimizer = torch.optim.Adam(net.parameters(), lr=hyper_params["learning_rate"])
 
-# loss_function = nn.KLDivLoss(reduction='mean')
-loss_function = nn.CrossEntropyLoss()
+loss_function = nn.KLDivLoss(reduction='mean')
+# loss_function = nn.CrossEntropyLoss()
 loss_function2 = nn.CrossEntropyLoss()
 best_val_loss = 100
 for epoch in range(hyper_params["num_epochs"]):
