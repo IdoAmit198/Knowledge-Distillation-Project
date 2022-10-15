@@ -31,7 +31,8 @@ hyper_params = {
     "learning_rate": 1e-4,
     "seed": args.seed,
     "percentage":args.percentage,
-    "gpu": args.gpu
+    "gpu": args.gpu,
+    "experiment": "Stage Wise"
 }
 
 data = get_dataset(dataset=hyper_params['dataset'],
