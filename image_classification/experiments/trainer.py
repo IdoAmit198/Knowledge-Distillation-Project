@@ -163,14 +163,14 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
                 labels = torch.autograd.Variable(labels)
 
             student_logits = student(images)
-            print(f"student_logits is: {student_logits}")
-            print(f"student_logits after softmax is: {F.softmax(student_logits, dim = 1)}")
+            # print(f"student_logits is: {student_logits}")
+            # print(f"student_logits after softmax is: {F.softmax(student_logits, dim = 1)}")
             y_pred_val_list.append(F.softmax(student_logits, dim = 1))
             labels_val_list.append(labels)
 
             if teacher is not None:
                 teacher_soft_targets = teacher(images)
-                print(f"teacher_soft_targets is: {teacher_soft_targets}")
+                # print(f"teacher_soft_targets is: {teacher_soft_targets}")
                 ##TODO: delete later
                 teacher_pred_val_list.append(F.softmax(teacher_soft_targets, dim = 1))
                 ##END of delete
@@ -266,11 +266,11 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
 ### NEW FUNCTION
 def get_samples_certainties(probs, labels):
     # print(f"preds.shape is: {preds.shape}")
-    print(f"labels.shape is: {labels.shape}")
+    # print(f"labels.shape is: {labels.shape}")
     # probs = F.softmax(preds, dim=1)
-    print(f"probs is: {probs}")
+    # print(f"probs is: {probs}")
     confidence = probs.max(dim=1)[0]
-    print(f"confidence is: {confidence}")
+    # print(f"confidence is: {confidence}")
     correctness = probs.argmax(dim=1) == labels
     samples_certainties = torch.stack([confidence, correctness.float()], dim=1)
     return samples_certainties
