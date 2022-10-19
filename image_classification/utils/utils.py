@@ -4,7 +4,7 @@ import torch
 from fastai.vision import *
 from image_classification.models import custom_resnet
 from pathlib import Path
-
+import torchvision.models as vision_models
 
 class SaveFeatures:
     def __init__(self, m):
@@ -149,3 +149,37 @@ def fsp_matrix(fm1, fm2):
     fsp = torch.bmm(fm1, fm2) / fm1.size(2)
 
     return fsp
+
+### START OF UTIL FUNCTIONS WE ADDED ###
+
+def load_teacher(teacher_name):
+    return_teacher = None
+    models_path_dict = {
+        'resnet34-0' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model0.pt' ,
+        'resnet34-1' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model1.pt' ,
+        'resnet34-2' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model2.pt' ,
+        'resnet50' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt' ,
+        'resnet101' : 'saved_models/imagewoof/full_data/no-teacher/resnet101_classifier/model0.pt'
+    }
+
+    if teacher_name.startswith('resnet34'):
+        return_teacher = vision_models.resnet34()
+    if teacher_name.startswith('resnet50'):
+        return_teacher = vision_models.resnet50()
+    if teacher_name.startswith('resnet101'):
+        return_teacher = vision_models.resnet101()
+
+    fc_in_features = return_teacher.fc.in_features
+    return_teacher.fc = nn.Linear(fc_in_features, 10)
+    return_teacher.load_state_dict(torch.load(models_path_dict[teacher_name]))
+    for param in return_teacher.parameters():
+        param.requires_grad = False
+    return return_teacher
+
+def load_teachers_list(teachers_names_list):
+    return [load_teacher(teacher_name) for teacher_name in teachers_names_list]
+    
+        
+        
+
+

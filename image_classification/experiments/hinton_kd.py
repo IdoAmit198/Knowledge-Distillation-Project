@@ -10,6 +10,7 @@ from image_classification.datasets.dataset import get_dataset
 from image_classification.utils.utils import *
 from image_classification.models.custom_resnet import *
 from trainer import *
+from torchvision.models import resnet50
 
 args = get_args(description='Hinton KD', mode='train')
 expt = 'hinton-kd'
@@ -35,7 +36,10 @@ hyper_params = {
     "alpha" : 0.2,
     "weight_decay": 5e-4,
     "stage":0,
-    "experiment": "Hinton"
+    "experiment": "Hinton",
+    "teacher": args.teacher,
+    "teachers_num": args.teachers_num ,
+    "teacher_models": args.teacher_models
 }
 
 data = get_dataset(dataset=hyper_params['dataset'],
@@ -46,7 +50,23 @@ data = get_dataset(dataset=hyper_params['dataset'],
 learn, net = get_model(hyper_params['model'], hyper_params['dataset'], data, teach=True)
 learn.model, net = learn.model.to(args.gpu), net.to(args.gpu)
 
-teacher = learn.model
+## Should make it a utility function
+if hyper_params['teachers_num'] and hyper_params['teachers_num']>1:
+    assert hyper_params['teacher_models'] is not None
+    teachers_list = load_teachers_list(hyper_params['teacher_models'])
+elif hyper_params['teacher'] and hyper_params['teachers_num'] is None:
+    teachers_list = [load_teacher(hyper_params['teacher'])]
+    # teacher = resnet50()
+    # fc_in_features = teacher.fc.in_features
+    # teacher.fc = nn.Linear(fc_in_features, 10)
+    # teacher.load_state_dict(torch.load('saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt'))
+    # for param in teacher.parameters():
+    #     param.requires_grad = False
+    # print(teacher)
+    # teacher.load_state_dict(torch.load('saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model42.pt'))
+    # print("### Worked to load pre-trained resnet-50!! ###")
+else:
+    teachers_list = [learn.model]
 
 sf_student = None
 sf_teacher = None
@@ -66,7 +86,7 @@ loss_function2 = nn.CrossEntropyLoss()
 best_val_loss = 100
 for epoch in range(hyper_params["num_epochs"]):
     net, train_loss, val_loss, _, best_val_loss = train(net,
-                                                        teacher,
+                                                        teachers_list,
                                                         data,
                                                         sf_teacher,
                                                         sf_student,
