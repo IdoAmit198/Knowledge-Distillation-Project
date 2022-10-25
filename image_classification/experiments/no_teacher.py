@@ -44,17 +44,18 @@ data = get_dataset(dataset=hyper_params['dataset'],
                    percentage=args.percentage)
 
 if hyper_params['teacher_training']:
-    if hyper_params['model'] == 'resnet34':
+    if hyper_params['model'].startswith('resnet34'):
         net = vision_models.resnet34(pretrained=True)
-    if hyper_params['model'] == 'resnet50':
+    if hyper_params['model'].startswith('resnet50'):
         net = vision_models.resnet50(pretrained=True)
-    if hyper_params['model'] == 'resnet101':
+    if hyper_params['model'].startswith('resnet101'):
         net = vision_models.resnet101(pretrained=True)
 
     fc_in_features = net.fc.in_features
     for param in net.parameters():
         param.requires_grad = False
     net.fc = nn.Linear(fc_in_features, 10)
+## Rajid loaded below a student, but we don't use it anymore...
 else:
     net = get_model(hyper_params['model'], hyper_params['dataset'])
 net = net.to(args.gpu)

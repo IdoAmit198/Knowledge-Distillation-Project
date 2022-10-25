@@ -5,6 +5,7 @@ from fastai.vision import *
 from image_classification.models import custom_resnet
 from pathlib import Path
 import torchvision.models as vision_models
+import wandb
 
 class SaveFeatures:
     def __init__(self, m):
@@ -152,12 +153,17 @@ def fsp_matrix(fm1, fm2):
 
 ### START OF UTIL FUNCTIONS WE ADDED ###
 
-def load_teacher(teacher_name):
+def load_teacher(teacher_name, savename, update_teacher=False):
     return_teacher = None
+    if update_teacher:
+        api = wandb.Api()
+        teacher_model_wandb = api.artifact(f'ido-shani-proj/our-awesome-project/{teacher_name}:latest')
+        teacher_model = teacher_model_wandb.download()
+        torch.save(teacher_model, savename)
     models_path_dict = {
-        'resnet34-0' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model0.pt' ,
-        'resnet34-1' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model1.pt' ,
-        'resnet34-2' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model2.pt' ,
+        'resnet34_0' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model0.pt' ,
+        'resnet34_1' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model1.pt' ,
+        'resnet34_2' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model2.pt' ,
         'resnet50' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt' ,
         'resnet101' : 'saved_models/imagewoof/full_data/no-teacher/resnet101_classifier/model0.pt'
     }

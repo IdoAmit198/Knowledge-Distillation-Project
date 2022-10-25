@@ -39,13 +39,15 @@ hyper_params = {
     "experiment": "Hinton",
     "teacher": args.teacher,
     "teachers_num": args.teachers_num ,
-    "teacher_models": args.teacher_models
+    "teacher_models": args.teacher_models,
+    "update_teacher": args.update_teacher
 }
 
 data = get_dataset(dataset=hyper_params['dataset'],
                    batch_size=hyper_params['batch_size'],
                    percentage=args.percentage)
 
+savename = get_savename(hyper_params, experiment=expt)
 
 learn, net = get_model(hyper_params['model'], hyper_params['dataset'], data, teach=True)
 learn.model, net = learn.model.to(args.gpu), net.to(args.gpu)
@@ -55,7 +57,7 @@ if hyper_params['teachers_num'] and hyper_params['teachers_num']>1:
     assert hyper_params['teacher_models'] is not None
     teachers_list = load_teachers_list(hyper_params['teacher_models'])
 elif hyper_params['teacher'] and hyper_params['teachers_num'] is None:
-    teachers_list = [load_teacher(hyper_params['teacher'])]
+    teachers_list = [load_teacher(hyper_params['teacher'], savename, hyper_params['update_teacher'])]
     # teacher = resnet50()
     # fc_in_features = teacher.fc.in_features
     # teacher.fc = nn.Linear(fc_in_features, 10)
@@ -76,7 +78,6 @@ if args.api_key:
     experiment = Experiment(api_key=args.api_key, project_name=project_name, workspace=args.workspace)
     experiment.log_parameters(hyper_params)
 
-savename = get_savename(hyper_params, experiment=expt)
 # optimizer = torch.optim.SGD(net.parameters(), lr=hyper_params["learning_rate"], momentum=hyper_params["momentum"], weight_decay=hyper_params["weight_decay"])
 optimizer = torch.optim.Adam(net.parameters(), lr=hyper_params["learning_rate"])
 
