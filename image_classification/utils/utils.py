@@ -153,7 +153,7 @@ def fsp_matrix(fm1, fm2):
 
 ### START OF UTIL FUNCTIONS WE ADDED ###
 
-def load_teacher(teacher_name, savename, update_teacher=False):
+def load_teacher(teacher_name, savename, update_teacher=False, teacher_training=False):
     return_teacher = None
     if update_teacher:
         api = wandb.Api()
@@ -175,11 +175,12 @@ def load_teacher(teacher_name, savename, update_teacher=False):
     if teacher_name.startswith('resnet101'):
         return_teacher = vision_models.resnet101()
 
-    fc_in_features = return_teacher.fc.in_features
-    return_teacher.fc = nn.Linear(fc_in_features, 10)
     return_teacher.load_state_dict(torch.load(models_path_dict[teacher_name]))
-    for param in return_teacher.parameters():
-        param.requires_grad = False
+    if teacher_training:
+        for param in return_teacher.parameters():
+            param.requires_grad = False
+        fc_in_features = return_teacher.fc.in_features
+        return_teacher.fc = nn.Linear(fc_in_features, 10)
     return return_teacher
 
 def load_teachers_list(teachers_names_list):
