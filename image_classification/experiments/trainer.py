@@ -61,11 +61,13 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             teachers_logits_list = []
             for teacher in teachers_list:
                 teacher_logits = teacher(images)
+                print(f"teacher_logits.shape is: {teacher_logits.shape}")
                 teachers_logits_list.append(teacher_logits)
                 if log_teacher_metrics:
                     teacher_pred_train_list.append(F.softmax(teacher_logits, dim = 1))
-            print(f"teachers_logits_list.shape is: {(torch.tensor(teachers_logits_list)).shape}")
-            teacher_mean_logits = torch.mean(torch.tensor(teachers_logits_list),dim=0)
+            all_teachers_logits = torch.stack(teachers_logits_list, dim=0)
+            print(f"all_teachers_logits.shape is: {all_teachers_logits.shape}")
+            teacher_mean_logits = torch.mean(all_teachers_logits,dim=0)
             print(f"teacher_mean_logits.shape is: {teacher_mean_logits.shape}")
 
         # classifier training

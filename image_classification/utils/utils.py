@@ -153,21 +153,18 @@ def fsp_matrix(fm1, fm2):
 
 ### START OF UTIL FUNCTIONS WE ADDED ###
 
-def load_teacher(teacher_name, savename, update_teacher=False, teacher_training=False):
+def get_save_teacher_path(teacher_name):
+    split = teacher_name.split('_')
+    model_name = split[0]
+    return f'saved_models/imagewoof/full_data/no-teacher/{model_name}_classifier'
+
+def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
     return_teacher = None
     if update_teacher:
         api = wandb.Api()
-        teacher_model_wandb = api.artifact(f'ido-shani-proj/our-awesome-project/{teacher_name}:latest')
-        teacher_model = teacher_model_wandb.download()
-        torch.save(teacher_model, savename)
-    models_path_dict = {
-        'resnet34_0' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model0.pt' ,
-        'resnet34_1' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model1.pt' ,
-        'resnet34_2' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model2.pt' ,
-        'resnet50' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt' ,
-        'resnet101' : 'saved_models/imagewoof/full_data/no-teacher/resnet101_classifier/model0.pt'
-    }
-
+        model_artifact = api.artifact(f'ido-shani-proj/our-awesome-project/{teacher_name}:latest')
+        model_artifact.download(root=get_save_teacher_path(teacher_name))
+    
     if teacher_name.startswith('resnet34'):
         return_teacher = vision_models.resnet34()
     if teacher_name.startswith('resnet50'):
@@ -175,16 +172,29 @@ def load_teacher(teacher_name, savename, update_teacher=False, teacher_training=
     if teacher_name.startswith('resnet101'):
         return_teacher = vision_models.resnet101()
 
+    models_path_dict = {
+        'resnet34_0' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model0.pt' ,
+        'resnet34_1' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model42.pt' ,
+        'resnet34_2' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model84.pt' ,
+        'resnet50' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt' ,
+        'resnet101' : 'saved_models/imagewoof/full_data/no-teacher/resnet101_classifier/model0.pt'
+    }
+        
+    for param in return_teacher.parameters():
+        param.requires_grad = False
+    fc_in_features = return_teacher.fc.in_features
+    return_teacher.fc = nn.Linear(fc_in_features, 10)
     return_teacher.load_state_dict(torch.load(models_path_dict[teacher_name]))
+
     if teacher_training:
         for param in return_teacher.parameters():
             param.requires_grad = False
-        fc_in_features = return_teacher.fc.in_features
-        return_teacher.fc = nn.Linear(fc_in_features, 10)
+
+    print(f"loaded teacher: name: {teacher_name}, from path: {models_path_dict[teacher_name]}")
     return return_teacher
 
-def load_teachers_list(teachers_names_list):
-    return [load_teacher(teacher_name) for teacher_name in teachers_names_list]
+def load_teachers_list(teachers_names_list, update_teacher=False, teacher_training=False):
+    return [load_teacher(teacher_name, update_teacher, teacher_training) for teacher_name in teachers_names_list]
     
         
         

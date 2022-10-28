@@ -40,7 +40,8 @@ hyper_params = {
     "teacher": args.teacher,
     "teachers_num": args.teachers_num ,
     "teacher_models": args.teacher_models,
-    "update_teacher": args.update_teacher
+    "update_teacher": args.update_teacher,
+    "teacher_training": args.teacher_training
 }
 
 data = get_dataset(dataset=hyper_params['dataset'],
@@ -55,9 +56,9 @@ learn.model, net = learn.model.to(args.gpu), net.to(args.gpu)
 ## Should make it a utility function
 if hyper_params['teachers_num'] and hyper_params['teachers_num']>1:
     assert hyper_params['teacher_models'] is not None
-    teachers_list = load_teachers_list(hyper_params['teacher_models'])
+    teachers_list = load_teachers_list(hyper_params['teacher_models'], update_teacher=hyper_params['update_teacher'])
 elif hyper_params['teacher'] and hyper_params['teachers_num'] is None:
-    teachers_list = [load_teacher(hyper_params['teacher'], savename, hyper_params['update_teacher'])]
+    teachers_list = [load_teacher(hyper_params['teacher'], hyper_params['update_teacher'])]
     # teacher = resnet50()
     # fc_in_features = teacher.fc.in_features
     # teacher.fc = nn.Linear(fc_in_features, 10)
@@ -85,6 +86,7 @@ loss_function = nn.KLDivLoss(reduction='mean')
 # loss_function = nn.CrossEntropyLoss()
 loss_function2 = nn.CrossEntropyLoss()
 best_val_loss = 100
+
 for epoch in range(hyper_params["num_epochs"]):
     net, train_loss, val_loss, _, best_val_loss = train(net,
                                                         teachers_list,
