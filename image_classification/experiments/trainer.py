@@ -212,11 +212,10 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
 
     all_y_pred_val = torch.cat(y_pred_val_list)
     all_labels_val = torch.cat(labels_val_list)
-    if teachers_list is not None:
-        all_teacher_pred_val = torch.cat(teacher_pred_val_list)
 
     ##TODO: delete later, only to test accuracy of teacher ResNet34 of paper!!
     if log_teacher_metrics:
+        all_teacher_pred_val = torch.cat(teacher_pred_val_list)
         _, teacher_val_pred_final = torch.max(all_teacher_pred_val, 1)
         teacher_correct_val = (teacher_val_pred_final==all_labels_val).sum().item()
         teacher_val_acc = teacher_correct_val / all_labels_val.size(0)
