@@ -159,6 +159,9 @@ def get_save_teacher_path(teacher_name):
     return f'saved_models/imagewoof/full_data/no-teacher/{model_name}_classifier'
 
 def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
+    """
+    Loading untrainable teachers either from wandb or from saved models.
+    """
     return_teacher = None
     if update_teacher:
         api = wandb.Api()
@@ -180,15 +183,11 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
         'resnet101' : 'saved_models/imagewoof/full_data/no-teacher/resnet101_classifier/model0.pt'
     }
         
-    for param in return_teacher.parameters():
-        param.requires_grad = False
     fc_in_features = return_teacher.fc.in_features
     return_teacher.fc = nn.Linear(fc_in_features, 10)
     return_teacher.load_state_dict(torch.load(models_path_dict[teacher_name]))
-
-    if teacher_training:
-        for param in return_teacher.parameters():
-            param.requires_grad = False
+    for param in return_teacher.parameters():
+        param.requires_grad = False
 
     print(f"loaded teacher: name: {teacher_name}, from path: {models_path_dict[teacher_name]}")
     return return_teacher

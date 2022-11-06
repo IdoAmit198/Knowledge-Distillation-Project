@@ -31,7 +31,7 @@ hyper_params = {
     "num_classes": 10,
     "batch_size": 64,
     "num_epochs": args.epoch,
-    "learning_rate": 1e-4,
+    "learning_rate": 1e-4 if args.learning_rate is None else args.learning_rate,
     "seed": args.seed,
     "percentage":args.percentage,
     "gpu": args.gpu,
@@ -52,9 +52,10 @@ if hyper_params['teacher_training']:
         net = vision_models.resnet101(pretrained=True)
 
     fc_in_features = net.fc.in_features
-    for param in net.parameters():
-        param.requires_grad = False
+    # for param in net.parameters():
+    #     param.requires_grad = False
     net.fc = nn.Linear(fc_in_features, 10)
+    
 ## Rajid loaded below a student, but we don't use it anymore...
 else:
     net = get_model(hyper_params['model'], hyper_params['dataset'])
