@@ -10,6 +10,9 @@ from image_classification.datasets.dataset import get_dataset
 from image_classification.utils.utils import *
 from image_classification.models.custom_resnet import *
 from trainer import *
+import torchvision.models as vision_models
+import wandb
+
 
 args = get_args(description='No Teacher', mode='train')
 expt = 'no-teacher'
@@ -28,18 +31,34 @@ hyper_params = {
     "num_classes": 10,
     "batch_size": 64,
     "num_epochs": args.epoch,
-    "learning_rate": 1e-4,
+    "learning_rate": 1e-4 if args.learning_rate is None else args.learning_rate,
     "seed": args.seed,
     "percentage":args.percentage,
     "gpu": args.gpu,
-    "experiment": "No Teacher"
+    "experiment": "No Teacher",
+    'teacher_training' : args.teacher_training
 }
 
 data = get_dataset(dataset=hyper_params['dataset'],
                    batch_size=hyper_params['batch_size'],
                    percentage=args.percentage)
 
-net = get_model(hyper_params['model'], hyper_params['dataset'])
+if hyper_params['teacher_training']:
+    if hyper_params['model'].startswith('resnet34'):
+        net = vision_models.resnet34(pretrained=True)
+    if hyper_params['model'].startswith('resnet50'):
+        net = vision_models.resnet50(pretrained=True)
+    if hyper_params['model'].startswith('resnet101'):
+        net = vision_models.resnet101(pretrained=True)
+
+    fc_in_features = net.fc.in_features
+    # for param in net.parameters():
+    #     param.requires_grad = False
+    net.fc = nn.Linear(fc_in_features, 10)
+    
+## Rajid loaded below a student, but we don't use it anymore...
+else:
+    net = get_model(hyper_params['model'], hyper_params['dataset'])
 net = net.to(args.gpu)
 
 if args.api_key:
@@ -53,8 +72,8 @@ savename = get_savename(hyper_params, experiment=expt)
 best_val_acc = 0
 for epoch in range(hyper_params['num_epochs']):
     student, train_loss, val_loss, val_acc, best_val_acc = train(
-                                                                net,
-                                                                teacher=None,
+                                                                student = net,
+                                                                teachers_list = None,
                                                                 data=data,
                                                                 sf_teacher=None,
                                                                 sf_student=None,
@@ -72,3 +91,4 @@ for epoch in range(hyper_params['num_epochs']):
         experiment.log_metric("train_loss", train_loss)
         experiment.log_metric("val_loss", val_loss)
         experiment.log_metric("val_acc", val_acc * 100)
+

@@ -10,29 +10,37 @@ import wandb
 
 from datetime import date, datetime
 
-def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_function2, optimizer, hyper_params, epoch, savename, best_val_acc, expt=None):
+def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, loss_function2, optimizer, hyper_params, epoch, savename, best_val_acc, expt=None):
     now = datetime.now()
     current_time = now.strftime("%H:%M")
     today = date.today().strftime("%d/%m")
-    wandb.init(
+    run = wandb.init(
     project="our-awesome-project",
     entity = "ido-shani-proj" ,
     # group=f"{hyper_params.experiment}",
     name= f"{hyper_params['experiment']}-{hyper_params['model']}-{hyper_params['num_epochs']} epochs-{today}-{current_time}",
     config=hyper_params)
     config = wandb.config
+    if hyper_params['teacher_training']:
+        artifact = wandb.Artifact(name=hyper_params['model'], type='model')
+
+    print(hyper_params)
     
     loop = tqdm(data.train_dl)
     max_val_acc = best_val_acc
     gpu = hyper_params['gpu']
     student.train()
     student = student.to(gpu)
-    if teacher is not None:
-        teacher.eval()
-        teacher = teacher.to(gpu)
-    trn = list()
+    if teachers_list is not None:
+        for teacher in teachers_list:
+            teacher.eval()
+            teacher = teacher.to(gpu)
+    train_loss_list = []
     student_pred_train_list = []
-    teacher_pred_train_list = []
+    log_teacher_metrics = False
+    if teachers_list and len(teachers_list)==1:
+        teacher_pred_train_list = []
+        log_teacher_metrics = True
     labels_train_list = []
     for images, labels in loop:
         # if idx == 3:
@@ -49,14 +57,21 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
         student_pred_train_list.append(F.softmax(student_logits, dim = 1))
         labels_train_list.append(labels)
 
-        if teacher is not None:
-            teacher_logits = teacher(images)
-            ##TODO: delete later, for tests prpose
-            teacher_pred_train_list.append(F.softmax(teacher_logits, dim = 1))        
-            ## END of tests
+        if teachers_list is not None:
+            teachers_logits_list = []
+            for teacher in teachers_list:
+                teacher_logits = teacher(images)
+                print(f"teacher_logits.shape is: {teacher_logits.shape}")
+                teachers_logits_list.append(teacher_logits)
+                if log_teacher_metrics:
+                    teacher_pred_train_list.append(F.softmax(teacher_logits, dim = 1))
+            all_teachers_logits = torch.stack(teachers_logits_list, dim=0)
+            print(f"all_teachers_logits.shape is: {all_teachers_logits.shape}")
+            teacher_mean_logits = torch.mean(all_teachers_logits,dim=0)
+            print(f"teacher_mean_logits.shape is: {teacher_mean_logits.shape}")
 
         # classifier training
-        if teacher is None:
+        if teachers_list is None:
             loss = loss_function(student_logits, labels)
         # stage training (and assuming sf_teacher and sf_student are given)
 
@@ -64,47 +79,47 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
             TEMP = hyper_params['temperature']
             ALPHA = hyper_params['alpha']
             
-            teacher_soft_targets = F.softmax(teacher_logits/TEMP,dim=1)
+            teacher_soft_targets = F.softmax(teacher_mean_logits/TEMP,dim=1)
             distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
             student_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
             loss = distillation_loss + student_loss
 
-        elif loss_function2 is None:
-            if expt == 'fsp-kd':
-                loss = 0
-                # 4 intermediate feature maps and taken 2 at a time (thus 3)
-                for k in range(3):
-                    loss += loss_function(fsp_matrix(sf_teacher[k].features, sf_teacher[k + 1].features),
-                                          fsp_matrix(sf_student[k].features, sf_student[k + 1].features))
-                loss /= 3
-            else:
-                loss = loss_function(sf_student[hyper_params['stage']].features, sf_teacher[hyper_params['stage']].features)
+        # elif loss_function2 is None:
+        #     if expt == 'fsp-kd':
+        #         loss = 0
+        #         # 4 intermediate feature maps and taken 2 at a time (thus 3)
+        #         for k in range(3):
+        #             loss += loss_function(fsp_matrix(sf_teacher[k].features, sf_teacher[k + 1].features),
+        #                                   fsp_matrix(sf_student[k].features, sf_student[k + 1].features))
+        #         loss /= 3
+        #     else:
+        #         loss = loss_function(sf_student[hyper_params['stage']].features, sf_teacher[hyper_params['stage']].features)
         # attention transfer KD
-        elif expt == 'attention-kd':
-            loss = loss_function(student_logits, labels)
-            for k in range(4):
-                loss += loss_function2(at(sf_student[k].features), at(sf_teacher[k].features))
-            loss /= 5
-        # 2 loss functions and student and teacher are given -> simultaneous training
-        else:
-            loss = loss_function(student_logits, labels)
-            for k in range(5):
-                loss += loss_function2(sf_student[k].features, sf_teacher[k].features)
-            # normalizing factor (doesn't affect optimization theoretically)
-            loss /= 6
+        # elif expt == 'attention-kd':
+        #     loss = loss_function(student_logits, labels)
+        #     for k in range(4):
+        #         loss += loss_function2(at(sf_student[k].features), at(sf_teacher[k].features))
+        #     loss /= 5
+        # # 2 loss functions and student and teacher are given -> simultaneous training
+        # else:
+        #     loss = loss_function(student_logits, labels)
+        #     for k in range(5):
+        #         loss += loss_function2(sf_student[k].features, sf_teacher[k].features)
+        #     # normalizing factor (doesn't affect optimization theoretically)
+        #     loss /= 6
 
-        trn.append(loss.item())
+        train_loss_list.append(loss.item())
 
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
 
-        # loop.set_description('Epoch {}/{}'.format(epoch + 1, hyper_params['num_epochs']))
-        # loop.set_postfix(loss=loss.item())
+        loop.set_description('Epoch {}/{}'.format(epoch + 1, hyper_params['num_epochs']))
+        loop.set_postfix(loss=loss.item())
     
     all_student_pred_train = torch.cat(student_pred_train_list)
     all_labels_train = torch.cat(labels_train_list)
-    if teacher is not None:
+    if log_teacher_metrics:
         all_teacher_pred_train = torch.cat(teacher_pred_train_list)
         samples_certainties = get_samples_certainties(all_teacher_pred_train, all_labels_train)
         _log_uncertainty("train_teacher", samples_certainties, epoch)
@@ -112,19 +127,19 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
     _log_uncertainty("train", samples_certainties, epoch)
     
     _, student_train_pred_final = torch.max(all_student_pred_train, 1)
-    if teacher is not None:
+    if log_teacher_metrics:
         _, teacher_train_pred_final = torch.max(all_teacher_pred_train, 1)
     student_correct = (student_train_pred_final==all_labels_train).sum().item()
-    if teacher is not None:
+    if log_teacher_metrics:
         teacher_correct = (teacher_train_pred_final==all_labels_train).sum().item()
     train_acc = student_correct / all_labels_train.size(0)
-    if teacher is not None:
+    if log_teacher_metrics:
         teacher_train_acc = teacher_correct / all_labels_train.size(0)
     
-    train_loss = (sum(trn) / len(trn))
+    train_loss = (sum(train_loss_list) / len(train_loss_list))
 
     student.eval()
-    val = list()
+    val_loss_list = list()
     with torch.no_grad():
         correct = 0
         total = 0
@@ -144,13 +159,13 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
             y_pred_val_list.append(F.softmax(student_logits, dim = 1))
             labels_val_list.append(labels)
 
-            if teacher is not None:
-                teacher_soft_targets = teacher(images)
+            if log_teacher_metrics:
+                teacher_soft_targets = teachers_list[0](images)
                 ##TODO: delete later
                 teacher_pred_val_list.append(F.softmax(teacher_soft_targets, dim = 1))
                 ##END of delete
             # classifier training
-            if teacher is None:
+            if teachers_list is None:
                 loss = loss_function(student_logits, labels)
                 student_logits = F.log_softmax(student_logits, dim = 1)
 
@@ -172,58 +187,61 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
 
 
             # stage training
-            elif loss_function2 is None:
-                if expt == 'fsp-kd':
-                    loss = 0
-                    # 4 intermediate feature maps and taken 2 at a time (thus 3)
-                    for k in range(3):
-                        loss += loss_function(fsp_matrix(sf_teacher[k].features, sf_teacher[k + 1].features),
-                                              fsp_matrix(sf_student[k].features, sf_student[k + 1].features))
-                    loss /= 3
-                else:
-                    loss = loss_function(sf_student[hyper_params['stage']].features, sf_teacher[hyper_params['stage']].features)
-            # simultaneous training or attention KD
-            else:
-                loss = loss_function(student_logits, labels)
-                student_pred = F.log_softmax(student_logits, dim = 1)
+            # elif loss_function2 is None:
+            #     if expt == 'fsp-kd':
+            #         loss = 0
+            #         # 4 intermediate feature maps and taken 2 at a time (thus 3)
+            #         for k in range(3):
+            #             loss += loss_function(fsp_matrix(sf_teacher[k].features, sf_teacher[k + 1].features),
+            #                                   fsp_matrix(sf_student[k].features, sf_student[k + 1].features))
+            #         loss /= 3
+            #     else:
+            #         loss = loss_function(sf_student[hyper_params['stage']].features, sf_teacher[hyper_params['stage']].features)
+            # # simultaneous training or attention KD
+            # else:
+            #     loss = loss_function(student_logits, labels)
+            #     student_pred = F.log_softmax(student_logits, dim = 1)
 
-                _, pred_ind = torch.max(student_pred, 1)
+            #     _, pred_ind = torch.max(student_pred, 1)
 
-                total += labels.size(0)
-                correct += (pred_ind == labels).sum().item()
+            #     total += labels.size(0)
+            #     correct += (pred_ind == labels).sum().item()
 
-            val.append(loss.item())
+            val_loss_list.append(loss.item())
     
 
     all_y_pred_val = torch.cat(y_pred_val_list)
     all_labels_val = torch.cat(labels_val_list)
-    if teacher is not None:
-        all_teacher_pred_val = torch.cat(teacher_pred_val_list)
 
     ##TODO: delete later, only to test accuracy of teacher ResNet34 of paper!!
-    if teacher is not None:
+    if log_teacher_metrics:
+        all_teacher_pred_val = torch.cat(teacher_pred_val_list)
         _, teacher_val_pred_final = torch.max(all_teacher_pred_val, 1)
         teacher_correct_val = (teacher_val_pred_final==all_labels_val).sum().item()
         teacher_val_acc = teacher_correct_val / all_labels_val.size(0)
 
-    if teacher is not None:
+    if log_teacher_metrics:
         samples_certainties = get_samples_certainties(all_teacher_pred_val, all_labels_val)
         _log_uncertainty("val_teacher", samples_certainties, epoch)
     samples_certainties = get_samples_certainties(all_y_pred_val, all_labels_val)
     _log_uncertainty("val", samples_certainties, epoch)
 
-    val_loss = (sum(val) / len(val))
+    val_loss = (sum(val_loss_list) / len(val_loss_list))
     if total > 0:
         val_acc = correct / total
     else:
         val_acc = None
 
-    # classifier training
-    if teacher is None:
+    # save trained teacher model
+    if teachers_list is None:
         if (val_acc * 100) > max_val_acc :
             print(f'higher valid acc obtained: {val_acc * 100}')
             max_val_acc = val_acc * 100
             torch.save(student.state_dict(), savename)
+            ## wandb save model
+        if epoch == hyper_params['num_epochs'] -1:
+            artifact.add_file(savename)
+            run.log_artifact(artifact)
     # stage training
     elif loss_function2 is None:
         if val_loss < max_val_acc :
@@ -238,7 +256,7 @@ def train(student, teacher, data, sf_teacher, sf_student, loss_function, loss_fu
             torch.save(student.state_dict(), savename)
 
     wandb.log({"train loss": train_loss, "val loss": val_loss, 'train accuracy': train_acc, 'val accuracy': val_acc, 'epoch':epoch})
-    if teacher is not None:
+    if log_teacher_metrics:
         wandb.log({'teacher_train accuracy': teacher_train_acc, 'teacher_val accuracy': teacher_val_acc, 'epoch':epoch})
     return student, train_loss, val_loss, val_acc, max_val_acc
 
