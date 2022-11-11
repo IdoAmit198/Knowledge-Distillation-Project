@@ -7,7 +7,8 @@ def get_args(description, mode='train'):
     parser.add_argument('-d', '--dataset', choices = ['imagenette', 'imagewoof', 'cifar10'], help = 'Give the dataset name from the choices')
     if mode == 'train':
         parser.add_argument('-m', '--model', choices = ['resnet10', 'resnet14', 'resnet18', 'resnet20', 'resnet26', \
-                            'resnet34', 'resnet34_0', 'resnet34_1', 'resnet34_2', 'resnet50', 'resnet101'], help = 'Decide the student model architecture from the choices')
+                            'resnet34', 'resnet34_0', 'resnet34_1', 'resnet34_2', 'resnet50', 'resnet101', 'vit'], \
+                             help = 'Decide the student model architecture from the choices')
         parser.add_argument('-e', '--epoch', type=int, help = 'Give number of epochs for training')
         parser.add_argument('-p', '--percentage', type=int, help='Percentage of dataset to be used for training', default=None)
         parser.add_argument('-g', '--gpu', choices=[0, 1, 'cpu'], help='which GPU (or CPU) to be used for training', default=0)

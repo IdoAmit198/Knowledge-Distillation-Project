@@ -6,6 +6,7 @@ from image_classification.models import custom_resnet
 from pathlib import Path
 import torchvision.models as vision_models
 import wandb
+import timm
 
 class SaveFeatures:
     def __init__(self, m):
@@ -63,7 +64,7 @@ def freeze_student(model, hyper_params, experiment):
 
 
 def get_savename(hyper_params, experiment):
-    assert experiment in ['stagewise-kd', 'traditional-kd', 'simultaneous-kd', 'attention-kd', 'fsp-kd', 'no-teacher', 'hinton-kd']
+    assert experiment in ['stagewise-kd', 'traditional-kd', 'simultaneous-kd', 'attention-kd', 'fsp-kd', 'no-teacher', 'hinton-kd', 'ViT-no-teacher']
     
     dsize = 'full_data' if hyper_params['percentage'] is None else f"less_data{str(hyper_params['percentage'])}"
 
@@ -170,22 +171,27 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
     
     if teacher_name.startswith('resnet34'):
         return_teacher = vision_models.resnet34()
-    if teacher_name.startswith('resnet50'):
+    elif teacher_name.startswith('resnet50'):
         return_teacher = vision_models.resnet50()
-    if teacher_name.startswith('resnet101'):
+    elif teacher_name.startswith('resnet101'):
         return_teacher = vision_models.resnet101()
+    elif teacher_name.startswith('vit'):
+        return_teacher = timm.models.create_model('vit_small_patch16_224', pretrained=False, num_classes=10)
 
     models_path_dict = {
         'resnet34_0' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model0.pt' ,
         'resnet34_1' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model42.pt' ,
         'resnet34_2' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model84.pt' ,
         'resnet50' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt' ,
-        'resnet101' : 'saved_models/imagewoof/full_data/no-teacher/resnet101_classifier/model0.pt'
+        'resnet101' : 'saved_models/imagewoof/full_data/no-teacher/resnet101_classifier/model0.pt',
+        'vit': 'saved_models/imagewoof/full_data/ViT-no-teacher/vit/model0.pt'
     }
         
-    fc_in_features = return_teacher.fc.in_features
-    return_teacher.fc = nn.Linear(fc_in_features, 10)
+    if teacher_name.startswith('resnet'):
+        fc_in_features = return_teacher.fc.in_features
+        return_teacher.fc = nn.Linear(fc_in_features, 10)
     return_teacher.load_state_dict(torch.load(models_path_dict[teacher_name]))
+    ## freezing gradiesnt of teacher below to speed up.
     for param in return_teacher.parameters():
         param.requires_grad = False
 

@@ -12,10 +12,12 @@ from image_classification.models.custom_resnet import *
 from trainer import *
 import torchvision.models as vision_models
 import wandb
+from timm.data import resolve_data_config, create_transform
+import timm
 
 
-args = get_args(description='No Teacher', mode='train')
-expt = 'no-teacher'
+args = get_args(description='ViT no teacher', mode='train')
+expt = 'ViT-no-teacher'
 
 
 torch.manual_seed(args.seed)
@@ -30,43 +32,46 @@ hyper_params = {
     "stage": 0,
     "num_classes": 10,
     "batch_size": 64,
+    "momentum": 0.9,
+    "weight_decay": 5e-4,
     "num_epochs": args.epoch,
     "learning_rate": 1e-4 if args.learning_rate is None else args.learning_rate,
     "seed": args.seed,
     "percentage":args.percentage,
     "gpu": args.gpu,
-    "experiment": "No Teacher",
+    "experiment": "ViT No Teacher",
     'teacher_training' : args.teacher_training
 }
 
-data = get_dataset(dataset=hyper_params['dataset'],
-                   batch_size=hyper_params['batch_size'],
-                   percentage=args.percentage)
-
+config= None
 if hyper_params['teacher_training']:
-    if hyper_params['model'].startswith('resnet34'):
-        net = vision_models.resnet34(pretrained=True)
-    elif hyper_params['model'].startswith('resnet50'):
-        net = vision_models.resnet50(pretrained=True)
-    elif hyper_params['model'].startswith('resnet101'):
-        net = vision_models.resnet101(pretrained=True)
-
-    fc_in_features = net.fc.in_features
-    # for param in net.parameters():
-    #     param.requires_grad = False
-    net.fc = nn.Linear(fc_in_features, 10)
+    # Verify we got 'vit' as model to train.
+    assert hyper_params['model'].startswith('vit'), f"Expected to get \'vit\' as an argument. Instead got {hyper_params['model']}"
+    net = timm.models.create_model('vit_small_patch16_224', pretrained=True, num_classes=10)
+    # Creating the model specific data transformation
+    config = resolve_data_config({}, model=net)
+    # print(config)
     
 ## Rajid loaded below a student, but we don't use it anymore...
 else:
-    net = get_model(hyper_params['model'], hyper_params['dataset'])
+    sys.exit(f"invalid argument. tried to train ViT, but got teacher_training={hyper_params['teacher_training']}")
 net = net.to(args.gpu)
+
+
+data = get_dataset(dataset=hyper_params['dataset'],
+                   batch_size=hyper_params['batch_size'],
+                   percentage=args.percentage, vit_config=config)
+
+# print("*"*50)
+# print(f"data is {data}")
 
 if args.api_key:
     project_name = expt + '-' + hyper_params['model'] + '-' + hyper_params['dataset']
     experiment = Experiment(api_key=args.api_key, project_name=project_name, workspace=args.workspace)
     experiment.log_parameters(hyper_params)
 
-optimizer = torch.optim.Adam(net.parameters(), lr=hyper_params["learning_rate"])
+optimizer = torch.optim.SGD(net.parameters(), lr=hyper_params["learning_rate"], momentum=hyper_params["momentum"], weight_decay=hyper_params["weight_decay"])
+# optimizer = torch.optim.Adam(net.parameters(), lr=hyper_params["learning_rate"])
 loss_function = nn.CrossEntropyLoss()
 savename = get_savename(hyper_params, experiment=expt)
 best_val_acc = 0

@@ -1,9 +1,11 @@
-sbatch -c 2 --gres=gpu:1 -o output_files/simultaneous.out -J simultaneous scripts/run_simultaneous.sh
-
+# hinton to train a student with one or multiple teachers.
 sbatch -c 2 --gres=gpu:1 -o output_files/hinton_18_teacher_50.out -J hinton scripts/run_hinton.sh
 
-sbatch -c 2 --gres=gpu:1 -o output_files/no_teacher_50_baseline.out -J no_teacher  scripts/run_noteacher.sh
+# no_teaher to train a student without a teacher.
+sbatch -c 2 --gres=gpu:1 -o output_files/no_teacher_50_baseline.out -J no_teacher scripts/run_noteacher.sh
 
+# run_teacher_training to train a teacher (which is not ViT)
 sbatch -c 2 --gres=gpu:1 -o output_files/teacher_training_34.out -J t_t  scripts/run_teacher_training.sh
 
-sbatch -c 2 --gres=gpu:1 -o output_files/stagewise_kd_18_baseline -J stagewise_kd scripts/stagewise_kd.sh
+# run_vit_training to train a ViT teacher.
+sbatch -c 2 --gres=gpu:1 -o output_files/vit_training.out -J t_t  scripts/run_vit_training.sh

@@ -44,6 +44,18 @@ hyper_params = {
     "teacher_training": args.teacher_training
 }
 
+# We ended up with multiple teachers of the same architecture (e.g resnet34)
+# But we need a way to group in wandb by architecture, so I add this attribute.
+if hyper_params['teacher']:
+    if hyper_params['teacher'].startswith('resnet34'):
+        hyper_params['teacher_architecture'] = 'resnet34'
+    elif hyper_params['teacher'].startswith('resnet50'):
+        hyper_params['teacher_architecture'] = 'resnet50'
+    elif hyper_params['teacher'].startswith('resnet101'):
+        hyper_params['teacher_architecture'] = 'resnet101'
+    elif hyper_params['teacher'].startswith('vit'):
+        hyper_params['teacher_architecture'] = 'vit'
+
 data = get_dataset(dataset=hyper_params['dataset'],
                    batch_size=hyper_params['batch_size'],
                    percentage=args.percentage)
