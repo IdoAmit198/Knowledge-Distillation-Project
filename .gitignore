@@ -1,1 +1,7 @@
 image_classification/saved_models/imagewoof/full_data/simultaneous-kd/resnet26/model0.pt
+semantic_segmentation/**
+stagewise_knowledge_distillation.egg-info/**
+**/__pycache__
+**/__pycache__/*
+**/wandb/**
+**/*.pyc

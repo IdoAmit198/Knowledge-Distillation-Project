@@ -1,6 +1,24 @@
 from fastai.vision import *
+from timm.data.dataset import ImageDataset
+from timm.data.loader import create_loader
+from timm.data import resolve_data_config, create_transform, create_dataset
 
-def get_dataset(dataset, batch_size, percentage=None):
+def create_datasets(config, train_path, val_path):
+    train_transforms = create_transform(
+        **config,
+        is_training=True,
+    )
+
+    eval_transforms = create_transform(
+        **config,
+        is_training=False,
+    )
+    train_dataset = create_dataset(name='', root=train_path, transform=train_transforms)
+    eval_dataset = create_dataset(name='', root=val_path, transform=eval_transforms)
+
+    return train_dataset, eval_dataset
+
+def get_dataset(dataset, batch_size, percentage=None, vit_config=None):
     val = 'val'
     sz = 224
     stats = imagenet_stats
@@ -19,10 +37,29 @@ def get_dataset(dataset, batch_size, percentage=None):
     if percentage is not None:
         path = path/('new' + str(percentage))
 
+
+    train_path = str(path) + '/train'
+    val_path = str(path) + '/val'
+
     tfms = get_transforms(do_flip=False)
     if dataset == 'cifar10' : 
         val = 'test'
         sz = 32
         stats = cifar_stats
+    
 
+    if vit_config:
+        # print("*" *20 + "Made it in vit_config" + "*"*20)
+        train_dataset, eval_dataset = create_datasets(
+        config = vit_config,
+        train_path=train_path,
+        val_path=val_path,
+        )
+        # print(f"len(train_dataset) = {len(train_dataset)}")
+        # print(f"len(eval_dataset) = {len(eval_dataset)}")
+        train_dl = create_loader(train_dataset, vit_config['input_size'], batch_size)
+        valid_dl = create_loader(eval_dataset, vit_config['input_size'], batch_size)
+        return {'train_dl':train_dl, 'valid_dl':valid_dl}
+
+    # print("*" *20 + "Didn't make it in vit_config" + "*"*20)
     return ImageDataBunch.from_folder(path, train='train', valid=val, bs=batch_size, size=sz, ds_tfms=tfms, classes=classes).normalize(stats)
