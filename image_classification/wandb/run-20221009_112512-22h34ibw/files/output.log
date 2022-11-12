@@ -1,0 +1,1460 @@
+
+
+Epoch 1/3:   2%|▏         | 3/194 [00:08<06:29,  2.04s/it, loss=-75.7]
+distillation loss: -75.9640884399414
+std loss: 0.4634561240673065
+distillation loss: -75.99993133544922
+std loss: 0.4610467851161957
+distillation loss: -76.12394714355469
+std loss: 0.4577888548374176
+distillation loss: -75.99549102783203
+
+Epoch 1/3:   3%|▎         | 5/194 [00:09<02:51,  1.10it/s, loss=-75.5]
+distillation loss: -76.02622985839844
+
+Epoch 1/3:   4%|▎         | 7/194 [00:11<03:22,  1.08s/it, loss=-75.6]
+distillation loss: -76.0628433227539
+std loss: 0.4797290861606598
+distillation loss: -76.0360107421875
+
+Epoch 1/3:   5%|▍         | 9/194 [00:14<03:14,  1.05s/it, loss=-75.7]
+distillation loss: -75.9846420288086
+std loss: 0.47332024574279785
+distillation loss: -76.11656188964844
+
+Epoch 1/3:   5%|▌         | 10/194 [00:16<04:07,  1.34s/it, loss=-75.6]
+distillation loss: -76.04625701904297
+std loss: 0.47413602471351624
+distillation loss: -76.05459594726562
+
+Epoch 1/3:   6%|▌         | 11/194 [00:18<03:09,  1.04s/it, loss=-75.6]
+distillation loss: -75.97074127197266
+std loss: 0.4541841149330139
+distillation loss: -76.13335418701172
+
+Epoch 1/3:   7%|▋         | 13/194 [00:18<03:07,  1.04s/it, loss=-75.7]
+distillation loss: -76.01856994628906
+
+Epoch 1/3:   8%|▊         | 15/194 [00:21<03:04,  1.03s/it, loss=-75.5]
+distillation loss: -75.97821044921875
+
+Epoch 1/3:   9%|▉         | 17/194 [00:23<03:01,  1.02s/it, loss=-75.6]
+distillation loss: -76.0474624633789
+std loss: 0.47522297501564026
+distillation loss: -76.09893798828125
+
+Epoch 1/3:  10%|▉         | 19/194 [00:26<03:06,  1.07s/it, loss=-75.7]
+distillation loss: -76.0088882446289
+std loss: 0.4653380513191223
+distillation loss: -76.11360931396484
+
+Epoch 1/3:  10%|█         | 20/194 [00:28<03:53,  1.34s/it, loss=-75.5]
+distillation loss: -75.99696350097656
+std loss: 0.46831947565078735
+distillation loss: -76.04300689697266
+
+Epoch 1/3:  11%|█▏        | 22/194 [00:30<03:46,  1.32s/it, loss=-75.7]
+distillation loss: -76.11961364746094
+std loss: 0.4573209285736084
+distillation loss: -76.16500091552734
+
+
+Epoch 1/3:  13%|█▎        | 25/194 [00:33<03:01,  1.07s/it, loss=-75.7]
+distillation loss: -76.16991424560547
+std loss: 0.47482916712760925
+distillation loss: -76.16204833984375
+
+Epoch 1/3:  14%|█▍        | 27/194 [00:35<02:53,  1.04s/it, loss=-75.7]
+distillation loss: -76.22811889648438
+std loss: 0.4535042345523834
+distillation loss: -76.14259338378906
+
+Epoch 1/3:  15%|█▍        | 29/194 [00:38<03:00,  1.10s/it, loss=-75.7]
+distillation loss: -76.3150405883789
+std loss: 0.4416186809539795
+distillation loss: -76.20191955566406
+
+Epoch 1/3:  15%|█▌        | 30/194 [00:40<03:33,  1.30s/it, loss=-75.7]
+distillation loss: -76.20736694335938
+
+Epoch 1/3:  16%|█▌        | 31/194 [00:41<03:21,  1.24s/it, loss=-75.8]
+distillation loss: -76.25140380859375
+std loss: 0.4541993737220764
+distillation loss: -76.20036315917969
+
+Epoch 1/3:  16%|█▋        | 32/194 [00:44<03:29,  1.29s/it, loss=-75.7]
+distillation loss: -76.248291015625
+
+Epoch 1/3:  18%|█▊        | 34/194 [00:45<03:21,  1.26s/it, loss=-75.7]
+distillation loss: -76.18550872802734
+std loss: 0.46855273842811584
+distillation loss: -76.27621459960938
+
+Epoch 1/3:  19%|█▊        | 36/194 [00:47<03:00,  1.14s/it, loss=-75.9]
+distillation loss: -76.3255386352539
+
+Epoch 1/3:  20%|█▉        | 38/194 [00:50<03:14,  1.24s/it, loss=-75.9]
+distillation loss: -76.23452758789062
+std loss: 0.4736470878124237
+distillation loss: -76.37730407714844
+
+Epoch 1/3:  20%|██        | 39/194 [00:51<03:24,  1.32s/it, loss=-76]
+distillation loss: -76.41072082519531
+std loss: 0.44711026549339294
+distillation loss: -76.08197021484375
+
+Epoch 1/3:  21%|██        | 41/194 [00:54<03:20,  1.31s/it, loss=-75.8]
+distillation loss: -76.21387481689453
+
+Epoch 1/3:  22%|██▏       | 42/194 [00:55<03:12,  1.26s/it, loss=-75.9]
+distillation loss: -76.33763122558594
+std loss: 0.44760891795158386
+distillation loss: -76.21395111083984
+
+Epoch 1/3:  23%|██▎       | 44/194 [00:58<03:04,  1.23s/it, loss=-75.7]
+distillation loss: -76.14883422851562
+
+Epoch 1/3:  24%|██▎       | 46/194 [01:00<02:58,  1.21s/it, loss=-76]
+distillation loss: -76.16114807128906
+std loss: 0.47347354888916016
+distillation loss: -76.41386413574219
+
+Epoch 1/3:  24%|██▍       | 47/194 [01:01<03:10,  1.30s/it, loss=-75.7]
+distillation loss: -76.17791748046875
+std loss: 0.45913243293762207
+distillation loss: -76.15975952148438
+
+Epoch 1/3:  25%|██▍       | 48/194 [01:04<02:58,  1.23s/it, loss=-75.7]
+distillation loss: -76.06267547607422
+
+Epoch 1/3:  26%|██▌       | 50/194 [01:05<02:55,  1.22s/it, loss=-75.9]
+distillation loss: -76.39076232910156
+
+Epoch 1/3:  27%|██▋       | 52/194 [01:07<02:42,  1.14s/it, loss=-75.6]
+distillation loss: -76.11604309082031
+std loss: 0.4703242778778076
+distillation loss: -76.05514526367188
+
+Epoch 1/3:  28%|██▊       | 54/194 [01:10<02:36,  1.12s/it, loss=-75.6]
+distillation loss: -76.20060729980469
+std loss: 0.4608396589756012
+distillation loss: -76.05905151367188
+
+Epoch 1/3:  28%|██▊       | 55/194 [01:12<03:19,  1.44s/it, loss=-75.8]
+distillation loss: -76.2245101928711
+std loss: 0.4640772342681885
+distillation loss: -75.91145324707031
+
+Epoch 1/3:  29%|██▉       | 56/194 [01:12<02:26,  1.06s/it, loss=-75.4]
+distillation loss: -76.37057495117188
+std loss: 0.44534412026405334
+distillation loss: -76.3499755859375
+
+Epoch 1/3:  30%|██▉       | 58/194 [01:15<02:24,  1.06s/it, loss=-75.9]
+distillation loss: -76.52909851074219
+
+Epoch 1/3:  31%|███       | 60/194 [01:17<02:14,  1.01s/it, loss=-75.8]
+distillation loss: -76.28688049316406
+
+Epoch 1/3:  32%|███▏      | 62/194 [01:19<02:06,  1.05it/s, loss=-75.8]
+distillation loss: -76.3780288696289
+std loss: 0.4489378035068512
+distillation loss: -76.28986358642578
+
+Epoch 1/3:  33%|███▎      | 64/194 [01:21<02:08,  1.01it/s, loss=-75.9]
+distillation loss: -76.23657989501953
+std loss: 0.46065065264701843
+distillation loss: -76.38554382324219
+
+Epoch 1/3:  34%|███▍      | 66/194 [01:24<02:05,  1.02it/s, loss=-75.8]
+distillation loss: -76.22625732421875
+std loss: 0.45783907175064087
+distillation loss: -76.27330017089844
+
+Epoch 1/3:  35%|███▌      | 68/194 [01:26<02:02,  1.03it/s, loss=-75.8]
+distillation loss: -76.14067077636719
+std loss: 0.46399036049842834
+distillation loss: -76.2743911743164
+
+Epoch 1/3:  36%|███▌      | 69/194 [01:28<02:47,  1.34s/it, loss=-75.9]
+distillation loss: -76.34990692138672
+
+Epoch 1/3:  36%|███▌      | 70/194 [01:30<02:50,  1.38s/it, loss=-75.7]
+distillation loss: -76.18708801269531
+
+Epoch 1/3:  37%|███▋      | 72/194 [01:32<02:38,  1.30s/it, loss=-75.6]
+distillation loss: -76.50579833984375
+std loss: 0.4420336186885834
+distillation loss: -76.05696105957031
+
+Epoch 1/3:  38%|███▊      | 73/194 [01:33<02:36,  1.30s/it, loss=-76]
+distillation loss: -76.41850280761719
+std loss: 0.4407735764980316
+distillation loss: -76.30644226074219
+
+Epoch 1/3:  39%|███▊      | 75/194 [01:36<02:25,  1.22s/it, loss=-76]
+distillation loss: -76.4639892578125
+std loss: 0.4453425407409668
+distillation loss: -76.17245483398438
+
+Epoch 1/3:  40%|███▉      | 77/194 [01:38<02:18,  1.18s/it, loss=-75.8]
+distillation loss: -76.2584228515625
+
+Epoch 1/3:  41%|████      | 79/194 [01:40<02:07,  1.11s/it, loss=-75.9]
+distillation loss: -76.5870361328125
+std loss: 0.4341793656349182
+distillation loss: -76.36241149902344
+
+Epoch 1/3:  42%|████▏     | 81/194 [01:42<01:58,  1.05s/it, loss=-75.7]
+distillation loss: -76.26404571533203
+std loss: 0.45770081877708435
+distillation loss: -76.1250228881836
+
+Epoch 1/3:  42%|████▏     | 82/194 [01:44<02:09,  1.16s/it, loss=-75.6]
+distillation loss: -76.11001586914062
+std loss: 0.47640833258628845
+distillation loss: -76.21929931640625
+
+Epoch 1/3:  43%|████▎     | 84/194 [01:46<02:07,  1.16s/it, loss=-75.7]
+distillation loss: -76.12728118896484
+std loss: 0.47275811433792114
+distillation loss: -76.30328369140625
+
+Epoch 1/3:  44%|████▍     | 86/194 [01:48<02:05,  1.16s/it, loss=-75.7]
+distillation loss: -76.17933654785156
+std loss: 0.45905032753944397
+distillation loss: -76.41317749023438
+
+Epoch 1/3:  45%|████▍     | 87/194 [01:50<01:51,  1.04s/it, loss=-76]
+distillation loss: -76.31777954101562
+
+Epoch 1/3:  46%|████▌     | 89/194 [01:51<01:54,  1.09s/it, loss=-75.7]
+distillation loss: -76.22216796875
+std loss: 0.47944360971450806
+distillation loss: -76.11917877197266
+
+Epoch 1/3:  47%|████▋     | 91/194 [01:54<01:55,  1.12s/it, loss=-75.9]
+distillation loss: -76.31983947753906
+
+Epoch 1/3:  48%|████▊     | 93/194 [01:56<01:47,  1.06s/it, loss=-75.9]
+distillation loss: -76.32844543457031
+std loss: 0.46070343255996704
+distillation loss: -76.35342407226562
+
+Epoch 1/3:  48%|████▊     | 94/194 [01:58<02:21,  1.42s/it, loss=-75.7]
+distillation loss: -76.16276550292969
+std loss: 0.46097898483276367
+distillation loss: -76.45474243164062
+
+Epoch 1/3:  49%|████▉     | 95/194 [01:58<01:44,  1.05s/it, loss=-76]
+distillation loss: -76.30950927734375
+
+Epoch 1/3:  50%|█████     | 97/194 [02:01<01:43,  1.06s/it, loss=-75.8]
+distillation loss: -76.29531860351562
+
+Epoch 1/3:  51%|█████     | 99/194 [02:03<01:38,  1.04s/it, loss=-75.8]
+distillation loss: -76.53559875488281
+std loss: 0.43900972604751587
+distillation loss: -76.30581665039062
+
+Epoch 1/3:  52%|█████▏    | 101/194 [02:06<01:35,  1.02s/it, loss=-76]
+distillation loss: -76.16935729980469
+std loss: 0.4607924520969391
+distillation loss: -76.48025512695312
+
+Epoch 1/3:  53%|█████▎    | 103/194 [02:08<01:33,  1.03s/it, loss=-75.9]
+distillation loss: -76.61241912841797
+std loss: 0.43898969888687134
+distillation loss: -76.38382720947266
+
+Epoch 1/3:  54%|█████▎    | 104/194 [02:10<02:01,  1.35s/it, loss=-76.2]
+distillation loss: -76.63714599609375
+std loss: 0.4327968657016754
+distillation loss: -76.2267074584961
+
+Epoch 1/3:  54%|█████▍    | 105/194 [02:10<01:29,  1.00s/it, loss=-75.8]
+distillation loss: -76.27910614013672
+std loss: 0.4546079635620117
+distillation loss: -76.25924682617188
+
+Epoch 1/3:  55%|█████▌    | 107/194 [02:13<01:24,  1.03it/s, loss=-75.8]
+distillation loss: -76.39936828613281
+std loss: 0.4573450982570648
+distillation loss: -76.21855163574219
+
+Epoch 1/3:  56%|█████▌    | 109/194 [02:15<01:19,  1.07it/s, loss=-75.8]
+distillation loss: -76.23295593261719
+std loss: 0.458467572927475
+distillation loss: -76.43447875976562
+
+Epoch 1/3:  57%|█████▋    | 111/194 [02:17<01:15,  1.10it/s, loss=-76]
+distillation loss: -76.22834777832031
+std loss: 0.46410009264945984
+distillation loss: -76.30583953857422
+
+Epoch 1/3:  58%|█████▊    | 113/194 [02:19<01:12,  1.12it/s, loss=-75.8]
+distillation loss: -76.0750961303711
+
+Epoch 1/3:  59%|█████▉    | 115/194 [02:21<01:13,  1.07it/s, loss=-76]
+distillation loss: -76.42125701904297
+
+Epoch 1/3:  60%|██████    | 117/194 [02:23<01:11,  1.08it/s, loss=-75.9]
+distillation loss: -76.29194641113281
+std loss: 0.45459499955177307
+distillation loss: -76.32927703857422
+
+Epoch 1/3:  61%|██████▏   | 119/194 [02:25<01:11,  1.05it/s, loss=-76]
+distillation loss: -76.48267364501953
+std loss: 0.4428400993347168
+distillation loss: -76.4572525024414
+
+Epoch 1/3:  62%|██████▏   | 121/194 [02:28<01:11,  1.02it/s, loss=-76]
+distillation loss: -76.41101837158203
+std loss: 0.43600994348526
+distillation loss: -76.4974365234375
+
+Epoch 1/3:  63%|██████▎   | 123/194 [02:30<01:04,  1.10it/s, loss=-75.7]
+distillation loss: -76.37334442138672
+std loss: 0.4518882930278778
+distillation loss: -76.20038604736328
+
+Epoch 1/3:  64%|██████▍   | 125/194 [02:32<01:09,  1.00s/it, loss=-75.9]
+distillation loss: -76.14820098876953
+std loss: 0.4546584188938141
+distillation loss: -76.35748291015625
+
+Epoch 1/3:  65%|██████▌   | 127/194 [02:34<01:06,  1.00it/s, loss=-76]
+distillation loss: -76.23896789550781
+std loss: 0.4546445906162262
+distillation loss: -76.47388458251953
+
+Epoch 1/3:  66%|██████▌   | 128/194 [02:36<01:20,  1.22s/it, loss=-76]
+distillation loss: -76.4910888671875
+std loss: 0.45056387782096863
+distillation loss: -76.26139831542969
+
+Epoch 1/3:  67%|██████▋   | 130/194 [02:38<01:14,  1.17s/it, loss=-75.7]
+distillation loss: -76.13270568847656
+std loss: 0.457750141620636
+distillation loss: -76.25086212158203
+
+Epoch 1/3:  68%|██████▊   | 132/194 [02:40<01:09,  1.12s/it, loss=-76]
+distillation loss: -76.41596984863281
+std loss: 0.4515882432460785
+distillation loss: -76.10595703125
+
+Epoch 1/3:  69%|██████▉   | 134/194 [02:42<01:08,  1.14s/it, loss=-76.1]
+distillation loss: -76.50047302246094
+std loss: 0.4361703097820282
+distillation loss: -76.4261245727539
+
+Epoch 1/3:  70%|███████   | 136/194 [02:44<01:02,  1.07s/it, loss=-75.9]
+distillation loss: -76.35264587402344
+
+Epoch 1/3:  71%|███████   | 138/194 [02:46<01:02,  1.12s/it, loss=-75.9]
+distillation loss: -76.20846557617188
+std loss: 0.45155856013298035
+distillation loss: -76.35497283935547
+
+Epoch 1/3:  72%|███████▏  | 139/194 [02:48<00:57,  1.05s/it, loss=-75.9]
+distillation loss: -76.3470230102539
+std loss: 0.4664153754711151
+distillation loss: -76.33271789550781
+
+Epoch 1/3:  73%|███████▎  | 141/194 [02:49<00:52,  1.02it/s, loss=-76]
+distillation loss: -76.4646987915039
+std loss: 0.442228227853775
+distillation loss: -76.34293365478516
+
+Epoch 1/3:  74%|███████▎  | 143/194 [02:51<00:49,  1.03it/s, loss=-75.9]
+distillation loss: -76.37288665771484
+
+Epoch 1/3:  75%|███████▍  | 145/194 [02:53<00:45,  1.08it/s, loss=-75.8]
+distillation loss: -76.40321350097656
+std loss: 0.4515252113342285
+distillation loss: -76.2686767578125
+
+Epoch 1/3:  76%|███████▌  | 147/194 [02:55<00:44,  1.07it/s, loss=-75.6]
+distillation loss: -76.55674743652344
+std loss: 0.4358551502227783
+distillation loss: -76.11394500732422
+
+Epoch 1/3:  77%|███████▋  | 149/194 [02:58<00:43,  1.04it/s, loss=-76]
+distillation loss: -76.42435455322266
+std loss: 0.4483974575996399
+distillation loss: -76.39736938476562
+
+Epoch 1/3:  78%|███████▊  | 151/194 [03:00<00:42,  1.01it/s, loss=-76.3]
+distillation loss: -76.44690704345703
+std loss: 0.44213685393333435
+distillation loss: -76.73374938964844
+
+Epoch 1/3:  79%|███████▉  | 153/194 [03:02<00:39,  1.04it/s, loss=-75.8]
+distillation loss: -76.18463134765625
+std loss: 0.4611186683177948
+distillation loss: -76.28440856933594
+std loss: 0.45443612337112427
+distillation loss: -76.49319458007812
+std loss: 0.4484235942363739
+distillation loss: -76.25634765625
+
+
+Epoch 1/3:  81%|████████  | 157/194 [03:07<00:38,  1.05s/it, loss=-75.9]
+distillation loss: -76.20549011230469
+std loss: 0.4577992558479309
+distillation loss: -76.37565612792969
+
+Epoch 1/3:  82%|████████▏ | 159/194 [03:09<00:34,  1.03it/s, loss=-75.8]
+distillation loss: -76.4207534790039
+std loss: 0.4484054744243622
+distillation loss: -76.25312805175781
+
+Epoch 1/3:  83%|████████▎ | 161/194 [03:12<00:33,  1.01s/it, loss=-75.8]
+distillation loss: -76.40221405029297
+std loss: 0.4578547179698944
+distillation loss: -76.26152038574219
+
+Epoch 1/3:  84%|████████▍ | 163/194 [03:14<00:29,  1.04it/s, loss=-76]
+distillation loss: -76.32781982421875
+std loss: 0.44525057077407837
+distillation loss: -76.44684600830078
+
+Epoch 1/3:  85%|████████▌ | 165/194 [03:16<00:27,  1.04it/s, loss=-76]
+distillation loss: -76.46475219726562
+std loss: 0.43897730112075806
+distillation loss: -76.45968627929688
+
+Epoch 1/3:  86%|████████▌ | 167/194 [03:18<00:25,  1.07it/s, loss=-76.1]
+distillation loss: -76.48680114746094
+std loss: 0.43586355447769165
+distillation loss: -76.51250457763672
+
+Epoch 1/3:  87%|████████▋ | 169/194 [03:22<00:28,  1.16s/it, loss=-75.9]
+distillation loss: -76.22711181640625
+std loss: 0.4578550457954407
+distillation loss: -76.38316345214844
+
+Epoch 1/3:  88%|████████▊ | 171/194 [03:24<00:22,  1.00it/s, loss=-76.1]
+distillation loss: -76.44702911376953
+std loss: 0.44838085770606995
+distillation loss: -76.49873352050781
+
+Epoch 1/3:  89%|████████▉ | 173/194 [03:26<00:20,  1.02it/s, loss=-75.8]
+distillation loss: -76.55448150634766
+std loss: 0.4433978199958801
+distillation loss: -76.28712463378906
+
+Epoch 1/3:  90%|█████████ | 175/194 [03:28<00:18,  1.03it/s, loss=-76.1]
+distillation loss: -76.49861145019531
+std loss: 0.4420381188392639
+distillation loss: -76.5512924194336
+
+Epoch 1/3:  91%|█████████ | 177/194 [03:30<00:14,  1.17it/s, loss=-75.9]
+distillation loss: -76.31246948242188
+std loss: 0.4493139684200287
+distillation loss: -76.34227752685547
+
+Epoch 1/3:  92%|█████████▏| 179/194 [03:32<00:13,  1.10it/s, loss=-76.1]
+distillation loss: -76.47863006591797
+std loss: 0.4298960268497467
+distillation loss: -76.50157928466797
+
+Epoch 1/3:  93%|█████████▎| 180/194 [03:34<00:16,  1.20s/it, loss=-76]
+distillation loss: -76.44927978515625
+std loss: 0.44847995042800903
+distillation loss: -76.49842834472656
+
+Epoch 1/3:  94%|█████████▍| 183/194 [03:36<00:09,  1.10it/s, loss=-75.9]
+distillation loss: -76.33433532714844
+std loss: 0.45471978187561035
+distillation loss: -76.35578918457031
+
+Epoch 1/3:  95%|█████████▍| 184/194 [03:38<00:11,  1.18s/it, loss=-75.8]
+distillation loss: -76.27618408203125
+std loss: 0.4578551948070526
+distillation loss: -76.32910919189453
+
+Epoch 1/3:  96%|█████████▌| 186/194 [03:40<00:09,  1.15s/it, loss=-75.6]
+distillation loss: -76.05945587158203
+std loss: 0.46410512924194336
+distillation loss: -76.24404907226562
+
+Epoch 1/3:  96%|█████████▋| 187/194 [03:41<00:06,  1.06it/s, loss=-75.8]
+distillation loss: -76.55842590332031
+std loss: 0.4422236382961273
+distillation loss: -76.48258209228516
+
+Epoch 1/3:  97%|█████████▋| 189/194 [03:43<00:04,  1.07it/s, loss=-76]
+distillation loss: -76.52030181884766
+
+Epoch 1/3:  98%|█████████▊| 191/194 [03:45<00:02,  1.06it/s, loss=-76]
+distillation loss: -76.4194564819336
+std loss: 0.4453321099281311
+distillation loss: -76.48577880859375
+std loss: 0.44223013520240784
+distillation loss: -76.24857330322266
+
+Epoch 1/3: 100%|██████████| 194/194 [03:48<00:00,  1.07s/it, loss=-76]
+distillation loss: -76.4361343383789
+
+Epoch 1/3: 100%|██████████| 194/194 [03:49<00:00,  1.18s/it, loss=-76]
+
+Epoch 2/3:   1%|          | 2/194 [00:02<03:27,  1.08s/it, loss=-75.8]
+distillation loss: -76.53741455078125
+std loss: 0.4389498233795166
+distillation loss: -76.26605224609375
+std loss: 0.4538725018501282
+distillation loss: -76.38256072998047
+
+Epoch 2/3:   2%|▏         | 4/194 [00:04<02:38,  1.20it/s, loss=-75.7]
+distillation loss: -76.16116333007812
+std loss: 0.4609774053096771
+distillation loss: -76.3363265991211
+std loss: 0.4546486437320709
+distillation loss: -76.50418090820312
+
+Epoch 2/3:   4%|▎         | 7/194 [00:07<03:10,  1.02s/it, loss=-75.8]
+distillation loss: -76.30052185058594
+std loss: 0.4578489363193512
+distillation loss: -76.0426025390625
+
+Epoch 2/3:   5%|▍         | 9/194 [00:09<03:14,  1.05s/it, loss=-75.9]
+distillation loss: -76.34124755859375
+std loss: 0.4545750319957733
+distillation loss: -76.58688354492188
+
+Epoch 2/3:   6%|▌         | 12/194 [00:11<02:26,  1.24it/s, loss=-76]
+distillation loss: -76.37259674072266
+std loss: 0.44843465089797974
+distillation loss: -76.44120788574219
+
+Epoch 2/3:   7%|▋         | 14/194 [00:13<02:31,  1.19it/s, loss=-76]
+distillation loss: -76.24270629882812
+std loss: 0.4609738886356354
+distillation loss: -76.42169189453125
+
+Epoch 2/3:   8%|▊         | 16/194 [00:15<02:23,  1.24it/s, loss=-76]
+distillation loss: -76.16630554199219
+std loss: 0.47035256028175354
+distillation loss: -76.39862060546875
+
+Epoch 2/3:   9%|▉         | 18/194 [00:17<02:21,  1.24it/s, loss=-75.8]
+distillation loss: -76.38398742675781
+std loss: 0.44836553931236267
+distillation loss: -76.29620361328125
+
+Epoch 2/3:  10%|▉         | 19/194 [00:19<03:42,  1.27s/it, loss=-76]
+distillation loss: -76.42659759521484
+std loss: 0.45160508155822754
+distillation loss: -76.35617065429688
+
+Epoch 2/3:  11%|█▏        | 22/194 [00:21<02:29,  1.15it/s, loss=-76]
+distillation loss: -76.56719970703125
+std loss: 0.4421160817146301
+distillation loss: -76.3956298828125
+
+Epoch 2/3:  12%|█▏        | 24/194 [00:23<02:21,  1.21it/s, loss=-76]
+distillation loss: -76.5317153930664
+std loss: 0.43598008155822754
+distillation loss: -76.42633056640625
+
+Epoch 2/3:  13%|█▎        | 26/194 [00:25<02:20,  1.20it/s, loss=-75.9]
+distillation loss: -76.50420379638672
+std loss: 0.451509952545166
+distillation loss: -76.3858871459961
+
+Epoch 2/3:  14%|█▍        | 28/194 [00:27<02:18,  1.20it/s, loss=-75.8]
+distillation loss: -76.1496353149414
+std loss: 0.4673333168029785
+distillation loss: -76.2581787109375
+std loss: 0.46410512924194336
+
+Epoch 2/3:  15%|█▌        | 30/194 [00:30<02:52,  1.05s/it, loss=-75.9]
+std loss: 0.46722957491874695
+distillation loss: -76.32059478759766
+std loss: 0.4515131115913391
+distillation loss: -76.47327423095703
+
+Epoch 2/3:  16%|█▋        | 32/194 [00:33<02:34,  1.05it/s, loss=-75.9]
+distillation loss: -76.31883239746094
+std loss: 0.4546157419681549
+distillation loss: -76.4339370727539
+std loss: 0.4484499394893646
+distillation loss: -76.12281799316406
+
+Epoch 2/3:  18%|█▊        | 34/194 [00:33<02:12,  1.21it/s, loss=-75.7]
+distillation loss: -76.27908325195312
+std loss: 0.45465683937072754
+distillation loss: -76.3271255493164
+
+Epoch 2/3:  19%|█▊        | 36/194 [00:37<02:21,  1.12it/s, loss=-75.9]
+distillation loss: -76.4864501953125
+std loss: 0.4422299563884735
+distillation loss: -76.20083618164062
+
+Epoch 2/3:  20%|██        | 39/194 [00:39<02:41,  1.04s/it, loss=-76]
+distillation loss: -76.43810272216797
+std loss: 0.4453551769256592
+distillation loss: -76.40462493896484
+
+Epoch 2/3:  22%|██▏       | 42/194 [00:41<02:02,  1.24it/s, loss=-76.1]
+distillation loss: -76.2637710571289
+std loss: 0.4515838325023651
+distillation loss: -76.50062561035156
+
+Epoch 2/3:  23%|██▎       | 44/194 [00:43<01:54,  1.30it/s, loss=-76.1]
+distillation loss: -76.54828643798828
+std loss: 0.44525861740112305
+distillation loss: -76.49685668945312
+
+Epoch 2/3:  23%|██▎       | 44/194 [00:45<01:54,  1.30it/s, loss=-76.1]
+distillation loss: -76.51856994628906
+std loss: 0.4391051232814789
+distillation loss: -76.36282348632812
+
+Epoch 2/3:  25%|██▍       | 48/194 [00:47<01:59,  1.22it/s, loss=-75.9]
+distillation loss: -76.16519165039062
+std loss: 0.46704646944999695
+distillation loss: -76.36180114746094
+
+Epoch 2/3:  26%|██▌       | 50/194 [00:49<01:53,  1.27it/s, loss=-75.9]
+distillation loss: -76.45555114746094
+std loss: 0.45062166452407837
+distillation loss: -76.32429504394531
+
+Epoch 2/3:  27%|██▋       | 52/194 [00:50<01:44,  1.36it/s, loss=-75.7]
+distillation loss: -76.25777435302734
+std loss: 0.4609678387641907
+distillation loss: -76.19786071777344
+
+Epoch 2/3:  28%|██▊       | 54/194 [00:52<01:46,  1.32it/s, loss=-75.8]
+distillation loss: -76.36178588867188
+std loss: 0.4452415108680725
+distillation loss: -76.22880554199219
+std loss: 0.460919052362442
+distillation loss: -76.16278839111328
+
+Epoch 2/3:  29%|██▉       | 56/194 [00:54<01:43,  1.33it/s, loss=-76]
+distillation loss: -76.45211029052734
+std loss: 0.4391044080257416
+distillation loss: -76.37329864501953
+std loss: 0.4422127306461334
+distillation loss: -76.41069030761719
+
+Epoch 2/3:  30%|███       | 59/194 [00:57<02:14,  1.00it/s, loss=-75.8]
+distillation loss: -76.26609802246094
+
+Epoch 2/3:  31%|███▏      | 61/194 [00:59<02:15,  1.02s/it, loss=-76.1]
+distillation loss: -76.5859603881836
+std loss: 0.44218990206718445
+distillation loss: -76.51786041259766
+std loss: 0.43892940878868103
+distillation loss: -76.56840515136719
+
+Epoch 2/3:  32%|███▏      | 63/194 [01:01<02:12,  1.01s/it, loss=-75.9]
+distillation loss: -76.3573226928711
+std loss: 0.4516051411628723
+distillation loss: -76.40324401855469
+
+
+Epoch 2/3:  34%|███▍      | 66/194 [01:04<02:02,  1.05it/s, loss=-76]
+distillation loss: -76.40538024902344
+std loss: 0.4516020715236664
+distillation loss: -76.4679946899414
+std loss: 0.451493501663208
+distillation loss: -76.2929916381836
+
+Epoch 2/3:  35%|███▌      | 68/194 [01:06<01:54,  1.10it/s, loss=-76.1]
+distillation loss: -76.49746704101562
+std loss: 0.43905994296073914
+
+Epoch 2/3:  36%|███▌      | 70/194 [01:08<01:49,  1.14it/s, loss=-76]
+std loss: 0.4547123908996582
+distillation loss: -76.46879577636719
+std loss: 0.4390929341316223
+distillation loss: -76.25860595703125
+
+Epoch 2/3:  37%|███▋      | 72/194 [01:11<01:41,  1.20it/s, loss=-76]
+distillation loss: -76.44276428222656
+std loss: 0.4516049325466156
+distillation loss: -76.2417984008789
+
+Epoch 2/3:  39%|███▊      | 75/194 [01:13<02:07,  1.07s/it, loss=-75.9]
+distillation loss: -76.37728881835938
+std loss: 0.45160362124443054
+distillation loss: -76.36713409423828
+std loss: 0.4545956254005432
+distillation loss: -76.40767669677734
+
+Epoch 2/3:  39%|███▉      | 76/194 [01:13<01:35,  1.23it/s, loss=-76]
+distillation loss: -76.31480407714844
+
+Epoch 2/3:  40%|████      | 78/194 [01:16<01:48,  1.07it/s, loss=-75.9]
+distillation loss: -76.34577941894531
+std loss: 0.4485534131526947
+distillation loss: -76.2765121459961
+std loss: 0.4609111249446869
+distillation loss: -76.31058502197266
+
+Epoch 2/3:  42%|████▏     | 81/194 [01:19<02:00,  1.06s/it, loss=-75.9]
+distillation loss: -76.39102172851562
+std loss: 0.4578309655189514
+distillation loss: -76.28034973144531
+
+Epoch 2/3:  42%|████▏     | 82/194 [01:21<01:30,  1.24it/s, loss=-75.8]
+distillation loss: -76.59620666503906
+std loss: 0.43905073404312134
+distillation loss: -76.34812927246094
+
+Epoch 2/3:  43%|████▎     | 84/194 [01:22<01:34,  1.16it/s, loss=-75.9]
+distillation loss: -76.2945556640625
+std loss: 0.46094033122062683
+distillation loss: -76.40928649902344
+
+Epoch 2/3:  44%|████▍     | 86/194 [01:25<01:35,  1.13it/s, loss=-75.9]
+distillation loss: -76.57112884521484
+std loss: 0.4328473210334778
+distillation loss: -76.32537841796875
+
+
+Epoch 2/3:  46%|████▋     | 90/194 [01:28<01:46,  1.02s/it, loss=-76]
+distillation loss: -76.15294647216797
+std loss: 0.470290869474411
+distillation loss: -76.4430923461914
+std loss: 0.4422295093536377
+distillation loss: -76.44517517089844
+
+Epoch 2/3:  48%|████▊     | 93/194 [01:31<01:43,  1.02s/it, loss=-75.9]
+distillation loss: -76.29876708984375
+std loss: 0.4512968063354492
+distillation loss: -76.33885955810547
+std loss: 0.460980087518692
+distillation loss: -76.54356384277344
+
+Epoch 2/3:  49%|████▉     | 96/194 [01:33<01:12,  1.34it/s, loss=-75.8]
+distillation loss: -76.23638916015625
+std loss: 0.45679888129234314
+distillation loss: -76.21336364746094
+
+Epoch 2/3:  51%|█████     | 98/194 [01:35<01:15,  1.27it/s, loss=-76]
+distillation loss: -76.4366226196289
+std loss: 0.45468196272850037
+distillation loss: -76.48430633544922
+
+Epoch 2/3:  52%|█████▏    | 100/194 [01:37<01:18,  1.20it/s, loss=-75.6]
+distillation loss: -76.35453033447266
+std loss: 0.44222742319107056
+distillation loss: -76.05352020263672
+
+Epoch 2/3:  53%|█████▎    | 102/194 [01:39<01:14,  1.24it/s, loss=-76.1]
+distillation loss: -76.32734680175781
+std loss: 0.4516042172908783
+distillation loss: -76.55546569824219
+
+Epoch 2/3:  54%|█████▎    | 104/194 [01:41<01:20,  1.11it/s, loss=-75.9]
+distillation loss: -76.4290771484375
+std loss: 0.45138174295425415
+distillation loss: -76.35597229003906
+
+Epoch 2/3:  54%|█████▍    | 105/194 [01:43<01:49,  1.23s/it, loss=-75.9]
+distillation loss: -76.32591247558594
+std loss: 0.45647963881492615
+distillation loss: -76.64559173583984
+
+Epoch 2/3:  56%|█████▌    | 108/194 [01:45<01:14,  1.16it/s, loss=-75.9]
+distillation loss: -76.27999877929688
+std loss: 0.4577270448207855
+distillation loss: -76.3455581665039
+
+Epoch 2/3:  57%|█████▋    | 110/194 [01:47<01:05,  1.29it/s, loss=-75.9]
+distillation loss: -76.31377410888672
+std loss: 0.46410369873046875
+distillation loss: -76.34085845947266
+
+Epoch 2/3:  58%|█████▊    | 112/194 [01:49<01:01,  1.32it/s, loss=-75.9]
+distillation loss: -76.45001220703125
+std loss: 0.43909892439842224
+distillation loss: -76.3284912109375
+
+Epoch 2/3:  59%|█████▉    | 114/194 [01:50<01:02,  1.29it/s, loss=-75.7]
+distillation loss: -76.3802719116211
+std loss: 0.4455943703651428
+distillation loss: -76.17085266113281
+
+Epoch 2/3:  60%|█████▉    | 116/194 [01:52<00:58,  1.33it/s, loss=-76.1]
+distillation loss: -76.33442687988281
+std loss: 0.45159798860549927
+distillation loss: -76.51571655273438
+std loss: 0.44599172472953796
+distillation loss: -76.38116455078125
+
+Epoch 2/3:  61%|██████▏   | 119/194 [01:55<01:14,  1.01it/s, loss=-76]
+distillation loss: -76.28302001953125
+std loss: 0.4578301012516022
+distillation loss: -76.46698760986328
+std loss: 0.4484380781650543
+distillation loss: -76.37576293945312
+
+Epoch 2/3:  63%|██████▎   | 122/194 [01:57<00:54,  1.33it/s, loss=-75.9]
+distillation loss: -76.36681365966797
+std loss: 0.4565012454986572
+distillation loss: -76.35429382324219
+
+Epoch 2/3:  64%|██████▍   | 124/194 [01:59<00:51,  1.36it/s, loss=-76]
+distillation loss: -76.27584838867188
+std loss: 0.45147237181663513
+distillation loss: -76.47750854492188
+
+Epoch 2/3:  65%|██████▍   | 126/194 [02:01<00:51,  1.32it/s, loss=-76.2]
+distillation loss: -76.48025512695312
+std loss: 0.43910709023475647
+distillation loss: -76.67279052734375
+
+Epoch 2/3:  66%|██████▌   | 128/194 [02:03<01:01,  1.08it/s, loss=-75.8]
+distillation loss: -76.4037857055664
+std loss: 0.4547301232814789
+distillation loss: -76.29036712646484
+
+Epoch 2/3:  66%|██████▌   | 128/194 [02:05<01:01,  1.08it/s, loss=-75.8]
+distillation loss: -76.52786254882812
+std loss: 0.44531264901161194
+distillation loss: -76.41825866699219
+
+Epoch 2/3:  68%|██████▊   | 131/194 [02:07<01:13,  1.17s/it, loss=-75.9]
+distillation loss: -76.35556030273438
+std loss: 0.45473018288612366
+distillation loss: -76.54144287109375
+
+Epoch 2/3:  69%|██████▉   | 134/194 [02:09<00:47,  1.26it/s, loss=-75.8]
+distillation loss: -76.32014465332031
+std loss: 0.45465216040611267
+distillation loss: -76.29785919189453
+
+Epoch 2/3:  70%|███████   | 136/194 [02:11<00:48,  1.20it/s, loss=-76]
+distillation loss: -76.3729248046875
+std loss: 0.45463648438453674
+distillation loss: -76.42363739013672
+
+Epoch 2/3:  71%|███████   | 138/194 [02:13<00:49,  1.13it/s, loss=-75.6]
+distillation loss: -76.13754272460938
+std loss: 0.46410322189331055
+distillation loss: -76.10464477539062
+
+Epoch 2/3:  72%|███████▏  | 140/194 [02:15<00:43,  1.23it/s, loss=-75.7]
+distillation loss: -76.65520477294922
+std loss: 0.43284550309181213
+distillation loss: -76.15055847167969
+
+Epoch 2/3:  73%|███████▎  | 141/194 [02:17<00:59,  1.12s/it, loss=-75.8]
+distillation loss: -76.280029296875
+std loss: 0.4576648771762848
+distillation loss: -76.08954620361328
+
+Epoch 2/3:  74%|███████▍  | 144/194 [02:19<00:39,  1.27it/s, loss=-75.9]
+distillation loss: -76.16131591796875
+std loss: 0.4609801769256592
+distillation loss: -76.30491638183594
+
+Epoch 2/3:  75%|███████▌  | 146/194 [02:21<00:37,  1.28it/s, loss=-75.6]
+distillation loss: -76.32474517822266
+std loss: 0.45153704285621643
+distillation loss: -76.11114501953125
+
+Epoch 2/3:  76%|███████▋  | 148/194 [02:22<00:35,  1.31it/s, loss=-75.9]
+distillation loss: -76.36981201171875
+std loss: 0.4516051709651947
+distillation loss: -76.3175048828125
+
+Epoch 2/3:  77%|███████▋  | 150/194 [02:24<00:33,  1.29it/s, loss=-75.9]
+distillation loss: -76.46107482910156
+std loss: 0.42966771125793457
+distillation loss: -76.34441375732422
+std loss: 0.4546937942504883
+distillation loss: -76.36951446533203
+
+Epoch 2/3:  78%|███████▊  | 152/194 [02:26<00:32,  1.29it/s, loss=-76]
+distillation loss: -76.40714263916016
+std loss: 0.4497872292995453
+distillation loss: -76.2501449584961
+std loss: 0.47025224566459656
+distillation loss: -76.28125762939453
+
+Epoch 2/3:  79%|███████▉  | 154/194 [02:29<00:29,  1.36it/s, loss=-75.8]
+distillation loss: -76.16638946533203
+std loss: 0.4703506529331207
+distillation loss: -76.4747314453125
+
+Epoch 2/3:  81%|████████  | 157/194 [02:31<00:36,  1.00it/s, loss=-76.1]
+distillation loss: -76.50794219970703
+std loss: 0.4391051232814789
+distillation loss: -76.67008972167969
+
+Epoch 2/3:  82%|████████▏ | 160/194 [02:33<00:26,  1.30it/s, loss=-75.8]
+distillation loss: -76.3873291015625
+std loss: 0.45159912109375
+distillation loss: -76.25517272949219
+
+Epoch 2/3:  84%|████████▎ | 162/194 [02:35<00:23,  1.34it/s, loss=-76]
+distillation loss: -76.6409912109375
+std loss: 0.4327576756477356
+distillation loss: -76.41107177734375
+
+Epoch 2/3:  85%|████████▍ | 164/194 [02:36<00:21,  1.40it/s, loss=-76]
+distillation loss: -76.29431915283203
+std loss: 0.4547068774700165
+distillation loss: -76.40786743164062
+
+Epoch 2/3:  86%|████████▌ | 166/194 [02:38<00:22,  1.24it/s, loss=-75.9]
+distillation loss: -76.20256042480469
+std loss: 0.470756858587265
+distillation loss: -76.33721923828125
+
+Epoch 2/3:  87%|████████▋ | 168/194 [02:40<00:21,  1.18it/s, loss=-75.7]
+distillation loss: -76.0711898803711
+std loss: 0.4671134650707245
+distillation loss: -76.12652587890625
+std loss: 0.46707096695899963
+distillation loss: -76.41020202636719
+
+Epoch 2/3:  88%|████████▊ | 170/194 [02:42<00:19,  1.23it/s, loss=-75.8]
+distillation loss: -76.26776123046875
+std loss: 0.464080810546875
+distillation loss: -76.2055435180664
+std loss: 0.454691618680954
+distillation loss: -76.24391174316406
+
+Epoch 2/3:  89%|████████▊ | 172/194 [02:44<00:16,  1.31it/s, loss=-75.8]
+distillation loss: -76.36369323730469
+std loss: 0.4546775817871094
+distillation loss: -76.40037536621094
+
+Epoch 2/3:  90%|█████████ | 175/194 [02:47<00:18,  1.00it/s, loss=-76.1]
+distillation loss: -76.52912902832031
+std loss: 0.43911847472190857
+distillation loss: -76.55364990234375
+
+Epoch 2/3:  92%|█████████▏| 178/194 [02:49<00:12,  1.28it/s, loss=-75.6]
+distillation loss: -76.27579498291016
+std loss: 0.4607502520084381
+distillation loss: -76.08348846435547
+
+Epoch 2/3:  93%|█████████▎| 180/194 [02:51<00:10,  1.29it/s, loss=-75.8]
+distillation loss: -76.2978744506836
+std loss: 0.4672136902809143
+distillation loss: -76.29566955566406
+
+Epoch 2/3:  94%|█████████▍| 182/194 [02:53<00:09,  1.24it/s, loss=-75.8]
+distillation loss: -76.25050354003906
+std loss: 0.46082958579063416
+distillation loss: -76.267333984375
+
+Epoch 2/3:  95%|█████████▍| 184/194 [02:55<00:08,  1.23it/s, loss=-75.9]
+distillation loss: -76.35657501220703
+std loss: 0.45160505175590515
+distillation loss: -76.34357452392578
+
+Epoch 2/3:  96%|█████████▌| 186/194 [02:56<00:06,  1.26it/s, loss=-76.2]
+distillation loss: -76.45965576171875
+std loss: 0.445355087518692
+distillation loss: -76.67011260986328
+
+Epoch 2/3:  97%|█████████▋| 188/194 [02:58<00:04,  1.23it/s, loss=-75.9]
+distillation loss: -76.39004516601562
+std loss: 0.45456406474113464
+distillation loss: -76.39393615722656
+std loss: 0.4453551471233368
+distillation loss: -76.51986694335938
+
+Epoch 2/3:  98%|█████████▊| 190/194 [03:00<00:03,  1.27it/s, loss=-75.8]
+distillation loss: -76.29141235351562
+std loss: 0.4578114449977875
+distillation loss: -76.23479461669922
+std loss: 0.45785507559776306
+distillation loss: -76.24591827392578
+
+Epoch 2/3:  99%|█████████▉| 193/194 [03:03<00:00,  1.09it/s, loss=-75.9]
+distillation loss: -76.38871765136719
+std loss: 0.44845739006996155
+distillation loss: -76.52105712890625
+
+Epoch 2/3: 100%|██████████| 194/194 [03:03<00:00,  1.05it/s, loss=-76.1]
+
+Epoch 3/3:   1%|          | 2/194 [00:02<03:26,  1.08s/it, loss=-75.8]
+distillation loss: -76.27387237548828
+std loss: 0.46088048815727234
+distillation loss: -76.21896362304688
+
+Epoch 3/3:   2%|▏         | 4/194 [00:04<02:57,  1.07it/s, loss=-75.7]
+distillation loss: -76.12890625
+std loss: 0.470266193151474
+distillation loss: -76.21617126464844
+std loss: 0.47342249751091003
+distillation loss: -76.55589294433594
+std loss: 0.44222745299339294
+distillation loss: -76.33004760742188
+
+Epoch 3/3:   3%|▎         | 6/194 [00:06<02:38,  1.19it/s, loss=-75.9]
+distillation loss: -76.32644653320312
+
+Epoch 3/3:   4%|▍         | 8/194 [00:08<02:46,  1.12it/s, loss=-75.8]
+distillation loss: -76.27616882324219
+std loss: 0.4578549563884735
+distillation loss: -76.19685363769531
+
+Epoch 3/3:   5%|▌         | 10/194 [00:10<02:36,  1.18it/s, loss=-76]
+distillation loss: -76.42369079589844
+std loss: 0.4515858292579651
+distillation loss: -76.30963134765625
+
+Epoch 3/3:   6%|▌         | 12/194 [00:12<02:41,  1.12it/s, loss=-76.1]
+distillation loss: -76.52372741699219
+std loss: 0.4451867640018463
+distillation loss: -76.57662963867188
+
+Epoch 3/3:   7%|▋         | 14/194 [00:14<02:37,  1.15it/s, loss=-75.9]
+distillation loss: -76.35675048828125
+std loss: 0.4547298848628998
+distillation loss: -76.57833099365234
+std loss: 0.442053884267807
+distillation loss: -76.3194351196289
+
+Epoch 3/3:   8%|▊         | 16/194 [00:16<02:24,  1.23it/s, loss=-75.9]
+distillation loss: -76.27854919433594
+std loss: 0.4546828866004944
+distillation loss: -76.41127014160156
+
+Epoch 3/3:  10%|▉         | 19/194 [00:19<03:03,  1.05s/it, loss=-75.9]
+distillation loss: -76.31270599365234
+std loss: 0.4603920876979828
+distillation loss: -76.3283920288086
+
+Epoch 3/3:  11%|█         | 21/194 [00:21<02:54,  1.01s/it, loss=-75.9]
+distillation loss: -76.35436248779297
+std loss: 0.4578551948070526
+distillation loss: -76.36619567871094
+
+Epoch 3/3:  12%|█▏        | 24/194 [00:23<02:22,  1.19it/s, loss=-75.8]
+distillation loss: -76.20143127441406
+std loss: 0.4609689712524414
+distillation loss: -76.29265594482422
+
+Epoch 3/3:  13%|█▎        | 26/194 [00:25<02:28,  1.13it/s, loss=-76]
+distillation loss: -76.17373657226562
+std loss: 0.4640474021434784
+distillation loss: -76.42935943603516
+
+Epoch 3/3:  14%|█▍        | 28/194 [00:27<02:18,  1.20it/s, loss=-75.6]
+distillation loss: -76.31758880615234
+std loss: 0.45518121123313904
+distillation loss: -76.11744689941406
+
+Epoch 3/3:  15%|█▌        | 30/194 [00:29<02:07,  1.28it/s, loss=-76]
+distillation loss: -76.54955291748047
+std loss: 0.4422297179698944
+distillation loss: -76.42867279052734
+
+Epoch 3/3:  16%|█▋        | 32/194 [00:31<02:32,  1.06it/s, loss=-75.8]
+distillation loss: -76.16844940185547
+std loss: 0.4609624445438385
+distillation loss: -76.29838562011719
+
+Epoch 3/3:  17%|█▋        | 33/194 [00:33<03:13,  1.20s/it, loss=-75.9]
+distillation loss: -76.39949798583984
+std loss: 0.4578551948070526
+distillation loss: -76.43679809570312
+
+Epoch 3/3:  19%|█▊        | 36/194 [00:35<02:12,  1.19it/s, loss=-75.6]
+distillation loss: -76.10391235351562
+std loss: 0.4734022617340088
+distillation loss: -76.11209869384766
+
+Epoch 3/3:  20%|█▉        | 38/194 [00:37<02:09,  1.20it/s, loss=-75.8]
+distillation loss: -76.15966033935547
+std loss: 0.47025561332702637
+distillation loss: -76.27367401123047
+
+Epoch 3/3:  20%|██        | 39/194 [00:39<02:58,  1.15s/it, loss=-76]
+distillation loss: -76.48101806640625
+std loss: 0.4374377429485321
+distillation loss: -76.61809539794922
+
+Epoch 3/3:  21%|██        | 41/194 [00:41<02:48,  1.10s/it, loss=-75.9]
+distillation loss: -76.38079833984375
+std loss: 0.45473018288612366
+distillation loss: -76.58639526367188
+
+Epoch 3/3:  23%|██▎       | 44/194 [00:43<02:09,  1.16it/s, loss=-75.9]
+distillation loss: -76.41268157958984
+std loss: 0.45159077644348145
+distillation loss: -76.3069076538086
+
+Epoch 3/3:  24%|██▎       | 46/194 [00:45<02:02,  1.20it/s, loss=-75.9]
+distillation loss: -76.2910385131836
+std loss: 0.45783016085624695
+distillation loss: -76.38418579101562
+
+Epoch 3/3:  25%|██▍       | 48/194 [00:47<02:04,  1.17it/s, loss=-75.9]
+distillation loss: -76.42623901367188
+std loss: 0.44222861528396606
+distillation loss: -76.36753845214844
+
+Epoch 3/3:  26%|██▌       | 50/194 [00:49<02:02,  1.17it/s, loss=-75.8]
+distillation loss: -76.37440490722656
+std loss: 0.4516026973724365
+distillation loss: -76.29810333251953
+std loss: 0.4578586518764496
+distillation loss: -76.23272705078125
+
+Epoch 3/3:  27%|██▋       | 52/194 [00:50<01:51,  1.27it/s, loss=-75.9]
+distillation loss: -76.32698059082031
+std loss: 0.46097883582115173
+distillation loss: -76.39112091064453
+std loss: 0.448110967874527
+distillation loss: -76.18824768066406
+
+Epoch 3/3:  28%|██▊       | 54/194 [00:52<01:48,  1.29it/s, loss=-75.7]
+distillation loss: -76.48019409179688
+std loss: 0.44848018884658813
+distillation loss: -76.31698608398438
+
+Epoch 3/3:  29%|██▉       | 56/194 [00:54<01:54,  1.21it/s, loss=-75.9]
+distillation loss: -76.48970794677734
+std loss: 0.4422301948070526
+distillation loss: -76.51453399658203
+
+Epoch 3/3:  30%|██▉       | 58/194 [00:56<01:51,  1.22it/s, loss=-76.1]
+distillation loss: -76.37171936035156
+
+Epoch 3/3:  31%|███       | 60/194 [00:58<02:16,  1.02s/it, loss=-75.7]
+distillation loss: -76.20574951171875
+std loss: 0.45785507559776306
+distillation loss: -76.40926361083984
+
+Epoch 3/3:  32%|███▏      | 62/194 [01:00<01:54,  1.15it/s, loss=-75.8]
+distillation loss: -76.28821563720703
+std loss: 0.46098002791404724
+distillation loss: -76.57160949707031
+std loss: 0.44533243775367737
+distillation loss: -76.30497741699219
+
+Epoch 3/3:  33%|███▎      | 64/194 [01:02<01:48,  1.20it/s, loss=-75.8]
+distillation loss: -76.15901947021484
+std loss: 0.46418648958206177
+distillation loss: -76.44707489013672
+
+Epoch 3/3:  34%|███▍      | 66/194 [01:05<01:41,  1.26it/s, loss=-76]
+distillation loss: -76.27369689941406
+std loss: 0.4609801769256592
+distillation loss: -76.35459899902344
+
+Epoch 3/3:  36%|███▌      | 69/194 [01:07<02:14,  1.08s/it, loss=-76.1]
+distillation loss: -76.58143615722656
+std loss: 0.4453551769256592
+distillation loss: -76.46713256835938
+
+Epoch 3/3:  37%|███▋      | 71/194 [01:09<02:08,  1.05s/it, loss=-76.2]
+distillation loss: -76.63058471679688
+std loss: 0.43910518288612366
+distillation loss: -76.73179626464844
+
+Epoch 3/3:  38%|███▊      | 73/194 [01:11<02:13,  1.10s/it, loss=-75.9]
+distillation loss: -76.34825134277344
+std loss: 0.45151352882385254
+distillation loss: -76.60789489746094
+
+Epoch 3/3:  39%|███▉      | 76/194 [01:13<01:36,  1.23it/s, loss=-76]
+distillation loss: -76.28450775146484
+std loss: 0.4484890401363373
+distillation loss: -76.43113708496094
+
+Epoch 3/3:  40%|████      | 78/194 [01:15<01:32,  1.25it/s, loss=-75.9]
+distillation loss: -76.55411529541016
+std loss: 0.4328535497188568
+distillation loss: -76.35748291015625
+
+Epoch 3/3:  41%|████      | 80/194 [01:17<01:31,  1.24it/s, loss=-75.6]
+distillation loss: -76.16118621826172
+std loss: 0.46091213822364807
+distillation loss: -76.09657287597656
+std loss: 0.46410518884658813
+distillation loss: -76.60281372070312
+
+Epoch 3/3:  42%|████▏     | 82/194 [01:19<01:41,  1.11it/s, loss=-76]
+distillation loss: -76.42874145507812
+std loss: 0.44848018884658813
+distillation loss: -76.51250457763672
+
+Epoch 3/3:  43%|████▎     | 84/194 [01:20<01:33,  1.17it/s, loss=-76.3]
+distillation loss: -76.70156860351562
+std loss: 0.4234795570373535
+distillation loss: -76.5395736694336
+
+Epoch 3/3:  44%|████▍     | 86/194 [01:23<01:59,  1.10s/it, loss=-76]
+distillation loss: -76.522705078125
+std loss: 0.44222989678382874
+distillation loss: -76.44994354248047
+
+Epoch 3/3:  46%|████▌     | 89/194 [01:25<01:27,  1.20it/s, loss=-76]
+distillation loss: -76.45387268066406
+std loss: 0.44214677810668945
+distillation loss: -76.4910888671875
+
+Epoch 3/3:  46%|████▋     | 90/194 [01:27<01:45,  1.02s/it, loss=-75.9]
+distillation loss: -76.3748550415039
+std loss: 0.45153090357780457
+distillation loss: -76.29945373535156
+
+Epoch 3/3:  47%|████▋     | 92/194 [01:28<01:39,  1.02it/s, loss=-75.8]
+distillation loss: -76.281982421875
+std loss: 0.4515058100223541
+distillation loss: -76.55377197265625
+
+Epoch 3/3:  49%|████▉     | 95/194 [01:31<01:28,  1.12it/s, loss=-75.7]
+distillation loss: -76.4547119140625
+std loss: 0.445355087518692
+distillation loss: -76.19294738769531
+std loss: 0.46718931198120117
+distillation loss: -76.11177062988281
+
+Epoch 3/3:  50%|█████     | 97/194 [01:33<01:26,  1.12it/s, loss=-76]
+distillation loss: -76.47481536865234
+std loss: 0.43909716606140137
+distillation loss: -76.39039611816406
+
+Epoch 3/3:  51%|█████     | 99/194 [01:35<01:35,  1.01s/it, loss=-75.6]
+distillation loss: -76.025390625
+std loss: 0.4734792411327362
+distillation loss: -76.27041625976562
+
+Epoch 3/3:  52%|█████▏    | 101/194 [01:37<01:32,  1.01it/s, loss=-76]
+distillation loss: -76.48446655273438
+std loss: 0.4359337389469147
+distillation loss: -76.50689697265625
+
+Epoch 3/3:  54%|█████▎    | 104/194 [01:39<01:13,  1.22it/s, loss=-75.8]
+distillation loss: -76.14693450927734
+std loss: 0.4547286629676819
+distillation loss: -76.26697540283203
+
+Epoch 3/3:  55%|█████▍    | 106/194 [01:41<01:07,  1.31it/s, loss=-76.1]
+distillation loss: -76.43627166748047
+std loss: 0.4390558898448944
+distillation loss: -76.53799438476562
+
+Epoch 3/3:  56%|█████▌    | 108/194 [01:42<01:03,  1.35it/s, loss=-76]
+distillation loss: -76.67731475830078
+std loss: 0.41702529788017273
+distillation loss: -76.4084243774414
+
+Epoch 3/3:  57%|█████▋    | 110/194 [01:44<01:05,  1.28it/s, loss=-75.9]
+distillation loss: -76.38414001464844
+std loss: 0.4578545093536377
+distillation loss: -76.30168914794922
+
+Epoch 3/3:  58%|█████▊    | 112/194 [01:47<01:12,  1.13it/s, loss=-76]
+distillation loss: -76.28941345214844
+std loss: 0.4516051709651947
+distillation loss: -76.48458099365234
+
+Epoch 3/3:  59%|█████▉    | 114/194 [01:49<01:07,  1.18it/s, loss=-76]
+distillation loss: -76.44496154785156
+std loss: 0.45782017707824707
+distillation loss: -76.41162872314453
+
+Epoch 3/3:  60%|█████▉    | 116/194 [01:50<01:05,  1.20it/s, loss=-76.1]
+distillation loss: -76.21188354492188
+std loss: 0.46097585558891296
+distillation loss: -76.57984924316406
+
+Epoch 3/3:  61%|██████    | 118/194 [01:52<01:03,  1.20it/s, loss=-76.1]
+distillation loss: -76.48298645019531
+std loss: 0.4453504979610443
+distillation loss: -76.53529357910156
+std loss: 0.4422197937965393
+distillation loss: -76.41483306884766
+
+Epoch 3/3:  62%|██████▏   | 120/194 [01:54<00:58,  1.28it/s, loss=-76.2]
+distillation loss: -76.59122467041016
+std loss: 0.4328556954860687
+distillation loss: -76.36185455322266
+std loss: 0.45160484313964844
+distillation loss: -76.40940856933594
+
+Epoch 3/3:  63%|██████▎   | 122/194 [01:56<00:55,  1.29it/s, loss=-76]
+distillation loss: -76.36687469482422
+std loss: 0.4578551948070526
+distillation loss: -76.5469970703125
+
+Epoch 3/3:  64%|██████▍   | 125/194 [01:59<01:09,  1.01s/it, loss=-76.2]
+distillation loss: -76.62937927246094
+std loss: 0.43281131982803345
+distillation loss: -76.26657104492188
+
+Epoch 3/3:  66%|██████▌   | 128/194 [02:01<00:52,  1.26it/s, loss=-76]
+distillation loss: -76.62229919433594
+std loss: 0.43285447359085083
+distillation loss: -76.46431732177734
+
+Epoch 3/3:  67%|██████▋   | 130/194 [02:03<00:49,  1.29it/s, loss=-75.9]
+distillation loss: -76.39212036132812
+std loss: 0.44224634766578674
+distillation loss: -76.39016723632812
+
+Epoch 3/3:  68%|██████▊   | 132/194 [02:05<00:47,  1.30it/s, loss=-75.8]
+distillation loss: -76.20205688476562
+std loss: 0.4640669524669647
+distillation loss: -76.27679443359375
+
+Epoch 3/3:  69%|██████▉   | 134/194 [02:07<00:46,  1.30it/s, loss=-75.7]
+distillation loss: -76.32527160644531
+std loss: 0.4547269940376282
+distillation loss: -76.17654418945312
+
+Epoch 3/3:  70%|██████▉   | 135/194 [02:09<01:18,  1.33s/it, loss=-76.2]
+distillation loss: -76.59349060058594
+std loss: 0.43595170974731445
+distillation loss: -76.22880554199219
+
+Epoch 3/3:  71%|███████   | 138/194 [02:11<00:50,  1.11it/s, loss=-75.9]
+distillation loss: -76.26306915283203
+std loss: 0.4639027714729309
+distillation loss: -76.34381866455078
+
+Epoch 3/3:  72%|███████▏  | 140/194 [02:13<00:44,  1.20it/s, loss=-75.8]
+distillation loss: -76.54557037353516
+std loss: 0.4359082877635956
+distillation loss: -76.22069549560547
+
+Epoch 3/3:  73%|███████▎  | 142/194 [02:15<00:40,  1.30it/s, loss=-76]
+distillation loss: -76.15513610839844
+std loss: 0.46488675475120544
+distillation loss: -76.42488098144531
+
+Epoch 3/3:  74%|███████▍  | 144/194 [02:16<00:37,  1.32it/s, loss=-76]
+distillation loss: -76.2647705078125
+std loss: 0.45473018288612366
+distillation loss: -76.47361755371094
+
+Epoch 3/3:  75%|███████▌  | 146/194 [02:19<00:39,  1.22it/s, loss=-75.9]
+distillation loss: -76.30233001708984
+std loss: 0.45780545473098755
+distillation loss: -76.30974578857422
+std loss: 0.4547427296638489
+distillation loss: -76.44798278808594
+
+Epoch 3/3:  76%|███████▋  | 148/194 [02:20<00:36,  1.25it/s, loss=-75.9]
+distillation loss: -76.38946533203125
+std loss: 0.44848090410232544
+distillation loss: -76.47921752929688
+
+Epoch 3/3:  77%|███████▋  | 150/194 [02:22<00:35,  1.24it/s, loss=-75.9]
+distillation loss: -76.34241485595703
+std loss: 0.4671998918056488
+distillation loss: -76.3033447265625
+std loss: 0.45785483717918396
+distillation loss: -76.30970001220703
+
+Epoch 3/3:  78%|███████▊  | 152/194 [02:24<00:33,  1.27it/s, loss=-75.8]
+distillation loss: -76.36296081542969
+std loss: 0.4578551948070526
+distillation loss: -76.45755004882812
+
+Epoch 3/3:  80%|███████▉  | 155/194 [02:27<00:38,  1.00it/s, loss=-75.8]
+distillation loss: -76.25839233398438
+std loss: 0.457743376493454
+distillation loss: -76.16841125488281
+
+Epoch 3/3:  81%|████████▏ | 158/194 [02:29<00:27,  1.30it/s, loss=-76.2]
+distillation loss: -76.47864532470703
+std loss: 0.44527173042297363
+distillation loss: -76.59161376953125
+
+Epoch 3/3:  82%|████████▏ | 160/194 [02:31<00:25,  1.36it/s, loss=-76.2]
+distillation loss: -76.32225036621094
+std loss: 0.4422301948070526
+distillation loss: -76.66990661621094
+
+Epoch 3/3:  84%|████████▎ | 162/194 [02:33<00:25,  1.25it/s, loss=-76]
+distillation loss: -76.54829406738281
+std loss: 0.4391051232814789
+distillation loss: -76.47264099121094
+
+Epoch 3/3:  85%|████████▍ | 164/194 [02:35<00:23,  1.26it/s, loss=-76]
+distillation loss: -76.65326690673828
+std loss: 0.4359639286994934
+distillation loss: -76.46753692626953
+
+Epoch 3/3:  86%|████████▌ | 166/194 [02:36<00:21,  1.30it/s, loss=-76]
+distillation loss: -76.45791625976562
+std loss: 0.4484572112560272
+distillation loss: -76.4443359375
+
+Epoch 3/3:  87%|████████▋ | 168/194 [02:38<00:21,  1.22it/s, loss=-75.9]
+distillation loss: -76.31587982177734
+std loss: 0.45467448234558105
+distillation loss: -76.39583587646484
+std loss: 0.4558520019054413
+distillation loss: -76.5267562866211
+
+Epoch 3/3:  88%|████████▊ | 170/194 [02:40<00:19,  1.25it/s, loss=-76]
+distillation loss: -76.4088134765625
+std loss: 0.44848012924194336
+distillation loss: -76.52427673339844
+std loss: 0.4453401565551758
+distillation loss: -76.31494903564453
+
+Epoch 3/3:  89%|████████▊ | 172/194 [02:43<00:17,  1.27it/s, loss=-75.8]
+distillation loss: -76.42871856689453
+std loss: 0.4516051709651947
+distillation loss: -76.50751495361328
+
+Epoch 3/3:  90%|█████████ | 175/194 [02:46<00:20,  1.06s/it, loss=-75.8]
+distillation loss: -76.29989624023438
+std loss: 0.4516051709651947
+distillation loss: -76.4230728149414
+
+Epoch 3/3:  92%|█████████▏| 178/194 [02:48<00:12,  1.26it/s, loss=-75.9]
+distillation loss: -76.36003112792969
+std loss: 0.4578551948070526
+distillation loss: -76.33289337158203
+
+Epoch 3/3:  93%|█████████▎| 180/194 [02:49<00:10,  1.32it/s, loss=-76]
+distillation loss: -76.34646606445312
+std loss: 0.4515305459499359
+distillation loss: -76.40404510498047
+
+Epoch 3/3:  94%|█████████▍| 182/194 [02:51<00:08,  1.35it/s, loss=-75.9]
+distillation loss: -76.37049865722656
+std loss: 0.4547188878059387
+distillation loss: -76.36508178710938
+
+Epoch 3/3:  95%|█████████▍| 184/194 [02:53<00:07,  1.27it/s, loss=-75.9]
+distillation loss: -76.40898132324219
+std loss: 0.4453551769256592
+distillation loss: -76.32391357421875
+std loss: 0.4547252655029297
+distillation loss: -76.52375793457031
+
+Epoch 3/3:  96%|█████████▌| 186/194 [02:54<00:06,  1.26it/s, loss=-76]
+distillation loss: -76.49039459228516
+std loss: 0.44223013520240784
+distillation loss: -76.3751220703125
+
+Epoch 3/3:  97%|█████████▋| 188/194 [02:56<00:04,  1.24it/s, loss=-75.9]
+distillation loss: -76.39192962646484
+std loss: 0.46097898483276367
+distillation loss: -76.49440002441406
+
+Epoch 3/3:  98%|█████████▊| 190/194 [02:58<00:03,  1.22it/s, loss=-75.7]
+distillation loss: -76.2011947631836
+std loss: 0.46410512924194336
+distillation loss: -76.36756896972656
+std loss: 0.4547269344329834
+distillation loss: -75.96144104003906
+
+Epoch 3/3:  99%|█████████▉| 193/194 [03:02<00:01,  1.01s/it, loss=-76]
+distillation loss: -76.43293762207031
+std loss: 0.45774561166763306
+distillation loss: -76.63015747070312
+
+Epoch 3/3: 100%|██████████| 194/194 [03:02<00:00,  1.06it/s, loss=-76.2]

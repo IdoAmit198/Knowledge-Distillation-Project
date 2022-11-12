@@ -1,0 +1,15 @@
+
+  0%|          | 0/194 [00:00<?, ?it/s]
+  0%|          | 0/194 [00:05<?, ?it/s]
+Traceback (most recent call last):
+  File "experiments/hinton_kd.py", line 104, in <module>
+    expt=expt
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 61, in train
+    all_teachers_logits = torch.tensor()
+TypeError: tensor() missing 1 required positional arguments: "data"
+Traceback (most recent call last):
+  File "experiments/hinton_kd.py", line 104, in <module>
+    expt=expt
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 61, in train
+    all_teachers_logits = torch.tensor()
+TypeError: tensor() missing 1 required positional arguments: "data"

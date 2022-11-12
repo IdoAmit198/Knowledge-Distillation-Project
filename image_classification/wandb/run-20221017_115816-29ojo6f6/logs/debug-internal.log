@@ -1,0 +1,12 @@
+2022-10-17 11:58:16,979 INFO    StreamThr :3298130 [internal.py:wandb_internal():91] W&B internal server running at pid: 3298130, started at: 2022-10-17 11:58:16.977118
+2022-10-17 11:58:16,981 DEBUG   HandlerThread:3298130 [handler.py:handle_request():138] handle_request: status
+2022-10-17 11:58:16,984 DEBUG   SenderThread:3298130 [sender.py:send_request():317] send_request: status
+2022-10-17 11:58:16,990 INFO    WriterThread:3298130 [datastore.py:open_for_write():75] open: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115816-29ojo6f6/run-29ojo6f6.wandb
+2022-10-17 11:58:16,991 DEBUG   SenderThread:3298130 [sender.py:send():303] send: header
+2022-10-17 11:58:17,099 DEBUG   SenderThread:3298130 [sender.py:send():303] send: run
+2022-10-17 11:58:17,820 DEBUG   HandlerThread:3298130 [handler.py:handle_request():138] handle_request: check_version
+2022-10-17 11:58:17,821 INFO    SenderThread:3298130 [dir_watcher.py:__init__():216] watching files in: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115816-29ojo6f6/files
+2022-10-17 11:58:17,821 INFO    SenderThread:3298130 [sender.py:_start_run_threads():931] run started: 29ojo6f6 with start time 1665997096.978565
+2022-10-17 11:58:17,822 DEBUG   SenderThread:3298130 [sender.py:send():303] send: summary
+2022-10-17 11:58:17,824 INFO    SenderThread:3298130 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-10-17 11:58:17,824 DEBUG   SenderThread:3298130 [sender.py:send_request():317] send_request: check_version

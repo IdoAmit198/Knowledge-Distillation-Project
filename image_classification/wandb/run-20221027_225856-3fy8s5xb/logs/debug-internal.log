@@ -1,0 +1,151 @@
+2022-10-27 22:58:56,665 INFO    StreamThr :2594577 [internal.py:wandb_internal():91] W&B internal server running at pid: 2594577, started at: 2022-10-27 22:58:56.662636
+2022-10-27 22:58:56,669 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: status
+2022-10-27 22:58:56,671 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: status
+2022-10-27 22:58:56,679 DEBUG   SenderThread:2594577 [sender.py:send():303] send: header
+2022-10-27 22:58:56,679 INFO    WriterThread:2594577 [datastore.py:open_for_write():75] open: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/run-3fy8s5xb.wandb
+2022-10-27 22:58:56,747 DEBUG   SenderThread:2594577 [sender.py:send():303] send: run
+2022-10-27 22:58:57,493 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: check_version
+2022-10-27 22:58:57,493 INFO    SenderThread:2594577 [dir_watcher.py:__init__():216] watching files in: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files
+2022-10-27 22:58:57,494 INFO    SenderThread:2594577 [sender.py:_start_run_threads():931] run started: 3fy8s5xb with start time 1666900736.66459
+2022-10-27 22:58:57,494 DEBUG   SenderThread:2594577 [sender.py:send():303] send: summary
+2022-10-27 22:58:57,496 INFO    SenderThread:2594577 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-10-27 22:58:57,496 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: check_version
+2022-10-27 22:58:57,826 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: run_start
+2022-10-27 22:58:57,834 DEBUG   HandlerThread:2594577 [meta.py:__init__():34] meta init
+2022-10-27 22:58:57,834 DEBUG   HandlerThread:2594577 [meta.py:__init__():49] meta init done
+2022-10-27 22:58:57,834 DEBUG   HandlerThread:2594577 [meta.py:probe():215] probe
+2022-10-27 22:58:57,847 DEBUG   HandlerThread:2594577 [meta.py:_setup_git():205] setup git
+2022-10-27 22:58:57,895 DEBUG   HandlerThread:2594577 [meta.py:_setup_git():212] setup git done
+2022-10-27 22:58:57,895 DEBUG   HandlerThread:2594577 [meta.py:_save_pip():53] save pip
+2022-10-27 22:58:57,898 DEBUG   HandlerThread:2594577 [meta.py:_save_pip():67] save pip done
+2022-10-27 22:58:57,898 DEBUG   HandlerThread:2594577 [meta.py:_save_conda():74] save conda
+2022-10-27 22:58:58,501 INFO    Thread-13 :2594577 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/wandb-summary.json
+2022-10-27 22:58:58,502 INFO    Thread-13 :2594577 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/conda-environment.yaml
+2022-10-27 22:58:58,502 INFO    Thread-13 :2594577 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/requirements.txt
+2022-10-27 22:59:00,747 DEBUG   HandlerThread:2594577 [meta.py:_save_conda():84] save conda done
+2022-10-27 22:59:00,747 DEBUG   HandlerThread:2594577 [meta.py:probe():253] probe done
+2022-10-27 22:59:00,756 DEBUG   SenderThread:2594577 [sender.py:send():303] send: files
+2022-10-27 22:59:00,757 INFO    SenderThread:2594577 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-10-27 22:59:00,767 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-27 22:59:00,768 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: stop_status
+2022-10-27 22:59:01,109 DEBUG   SenderThread:2594577 [sender.py:send():303] send: telemetry
+2022-10-27 22:59:01,503 INFO    Thread-13 :2594577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/conda-environment.yaml
+2022-10-27 22:59:01,504 INFO    Thread-13 :2594577 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/output.log
+2022-10-27 22:59:01,504 INFO    Thread-13 :2594577 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/wandb-metadata.json
+2022-10-27 22:59:01,646 INFO    Thread-17 :2594577 [upload_job.py:push():143] Uploaded file /tmp/tmpqwfkabwvwandb/r3xponfg-wandb-metadata.json
+2022-10-27 22:59:03,506 INFO    Thread-13 :2594577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/output.log
+2022-10-27 22:59:04,478 DEBUG   SenderThread:2594577 [sender.py:send():303] send: exit
+2022-10-27 22:59:04,478 INFO    SenderThread:2594577 [sender.py:send_exit():442] handling exit code: 1
+2022-10-27 22:59:04,479 INFO    SenderThread:2594577 [sender.py:send_exit():444] handling runtime: 6
+2022-10-27 22:59:04,482 INFO    SenderThread:2594577 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-10-27 22:59:04,482 INFO    SenderThread:2594577 [sender.py:send_exit():450] send defer
+2022-10-27 22:59:04,483 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:04,483 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 0
+2022-10-27 22:59:04,483 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:04,483 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-10-27 22:59:04,483 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 1
+2022-10-27 22:59:04,483 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:04,483 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 1
+2022-10-27 22:59:04,507 INFO    Thread-13 :2594577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/wandb-summary.json
+2022-10-27 22:59:04,596 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:04,596 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-10-27 22:59:04,597 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 2
+2022-10-27 22:59:04,597 DEBUG   SenderThread:2594577 [sender.py:send():303] send: stats
+2022-10-27 22:59:04,597 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:04,597 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 2
+2022-10-27 22:59:04,598 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:04,598 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-10-27 22:59:04,598 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 3
+2022-10-27 22:59:04,598 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:04,598 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 3
+2022-10-27 22:59:04,598 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:04,598 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-10-27 22:59:04,598 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 4
+2022-10-27 22:59:04,598 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:04,599 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 4
+2022-10-27 22:59:04,599 DEBUG   SenderThread:2594577 [sender.py:send():303] send: summary
+2022-10-27 22:59:04,602 INFO    SenderThread:2594577 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-10-27 22:59:04,602 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:04,603 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-10-27 22:59:04,603 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 5
+2022-10-27 22:59:04,603 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:04,603 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 5
+2022-10-27 22:59:04,603 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:04,603 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-10-27 22:59:04,980 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 6
+2022-10-27 22:59:04,980 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:04,980 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 6
+2022-10-27 22:59:04,981 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:04,981 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-10-27 22:59:05,149 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 7
+2022-10-27 22:59:05,149 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:05,150 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 7
+2022-10-27 22:59:05,150 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:05,150 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-10-27 22:59:05,150 INFO    SenderThread:2594577 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-10-27 22:59:05,478 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-27 22:59:05,509 INFO    SenderThread:2594577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/output.log
+2022-10-27 22:59:05,510 INFO    SenderThread:2594577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/wandb-summary.json
+2022-10-27 22:59:05,510 INFO    SenderThread:2594577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/config.yaml
+2022-10-27 22:59:05,510 INFO    SenderThread:2594577 [dir_watcher.py:finish():392] scan: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files
+2022-10-27 22:59:05,511 INFO    SenderThread:2594577 [dir_watcher.py:finish():406] scan save: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/conda-environment.yaml conda-environment.yaml
+2022-10-27 22:59:05,512 INFO    SenderThread:2594577 [dir_watcher.py:finish():406] scan save: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/wandb-summary.json wandb-summary.json
+2022-10-27 22:59:05,519 INFO    SenderThread:2594577 [dir_watcher.py:finish():406] scan save: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/wandb-metadata.json wandb-metadata.json
+2022-10-27 22:59:05,519 INFO    SenderThread:2594577 [dir_watcher.py:finish():406] scan save: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/output.log output.log
+2022-10-27 22:59:05,520 INFO    SenderThread:2594577 [dir_watcher.py:finish():406] scan save: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/config.yaml config.yaml
+2022-10-27 22:59:05,524 INFO    SenderThread:2594577 [dir_watcher.py:finish():406] scan save: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/requirements.txt requirements.txt
+2022-10-27 22:59:05,531 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 8
+2022-10-27 22:59:05,531 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: poll_exit
+2022-10-27 22:59:05,536 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:05,537 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 8
+2022-10-27 22:59:05,537 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:05,537 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-10-27 22:59:05,537 INFO    SenderThread:2594577 [file_pusher.py:finish():168] shutting down file pusher
+2022-10-27 22:59:06,406 INFO    Thread-20 :2594577 [upload_job.py:push():143] Uploaded file /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/output.log
+2022-10-27 22:59:06,407 INFO    Thread-21 :2594577 [upload_job.py:push():143] Uploaded file /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/config.yaml
+2022-10-27 22:59:06,417 INFO    Thread-22 :2594577 [upload_job.py:push():143] Uploaded file /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/requirements.txt
+2022-10-27 22:59:06,432 INFO    Thread-19 :2594577 [upload_job.py:push():143] Uploaded file /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/wandb-summary.json
+2022-10-27 22:59:06,433 INFO    Thread-18 :2594577 [upload_job.py:push():143] Uploaded file /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/files/conda-environment.yaml
+2022-10-27 22:59:06,480 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-27 22:59:06,480 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: poll_exit
+2022-10-27 22:59:06,634 INFO    Thread-12 :2594577 [sender.py:transition_state():463] send defer: 9
+2022-10-27 22:59:06,634 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:06,634 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 9
+2022-10-27 22:59:06,635 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:06,635 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-10-27 22:59:06,635 INFO    SenderThread:2594577 [file_pusher.py:join():173] waiting for file pusher
+2022-10-27 22:59:06,635 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 10
+2022-10-27 22:59:06,636 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:06,636 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 10
+2022-10-27 22:59:06,636 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:06,636 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-10-27 22:59:06,864 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 11
+2022-10-27 22:59:06,864 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:06,865 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 11
+2022-10-27 22:59:06,865 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:06,865 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-10-27 22:59:06,866 INFO    SenderThread:2594577 [sender.py:transition_state():463] send defer: 12
+2022-10-27 22:59:06,867 DEBUG   SenderThread:2594577 [sender.py:send():303] send: final
+2022-10-27 22:59:06,868 DEBUG   SenderThread:2594577 [sender.py:send():303] send: footer
+2022-10-27 22:59:06,868 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: defer
+2022-10-27 22:59:06,868 INFO    HandlerThread:2594577 [handler.py:handle_request_defer():161] handle defer: 12
+2022-10-27 22:59:06,868 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: defer
+2022-10-27 22:59:06,869 INFO    SenderThread:2594577 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-10-27 22:59:06,873 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-27 22:59:06,873 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: poll_exit
+2022-10-27 22:59:06,874 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-27 22:59:06,874 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: poll_exit
+2022-10-27 22:59:06,874 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: server_info
+2022-10-27 22:59:06,875 DEBUG   SenderThread:2594577 [sender.py:send_request():317] send_request: server_info
+2022-10-27 22:59:06,875 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: get_summary
+2022-10-27 22:59:06,878 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: sampled_history
+2022-10-27 22:59:07,539 INFO    MainThread:2594577 [wandb_run.py:_footer_history_summary_info():3377] rendering history
+2022-10-27 22:59:07,540 INFO    MainThread:2594577 [wandb_run.py:_footer_history_summary_info():3409] rendering summary
+2022-10-27 22:59:07,540 INFO    MainThread:2594577 [wandb_run.py:_footer_sync_info():3333] logging synced files
+2022-10-27 22:59:07,541 DEBUG   HandlerThread:2594577 [handler.py:handle_request():138] handle_request: shutdown
+2022-10-27 22:59:07,541 INFO    HandlerThread:2594577 [handler.py:finish():814] shutting down handler
+2022-10-27 22:59:07,868 INFO    WriterThread:2594577 [datastore.py:close():279] close: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221027_225856-3fy8s5xb/run-3fy8s5xb.wandb
+2022-10-27 22:59:08,539 INFO    SenderThread:2594577 [sender.py:finish():1331] shutting down sender
+2022-10-27 22:59:08,539 INFO    SenderThread:2594577 [file_pusher.py:finish():168] shutting down file pusher
+2022-10-27 22:59:08,539 INFO    SenderThread:2594577 [file_pusher.py:join():173] waiting for file pusher
+2022-10-27 22:59:08,545 INFO    MainThread:2594577 [internal.py:handle_exit():78] Internal process exited

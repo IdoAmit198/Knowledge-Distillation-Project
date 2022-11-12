@@ -1,0 +1,12 @@
+2022-10-19 09:11:09,656 INFO    MainThread:619122 [wandb_setup.py:_flush():68] Configure stats pid to 619122
+2022-10-19 09:11:09,677 INFO    MainThread:619122 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-19 09:11:09,680 INFO    MainThread:619122 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-19 09:11:09,682 INFO    MainThread:619122 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-19 09:11:09,684 INFO    MainThread:619122 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-19 09:11:09,685 INFO    MainThread:619122 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221019_091109-2a6o6k1j/logs/debug.log
+2022-10-19 09:11:09,687 INFO    MainThread:619122 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221019_091109-2a6o6k1j/logs/debug-internal.log
+2022-10-19 09:11:09,689 INFO    MainThread:619122 [wandb_init.py:init():516] calling init triggers
+2022-10-19 09:11:09,690 INFO    MainThread:619122 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 6, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-19 09:11:09,692 INFO    MainThread:619122 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-19 09:14:39,355 WARNING MsgRouterThr:619122 [router.py:message_loop():77] message_loop has been closed

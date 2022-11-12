@@ -1,0 +1,39 @@
+{
+    "os": "Linux-5.4.0-125-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.6.13",
+    "heartbeatAt": "2022-10-28T08:03:47.127127",
+    "startedAt": "2022-10-28T08:03:45.941559",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 1,
+    "cpu_count": 80,
+    "cuda": "10.2.89",
+    "args": [
+        "-d",
+        "imagewoof",
+        "-m",
+        "resnet18",
+        "-e",
+        "100",
+        "-s",
+        "0",
+        "--teachers_num",
+        "3",
+        "--teacher_models",
+        "resnet34_0",
+        "resnet34_1",
+        "resnet34_2"
+    ],
+    "state": "running",
+    "program": "experiments/hinton_kd.py",
+    "codePath": "image_classification/experiments/hinton_kd.py",
+    "git": {
+        "remote": "https://github.com/IdoAmit198/Knowledge-Distillation-Project.git",
+        "commit": "93710b9b68e81bc0b3f5f4ae9cc1b6a32607d173"
+    },
+    "email": "shanigoren@campus.technion.ac.il",
+    "root": "/home/shanigoren/KD_Project/Knowledge-Distillation-Project",
+    "host": "lambda5",
+    "username": "shanigoren",
+    "executable": "/home/shanigoren/miniconda3/envs/skd/bin/python3"
+}

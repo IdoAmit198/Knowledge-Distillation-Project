@@ -1,0 +1,133 @@
+2022-10-09 21:54:30,632 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 21:54:30,654 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 21:54:30,657 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 21:54:30,659 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 21:54:30,662 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 21:54:30,665 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_215430-3opv5yoa/logs/debug.log
+2022-10-09 21:54:30,667 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_215430-3opv5yoa/logs/debug-internal.log
+2022-10-09 21:54:30,669 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 21:54:30,670 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 21:54:30,672 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 21:57:55,106 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 21:57:55,129 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 21:57:55,131 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 21:57:55,132 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 21:57:55,134 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 21:57:55,135 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_215755-24tvhtsf/logs/debug.log
+2022-10-09 21:57:55,137 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_215755-24tvhtsf/logs/debug-internal.log
+2022-10-09 21:57:55,139 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 21:57:55,140 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 21:57:55,142 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:01:18,297 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 22:01:18,315 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 22:01:18,317 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 22:01:18,319 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 22:01:18,321 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 22:01:18,324 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_220118-a2z77fnt/logs/debug.log
+2022-10-09 22:01:18,326 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_220118-a2z77fnt/logs/debug-internal.log
+2022-10-09 22:01:18,328 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 22:01:18,330 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 22:01:18,332 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:04:41,743 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 22:04:41,778 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 22:04:41,781 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 22:04:41,783 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 22:04:41,786 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 22:04:41,789 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_220441-16belfki/logs/debug.log
+2022-10-09 22:04:41,790 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_220441-16belfki/logs/debug-internal.log
+2022-10-09 22:04:41,792 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 22:04:41,794 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 22:04:41,795 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:07:58,577 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 22:07:58,598 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 22:07:58,600 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 22:07:58,602 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 22:07:58,604 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 22:07:58,606 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_220758-gebue01y/logs/debug.log
+2022-10-09 22:07:58,608 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_220758-gebue01y/logs/debug-internal.log
+2022-10-09 22:07:58,610 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 22:07:58,612 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 22:07:58,614 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:11:20,350 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 22:11:20,368 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 22:11:20,371 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 22:11:20,373 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 22:11:20,376 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 22:11:20,378 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_221120-34e8e407/logs/debug.log
+2022-10-09 22:11:20,381 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_221120-34e8e407/logs/debug-internal.log
+2022-10-09 22:11:20,382 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 22:11:20,384 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 22:11:20,386 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:14:42,719 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 22:14:42,747 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 22:14:42,750 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 22:14:42,753 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 22:14:42,755 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 22:14:42,756 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_221442-2giceucq/logs/debug.log
+2022-10-09 22:14:42,758 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_221442-2giceucq/logs/debug-internal.log
+2022-10-09 22:14:42,759 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 22:14:42,761 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 22:14:42,763 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:18:06,082 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 22:18:06,105 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 22:18:06,108 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 22:18:06,110 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 22:18:06,113 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 22:18:06,116 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_221806-1n4q9l25/logs/debug.log
+2022-10-09 22:18:06,118 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_221806-1n4q9l25/logs/debug-internal.log
+2022-10-09 22:18:06,120 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 22:18:06,121 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 22:18:06,123 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:21:28,893 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 22:21:28,920 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 22:21:28,924 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 22:21:28,926 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 22:21:28,928 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 22:21:28,930 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_222128-2lv7i6h9/logs/debug.log
+2022-10-09 22:21:28,932 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_222128-2lv7i6h9/logs/debug-internal.log
+2022-10-09 22:21:28,934 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 22:21:28,935 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 22:21:28,937 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:24:50,453 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 22:24:50,472 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 22:24:50,475 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 22:24:50,478 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 22:24:50,480 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 22:24:50,482 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_222450-wxkgc52a/logs/debug.log
+2022-10-09 22:24:50,484 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_222450-wxkgc52a/logs/debug-internal.log
+2022-10-09 22:24:50,485 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 22:24:50,487 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 22:24:50,489 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:28:13,322 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 22:28:13,376 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 22:28:13,379 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 22:28:13,382 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 22:28:13,384 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 22:28:13,386 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_222813-1gd4la71/logs/debug.log
+2022-10-09 22:28:13,388 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_222813-1gd4la71/logs/debug-internal.log
+2022-10-09 22:28:13,390 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 22:28:13,392 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 22:28:13,394 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:31:32,826 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Configure stats pid to 991568
+2022-10-09 22:31:32,866 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-09 22:31:32,869 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-09 22:31:32,873 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-09 22:31:32,874 INFO    MainThread:991568 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-09 22:31:32,876 INFO    MainThread:991568 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_223132-11lbi8gs/logs/debug.log
+2022-10-09 22:31:32,878 INFO    MainThread:991568 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221009_223132-11lbi8gs/logs/debug-internal.log
+2022-10-09 22:31:32,879 INFO    MainThread:991568 [wandb_init.py:init():516] calling init triggers
+2022-10-09 22:31:32,881 INFO    MainThread:991568 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-09 22:31:32,883 INFO    MainThread:991568 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-09 22:34:59,830 WARNING MsgRouterThr:991568 [router.py:message_loop():77] message_loop has been closed

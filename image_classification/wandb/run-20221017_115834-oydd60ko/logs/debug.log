@@ -1,0 +1,24 @@
+2022-10-17 11:58:34,137 INFO    MainThread:3298254 [wandb_setup.py:_flush():68] Configure stats pid to 3298254
+2022-10-17 11:58:34,137 INFO    MainThread:3298254 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-17 11:58:34,137 INFO    MainThread:3298254 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-17 11:58:34,137 INFO    MainThread:3298254 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-17 11:58:34,137 INFO    MainThread:3298254 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-17 11:58:34,137 INFO    MainThread:3298254 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115834-oydd60ko/logs/debug.log
+2022-10-17 11:58:34,137 INFO    MainThread:3298254 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115834-oydd60ko/logs/debug-internal.log
+2022-10-17 11:58:34,138 INFO    MainThread:3298254 [wandb_init.py:init():516] calling init triggers
+2022-10-17 11:58:34,138 INFO    MainThread:3298254 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 2, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-10-17 11:58:34,138 INFO    MainThread:3298254 [wandb_init.py:init():569] starting backend
+2022-10-17 11:58:34,139 INFO    MainThread:3298254 [wandb_init.py:init():573] setting up manager
+2022-10-17 11:58:34,164 INFO    MainThread:3298254 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-10-17 11:58:34,175 INFO    MainThread:3298254 [wandb_init.py:init():580] backend started and connected
+2022-10-17 11:58:34,185 INFO    MainThread:3298254 [wandb_init.py:init():658] updated telemetry
+2022-10-17 11:58:34,277 INFO    MainThread:3298254 [wandb_init.py:init():694] communicating run to backend with 60 second timeout
+2022-10-17 11:58:35,052 INFO    MainThread:3298254 [wandb_run.py:_on_init():2000] communicating current version
+2022-10-17 11:58:35,350 INFO    MainThread:3298254 [wandb_run.py:_on_init():2004] got version response 
+2022-10-17 11:58:35,350 INFO    MainThread:3298254 [wandb_init.py:init():728] starting run threads in backend
+2022-10-17 11:58:38,228 INFO    MainThread:3298254 [wandb_run.py:_console_start():1980] atexit reg
+2022-10-17 11:58:38,229 INFO    MainThread:3298254 [wandb_run.py:_redirect():1838] redirect: SettingsConsole.WRAP_RAW
+2022-10-17 11:58:38,230 INFO    MainThread:3298254 [wandb_run.py:_redirect():1903] Wrapping output streams.
+2022-10-17 11:58:38,230 INFO    MainThread:3298254 [wandb_run.py:_redirect():1925] Redirects installed.
+2022-10-17 11:58:38,231 INFO    MainThread:3298254 [wandb_init.py:init():765] run started, returning control to user process

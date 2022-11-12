@@ -1,0 +1,23 @@
+2022-10-28 16:00:45,711 INFO    MainThread:3749940 [wandb_setup.py:_flush():68] Configure stats pid to 3749940
+2022-10-28 16:00:45,732 INFO    MainThread:3749940 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-28 16:00:45,734 INFO    MainThread:3749940 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-28 16:00:45,736 INFO    MainThread:3749940 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-28 16:00:45,738 INFO    MainThread:3749940 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-28 16:00:45,740 INFO    MainThread:3749940 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221028_160045-2me51vg4/logs/debug.log
+2022-10-28 16:00:45,742 INFO    MainThread:3749940 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221028_160045-2me51vg4/logs/debug-internal.log
+2022-10-28 16:00:45,744 INFO    MainThread:3749940 [wandb_init.py:init():516] calling init triggers
+2022-10-28 16:00:45,746 INFO    MainThread:3749940 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton', 'teacher': None, 'teachers_num': 3, 'teacher_models': ['resnet34_0', 'resnet34_1', 'resnet34_2'], 'update_teacher': False, 'teacher_training': False}
+2022-10-28 16:00:45,747 INFO    MainThread:3749940 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-28 16:04:15,788 INFO    MainThread:3749940 [wandb_setup.py:_flush():68] Configure stats pid to 3749940
+2022-10-28 16:04:15,806 INFO    MainThread:3749940 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-28 16:04:15,808 INFO    MainThread:3749940 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-28 16:04:15,810 INFO    MainThread:3749940 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-28 16:04:15,811 INFO    MainThread:3749940 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-28 16:04:15,813 INFO    MainThread:3749940 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221028_160415-lz4xcu2t/logs/debug.log
+2022-10-28 16:04:15,814 INFO    MainThread:3749940 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221028_160415-lz4xcu2t/logs/debug-internal.log
+2022-10-28 16:04:15,815 INFO    MainThread:3749940 [wandb_init.py:init():516] calling init triggers
+2022-10-28 16:04:15,816 INFO    MainThread:3749940 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton', 'teacher': None, 'teachers_num': 3, 'teacher_models': ['resnet34_0', 'resnet34_1', 'resnet34_2'], 'update_teacher': False, 'teacher_training': False}
+2022-10-28 16:04:15,818 INFO    MainThread:3749940 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-28 16:06:53,356 WARNING MsgRouterThr:3749940 [router.py:message_loop():77] message_loop has been closed

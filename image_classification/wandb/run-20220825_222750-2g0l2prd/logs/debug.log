@@ -1,0 +1,12 @@
+2022-08-25 22:27:50,937 INFO    MainThread:8782 [wandb_setup.py:_flush():76] Configure stats pid to 8782
+2022-08-25 22:27:50,957 INFO    MainThread:8782 [wandb_setup.py:_flush():76] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-08-25 22:27:50,959 INFO    MainThread:8782 [wandb_setup.py:_flush():76] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-08-25 22:27:50,961 INFO    MainThread:8782 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'_require_service': 'True'}
+2022-08-25 22:27:50,963 INFO    MainThread:8782 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-08-25 22:27:50,965 INFO    MainThread:8782 [wandb_init.py:_log_setup():461] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20220825_222750-2g0l2prd/logs/debug.log
+2022-08-25 22:27:50,967 INFO    MainThread:8782 [wandb_init.py:_log_setup():462] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20220825_222750-2g0l2prd/logs/debug-internal.log
+2022-08-25 22:27:50,968 INFO    MainThread:8782 [wandb_init.py:init():495] calling init triggers
+2022-08-25 22:27:50,970 INFO    MainThread:8782 [wandb_init.py:init():499] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-08-25 22:27:50,972 INFO    MainThread:8782 [wandb_init.py:init():543] wandb.init() called when a run is still active
+2022-08-25 22:31:26,026 WARNING MsgRouterThr:8782 [router.py:message_loop():76] message_loop has been closed

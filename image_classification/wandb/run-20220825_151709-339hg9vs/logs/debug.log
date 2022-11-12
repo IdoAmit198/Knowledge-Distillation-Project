@@ -1,0 +1,20 @@
+2022-08-25 15:17:09,937 INFO    MainThread:20981 [wandb_setup.py:_flush():76] Configure stats pid to 20981
+2022-08-25 15:17:09,937 INFO    MainThread:20981 [wandb_setup.py:_flush():76] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-08-25 15:17:09,937 INFO    MainThread:20981 [wandb_setup.py:_flush():76] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-08-25 15:17:09,937 INFO    MainThread:20981 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'_require_service': 'True'}
+2022-08-25 15:17:09,937 INFO    MainThread:20981 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-08-25 15:17:09,938 INFO    MainThread:20981 [wandb_init.py:_log_setup():461] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20220825_151709-339hg9vs/logs/debug.log
+2022-08-25 15:17:09,938 INFO    MainThread:20981 [wandb_init.py:_log_setup():462] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20220825_151709-339hg9vs/logs/debug-internal.log
+2022-08-25 15:17:09,938 INFO    MainThread:20981 [wandb_init.py:init():495] calling init triggers
+2022-08-25 15:17:09,939 INFO    MainThread:20981 [wandb_init.py:init():499] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton'}
+2022-08-25 15:17:09,939 INFO    MainThread:20981 [wandb_init.py:init():548] starting backend
+2022-08-25 15:17:09,939 INFO    MainThread:20981 [wandb_init.py:init():552] setting up manager
+2022-08-25 15:17:09,949 INFO    MainThread:20981 [backend.py:_multiprocessing_setup():99] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-08-25 15:17:10,088 INFO    MainThread:20981 [wandb_init.py:init():558] backend started and connected
+2022-08-25 15:17:10,116 INFO    MainThread:20981 [wandb_init.py:init():636] updated telemetry
+2022-08-25 15:17:10,116 INFO    MainThread:20981 [wandb_init.py:init():668] communicating run to backend with 30 second timeout
+2022-08-25 15:17:40,117 INFO    MainThread:20981 [interface_shared.py:_communicate_run():331] couldn't get run from backend
+2022-08-25 15:17:40,118 ERROR   MainThread:20981 [wandb_init.py:init():676] backend process timed out
+2022-08-25 15:17:40,118 ERROR   MainThread:20981 [wandb_init.py:init():685] encountered error: Error communicating with wandb process
+For more info see: https://docs.wandb.ai/library/init#init-start-error

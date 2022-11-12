@@ -1,0 +1,12 @@
+2022-10-28 15:45:19,798 INFO    MainThread:3747908 [wandb_setup.py:_flush():68] Configure stats pid to 3747908
+2022-10-28 15:45:19,820 INFO    MainThread:3747908 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/.config/wandb/settings
+2022-10-28 15:45:19,822 INFO    MainThread:3747908 [wandb_setup.py:_flush():68] Loading settings from /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/settings
+2022-10-28 15:45:19,825 INFO    MainThread:3747908 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-10-28 15:45:19,827 INFO    MainThread:3747908 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'image_classification/experiments/hinton_kd.py', 'program': 'experiments/hinton_kd.py'}
+2022-10-28 15:45:19,829 INFO    MainThread:3747908 [wandb_init.py:_log_setup():476] Logging user logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221028_154519-1h8anmw1/logs/debug.log
+2022-10-28 15:45:19,832 INFO    MainThread:3747908 [wandb_init.py:_log_setup():477] Logging internal logs to /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221028_154519-1h8anmw1/logs/debug-internal.log
+2022-10-28 15:45:19,834 INFO    MainThread:3747908 [wandb_init.py:init():516] calling init triggers
+2022-10-28 15:45:19,835 INFO    MainThread:3747908 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 12, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton', 'teacher': 'resnet34_1', 'teachers_num': None, 'teacher_models': None, 'update_teacher': False, 'teacher_training': False}
+2022-10-28 15:45:19,836 INFO    MainThread:3747908 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-10-28 15:48:12,114 WARNING MsgRouterThr:3747908 [router.py:message_loop():77] message_loop has been closed

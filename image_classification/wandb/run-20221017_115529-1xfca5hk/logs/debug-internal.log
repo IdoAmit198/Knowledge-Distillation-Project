@@ -1,0 +1,129 @@
+2022-10-17 11:55:29,327 INFO    StreamThr :3296925 [internal.py:wandb_internal():91] W&B internal server running at pid: 3296925, started at: 2022-10-17 11:55:29.326203
+2022-10-17 11:55:29,329 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: status
+2022-10-17 11:55:29,333 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: status
+2022-10-17 11:55:29,338 DEBUG   SenderThread:3296925 [sender.py:send():303] send: header
+2022-10-17 11:55:29,338 INFO    WriterThread:3296925 [datastore.py:open_for_write():75] open: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/run-1xfca5hk.wandb
+2022-10-17 11:55:29,423 DEBUG   SenderThread:3296925 [sender.py:send():303] send: run
+2022-10-17 11:55:30,173 INFO    SenderThread:3296925 [dir_watcher.py:__init__():216] watching files in: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files
+2022-10-17 11:55:30,174 INFO    SenderThread:3296925 [sender.py:_start_run_threads():931] run started: 1xfca5hk with start time 1665996929.327962
+2022-10-17 11:55:30,174 DEBUG   SenderThread:3296925 [sender.py:send():303] send: summary
+2022-10-17 11:55:30,175 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: check_version
+2022-10-17 11:55:30,178 INFO    SenderThread:3296925 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-10-17 11:55:30,178 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: check_version
+2022-10-17 11:55:30,484 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: run_start
+2022-10-17 11:55:30,491 DEBUG   HandlerThread:3296925 [meta.py:__init__():34] meta init
+2022-10-17 11:55:30,491 DEBUG   HandlerThread:3296925 [meta.py:__init__():49] meta init done
+2022-10-17 11:55:30,491 DEBUG   HandlerThread:3296925 [meta.py:probe():215] probe
+2022-10-17 11:55:30,503 DEBUG   HandlerThread:3296925 [meta.py:_setup_git():205] setup git
+2022-10-17 11:55:30,552 DEBUG   HandlerThread:3296925 [meta.py:_setup_git():212] setup git done
+2022-10-17 11:55:30,552 DEBUG   HandlerThread:3296925 [meta.py:_save_pip():53] save pip
+2022-10-17 11:55:30,555 DEBUG   HandlerThread:3296925 [meta.py:_save_pip():67] save pip done
+2022-10-17 11:55:30,555 DEBUG   HandlerThread:3296925 [meta.py:_save_conda():74] save conda
+2022-10-17 11:55:31,180 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/wandb-summary.json
+2022-10-17 11:55:31,180 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/conda-environment.yaml
+2022-10-17 11:55:31,181 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/requirements.txt
+2022-10-17 11:55:33,699 DEBUG   HandlerThread:3296925 [meta.py:_save_conda():84] save conda done
+2022-10-17 11:55:33,700 DEBUG   HandlerThread:3296925 [meta.py:probe():253] probe done
+2022-10-17 11:55:33,711 DEBUG   SenderThread:3296925 [sender.py:send():303] send: files
+2022-10-17 11:55:33,711 INFO    SenderThread:3296925 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-10-17 11:55:33,739 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-17 11:55:33,740 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: stop_status
+2022-10-17 11:55:34,075 DEBUG   SenderThread:3296925 [sender.py:send():303] send: telemetry
+2022-10-17 11:55:34,183 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/conda-environment.yaml
+2022-10-17 11:55:34,183 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:34,184 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_created():275] file/dir created: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/wandb-metadata.json
+2022-10-17 11:55:34,626 INFO    Thread-17 :3296925 [upload_job.py:push():143] Uploaded file /tmp/tmpei20yz_nwandb/3oz452vk-wandb-metadata.json
+2022-10-17 11:55:36,186 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:38,189 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:40,194 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:42,197 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:44,200 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:46,203 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:48,205 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:49,078 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-17 11:55:49,078 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: stop_status
+2022-10-17 11:55:50,208 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:52,213 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:54,216 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:56,219 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:58,222 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:55:59,878 DEBUG   SenderThread:3296925 [sender.py:send():303] send: stats
+2022-10-17 11:56:00,225 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:00,225 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/config.yaml
+2022-10-17 11:56:02,228 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:04,230 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:04,462 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-17 11:56:04,462 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: stop_status
+2022-10-17 11:56:06,233 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:08,239 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:10,241 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:12,244 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:14,247 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:16,249 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:18,252 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:19,804 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-17 11:56:19,804 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: stop_status
+2022-10-17 11:56:20,258 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:22,261 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:24,264 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:26,267 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:28,269 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:30,272 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:30,895 DEBUG   SenderThread:3296925 [sender.py:send():303] send: stats
+2022-10-17 11:56:32,275 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:34,285 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:35,173 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-17 11:56:35,173 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: stop_status
+2022-10-17 11:56:36,288 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:38,290 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:40,298 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:42,300 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:44,303 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:46,310 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:48,312 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:50,316 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:50,506 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-17 11:56:50,507 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: stop_status
+2022-10-17 11:56:52,318 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:54,321 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:56,324 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:56:58,326 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:00,330 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:02,046 DEBUG   SenderThread:3296925 [sender.py:send():303] send: stats
+2022-10-17 11:57:02,333 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:04,338 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:05,839 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-17 11:57:05,839 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: stop_status
+2022-10-17 11:57:06,341 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:08,350 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:10,354 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:12,357 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:14,359 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:16,363 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:18,365 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:20,368 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:21,171 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-17 11:57:21,171 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: stop_status
+2022-10-17 11:57:22,372 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:24,380 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:26,383 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:28,386 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:30,389 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:32,392 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:33,209 DEBUG   SenderThread:3296925 [sender.py:send():303] send: stats
+2022-10-17 11:57:34,395 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:36,398 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:36,530 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-17 11:57:36,531 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: stop_status
+2022-10-17 11:57:38,400 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:40,403 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:42,406 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:44,414 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:46,419 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:48,421 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:50,424 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:51,873 DEBUG   HandlerThread:3296925 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-17 11:57:51,874 DEBUG   SenderThread:3296925 [sender.py:send_request():317] send_request: stop_status
+2022-10-17 11:57:52,425 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:54,431 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log
+2022-10-17 11:57:56,433 INFO    Thread-13 :3296925 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/wandb/run-20221017_115529-1xfca5hk/files/output.log

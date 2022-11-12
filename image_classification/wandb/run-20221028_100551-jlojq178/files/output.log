@@ -1,0 +1,15 @@
+
+{'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 12, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton', 'teacher': 'resnet34_1', 'teachers_num': None, 'teacher_models': None, 'update_teacher': False, 'teacher_training': False}
+  0%|          | 0/194 [00:20<?, ?it/s]
+Traceback (most recent call last):
+  File "experiments/hinton_kd.py", line 104, in <module>
+    expt=expt
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 67, in train
+    print(f"teachers_logits_list is: {torch.tensor(teachers_logits_list)}")
+ValueError: only one element tensors can be converted to Python scalars
+Traceback (most recent call last):
+  File "experiments/hinton_kd.py", line 104, in <module>
+    expt=expt
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 67, in train
+    print(f"teachers_logits_list is: {torch.tensor(teachers_logits_list)}")
+ValueError: only one element tensors can be converted to Python scalars

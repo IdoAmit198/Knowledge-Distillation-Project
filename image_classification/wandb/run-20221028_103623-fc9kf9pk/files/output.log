@@ -1,0 +1,878 @@
+{'dataset': 'imagewoof', 'model': 'resnet18', 'num_classes': 10, 'batch_size': 64, 'num_epochs': 100, 'learning_rate': 0.001, 'momentum': 0.9, 'seed': 0, 'percentage': None, 'gpu': 0, 'temperature': 20, 'alpha': 0.2, 'weight_decay': 0.0005, 'stage': 0, 'experiment': 'Hinton', 'teacher': None, 'teachers_num': 2, 'teacher_models': ['resnet34_0', 'resnet34_1'], 'update_teacher': False, 'teacher_training': False}
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+  0%|          | 0/194 [00:00<?, ?it/s]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:   1%|          | 2/194 [00:02<03:31,  1.10s/it, loss=0.973]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:   2%|▏         | 3/194 [00:05<05:55,  1.86s/it, loss=0.814]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:   3%|▎         | 5/194 [00:13<08:47,  2.79s/it, loss=0.799]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+
+Epoch 1/100:   4%|▎         | 7/194 [00:14<04:51,  1.56s/it, loss=0.748]
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:   6%|▌         | 11/194 [00:17<02:31,  1.21it/s, loss=0.749]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:   7%|▋         | 13/194 [00:21<03:40,  1.22s/it, loss=0.76]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:   8%|▊         | 15/194 [00:25<04:25,  1.49s/it, loss=0.776]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:   9%|▉         | 17/194 [00:26<03:01,  1.02s/it, loss=0.741]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  10%|▉         | 19/194 [00:28<02:19,  1.25it/s, loss=0.769]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  12%|█▏        | 23/194 [00:41<04:57,  1.74s/it, loss=0.761]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  12%|█▏        | 24/194 [00:42<04:16,  1.51s/it, loss=0.753]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  13%|█▎        | 25/194 [00:44<04:49,  1.71s/it, loss=0.78]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  14%|█▍        | 27/194 [00:49<04:54,  1.76s/it, loss=0.723]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  15%|█▌        | 30/194 [00:51<03:12,  1.17s/it, loss=0.732]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  17%|█▋        | 33/194 [00:53<01:49,  1.47it/s, loss=0.719]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  19%|█▉        | 37/194 [00:55<01:36,  1.63it/s, loss=0.717]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+
+Epoch 1/100:  20%|█▉        | 38/194 [00:57<02:44,  1.06s/it, loss=0.714]
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  21%|██        | 41/194 [00:59<01:37,  1.58it/s, loss=0.747]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+
+Epoch 1/100:  23%|██▎       | 45/194 [01:02<01:30,  1.65it/s, loss=0.698]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+
+Epoch 1/100:  26%|██▋       | 51/194 [01:14<02:54,  1.22s/it, loss=0.721]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  27%|██▋       | 53/194 [01:14<02:03,  1.14it/s, loss=0.747]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  29%|██▉       | 56/194 [01:23<04:22,  1.91s/it, loss=0.734]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+
+Epoch 1/100:  30%|██▉       | 58/194 [01:33<08:53,  3.92s/it, loss=0.689]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  31%|███▏      | 61/194 [01:35<03:37,  1.64s/it, loss=0.706]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  32%|███▏      | 63/194 [01:36<02:27,  1.13s/it, loss=0.717]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  34%|███▍      | 66/194 [01:41<02:48,  1.32s/it, loss=0.693]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+
+Epoch 1/100:  35%|███▌      | 68/194 [01:45<03:50,  1.83s/it, loss=0.72]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  37%|███▋      | 71/194 [01:47<02:00,  1.02it/s, loss=0.725]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  38%|███▊      | 73/194 [01:48<01:33,  1.29it/s, loss=0.672]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  39%|███▊      | 75/194 [01:50<01:27,  1.36it/s, loss=0.715]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  40%|███▉      | 77/194 [01:55<02:53,  1.49s/it, loss=0.745]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  41%|████      | 79/194 [02:00<03:24,  1.78s/it, loss=0.711]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  42%|████▏     | 82/194 [02:06<02:57,  1.59s/it, loss=0.74]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+
+Epoch 1/100:  44%|████▍     | 85/194 [02:07<01:37,  1.11it/s, loss=0.722]
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  45%|████▍     | 87/194 [02:10<01:18,  1.36it/s, loss=0.706]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  46%|████▌     | 89/194 [02:10<01:06,  1.58it/s, loss=0.696]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  48%|████▊     | 93/194 [02:16<01:31,  1.10it/s, loss=0.736]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  48%|████▊     | 94/194 [02:17<01:38,  1.01it/s, loss=0.695]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  49%|████▉     | 96/194 [02:23<02:57,  1.81s/it, loss=0.695]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  49%|████▉     | 96/194 [02:26<02:57,  1.81s/it, loss=0.695]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  52%|█████▏    | 100/194 [02:27<01:38,  1.04s/it, loss=0.755]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  53%|█████▎    | 102/194 [02:29<01:16,  1.20it/s, loss=0.715]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  53%|█████▎    | 103/194 [02:30<01:26,  1.05it/s, loss=0.709]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  54%|█████▍    | 105/194 [02:33<01:37,  1.09s/it, loss=0.739]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  56%|█████▌    | 108/194 [02:36<01:24,  1.01it/s, loss=0.702]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  57%|█████▋    | 111/194 [02:37<00:58,  1.43it/s, loss=0.769]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  58%|█████▊    | 112/194 [02:39<01:10,  1.16it/s, loss=0.685]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  59%|█████▉    | 114/194 [02:41<01:15,  1.07it/s, loss=0.697]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  60%|█████▉    | 116/194 [02:44<01:01,  1.28it/s, loss=0.692]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  62%|██████▏   | 120/194 [02:45<00:48,  1.52it/s, loss=0.723]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  62%|██████▏   | 121/194 [02:47<01:02,  1.17it/s, loss=0.696]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  63%|██████▎   | 123/194 [02:57<03:10,  2.69s/it, loss=0.717]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  64%|██████▍   | 125/194 [03:00<01:49,  1.58s/it, loss=0.662]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+
+Epoch 1/100:  68%|██████▊   | 131/194 [03:03<00:43,  1.46it/s, loss=0.717]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  68%|██████▊   | 132/194 [03:04<00:52,  1.19it/s, loss=0.714]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  70%|███████   | 136/194 [03:12<01:08,  1.18s/it, loss=0.725]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  71%|███████   | 138/194 [03:13<00:50,  1.12it/s, loss=0.721]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  72%|███████▏  | 139/194 [03:14<00:53,  1.04it/s, loss=0.697]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  72%|███████▏  | 140/194 [03:25<03:35,  3.99s/it, loss=0.714]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  73%|███████▎  | 142/194 [03:33<03:05,  3.57s/it, loss=0.671]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  74%|███████▍  | 144/194 [03:34<01:41,  2.03s/it, loss=0.723]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  75%|███████▌  | 146/194 [03:38<01:30,  1.89s/it, loss=0.685]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  76%|███████▋  | 148/194 [03:41<01:11,  1.56s/it, loss=0.664]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  77%|███████▋  | 150/194 [03:44<00:46,  1.06s/it, loss=0.714]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  78%|███████▊  | 152/194 [03:44<00:35,  1.19it/s, loss=0.685]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  79%|███████▉  | 154/194 [03:58<02:12,  3.30s/it, loss=0.681]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  80%|████████  | 156/194 [03:59<01:13,  1.94s/it, loss=0.694]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  82%|████████▏ | 159/194 [04:02<00:43,  1.25s/it, loss=0.707]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  82%|████████▏ | 160/194 [04:05<01:00,  1.79s/it, loss=0.661]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  84%|████████▍ | 163/194 [04:08<00:39,  1.27s/it, loss=0.67]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  85%|████████▌ | 165/194 [04:09<00:30,  1.06s/it, loss=0.665]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  86%|████████▌ | 167/194 [04:16<00:50,  1.86s/it, loss=0.672]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  87%|████████▋ | 168/194 [04:17<00:42,  1.62s/it, loss=0.692]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  88%|████████▊ | 171/194 [04:22<00:33,  1.46s/it, loss=0.662]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  90%|█████████ | 175/194 [04:34<00:33,  1.78s/it, loss=0.654]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  91%|█████████ | 177/194 [04:35<00:20,  1.20s/it, loss=0.653]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  92%|█████████▏| 179/194 [04:40<00:22,  1.51s/it, loss=0.655]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  93%|█████████▎| 181/194 [04:41<00:13,  1.03s/it, loss=0.658]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  95%|█████████▌| 185/194 [04:44<00:06,  1.39it/s, loss=0.665]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  96%|█████████▋| 187/194 [04:45<00:04,  1.48it/s, loss=0.665]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  97%|█████████▋| 189/194 [04:48<00:03,  1.55it/s, loss=0.677]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+teacher_mean_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100:  99%|█████████▉| 193/194 [04:49<00:00,  1.79it/s, loss=0.644]
+teacher_logits.shape is: torch.Size([64, 10])
+teacher_logits.shape is: torch.Size([64, 10])
+all_teachers_logits.shape is: torch.Size([2, 64, 10])
+
+Epoch 1/100: 100%|██████████| 194/194 [04:50<00:00,  1.50s/it, loss=0.635]
+Traceback (most recent call last):
+  File "experiments/hinton_kd.py", line 104, in <module>
+    )
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 216, in train
+    all_teacher_pred_val = torch.cat(teacher_pred_val_list)
+RuntimeError: There were no tensor arguments to this function (e.g., you passed an empty list of Tensors), but no fallback function is registered for schema aten::_cat.  This usually means that this function requires a non-empty list of Tensors.  Available functions are [CUDATensorId, CPUTensorId, VariableTensorId]
+Traceback (most recent call last):
+  File "experiments/hinton_kd.py", line 104, in <module>
+    )
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 216, in train
+    all_teacher_pred_val = torch.cat(teacher_pred_val_list)
+RuntimeError: There were no tensor arguments to this function (e.g., you passed an empty list of Tensors), but no fallback function is registered for schema aten::_cat.  This usually means that this function requires a non-empty list of Tensors.  Available functions are [CUDATensorId, CPUTensorId, VariableTensorId]

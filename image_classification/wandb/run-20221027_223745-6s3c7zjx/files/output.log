@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "experiments/hinton_kd.py", line 101, in <module>
+    expt=expt
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 24, in train
+    if hyper_params['teacher_training']:
+KeyError: 'teacher_training'
+Traceback (most recent call last):
+  File "experiments/hinton_kd.py", line 101, in <module>
+    expt=expt
+  File "/home/shanigoren/KD_Project/Knowledge-Distillation-Project/image_classification/experiments/trainer.py", line 24, in train
+    if hyper_params['teacher_training']:
+KeyError: 'teacher_training'
