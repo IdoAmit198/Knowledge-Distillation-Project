@@ -25,6 +25,8 @@ def get_args(description, mode='train'):
                             , default=False)
         parser.add_argument('-ud', '--update_teacher', action='store_true', help='In case we load a teacher, \
                              then load the teacher from wandb hub before using the local teacher' , default=False)
+        parser.add_argument('-sm', '--save_model', action='store_true', help='In case we want to save trained teacher model, \
+                             the model is saved to wandb.' , default=False)
 
     elif mode == 'eval':
         parser.add_argument('-m', '--model', choices = ['resnet10', 'resnet14', 'resnet18', 'resnet20', 'resnet26'], help = 'Give the model name from the choices')

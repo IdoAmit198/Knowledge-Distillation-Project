@@ -17,7 +17,6 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
     run = wandb.init(
     project="our-awesome-project",
     entity = "ido-shani-proj" ,
-    # group=f"{hyper_params.experiment}",
     name= f"{hyper_params['experiment']}-{hyper_params['model']}-{hyper_params['num_epochs']} epochs-{today}-{current_time}",
     config=hyper_params)
     config = wandb.config
@@ -43,9 +42,6 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
         log_teacher_metrics = True
     labels_train_list = []
     for images, labels in loop:
-        # if idx == 3:
-        #     break
-
         if gpu != 'cpu':
             images = torch.autograd.Variable(images).to(gpu).float()
             labels = torch.autograd.Variable(labels).to(gpu)
@@ -239,7 +235,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             max_val_acc = val_acc * 100
             torch.save(student.state_dict(), savename)
             ## wandb save model
-        if epoch == hyper_params['num_epochs'] -1:
+        if (epoch == hyper_params['num_epochs'] - 1) and (hyper_params["save_trained_teacher_model"]) :
             artifact.add_file(savename)
             run.log_artifact(artifact)
     # stage training

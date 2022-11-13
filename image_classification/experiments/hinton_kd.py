@@ -41,7 +41,8 @@ hyper_params = {
     "teachers_num": args.teachers_num ,
     "teacher_models": args.teacher_models,
     "update_teacher": args.update_teacher,
-    "teacher_training": args.teacher_training
+    "teacher_training": args.teacher_training,
+    "save_trained_teacher_model": args.save_model
 }
 
 data = get_dataset(dataset=hyper_params['dataset'],
@@ -54,9 +55,11 @@ learn, net = get_model(hyper_params['model'], hyper_params['dataset'], data, tea
 learn.model, net = learn.model.to(args.gpu), net.to(args.gpu)
 
 ## Should make it a utility function
+# multi teacher
 if hyper_params['teachers_num'] and hyper_params['teachers_num']>1:
     assert hyper_params['teacher_models'] is not None
     teachers_list = load_teachers_list(hyper_params['teacher_models'], update_teacher=hyper_params['update_teacher'])
+# single teacher
 elif hyper_params['teacher'] and hyper_params['teachers_num'] is None:
     teachers_list = [load_teacher(hyper_params['teacher'], hyper_params['update_teacher'])]
     # teacher = resnet50()
@@ -83,7 +86,6 @@ if args.api_key:
 optimizer = torch.optim.Adam(net.parameters(), lr=hyper_params["learning_rate"])
 
 loss_function = nn.KLDivLoss(reduction='mean')
-# loss_function = nn.CrossEntropyLoss()
 loss_function2 = nn.CrossEntropyLoss()
 best_val_loss = 100
 
