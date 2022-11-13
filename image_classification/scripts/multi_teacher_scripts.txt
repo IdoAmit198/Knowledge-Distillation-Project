@@ -1,0 +1,17 @@
+# update teacher model from wandb
+sbatch -c 2 --gres=gpu:1 -o output_files/update_teacher.out -J update scripts/update_teacher.sh
+
+# hinton to train a student with one or multiple teachers.
+sbatch -c 2 --gres=gpu:1 -o output_files/hinton_18_teacher_50.out -J hinton scripts/run_hinton.sh
+
+# Run multi teacher experiments
+sbatch -c 2 --gres=gpu:1 -o output_files/multi_34_012.out -J 3*34 scripts/run_multi_teacher_34*3.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/multi_34_50_101.out -J 3450101 scripts/run_multi_teacher_34_50_101.sh
+
+# train resnet18 as teacher
+sbatch -c 2 --gres=gpu:1 -o output_files/teacher_training_18.out -J t_t18  scripts/run_teacher_training.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/teacher_training_152.out -J t_t152  scripts/run_teacher_training.sh
+
+# Timm teacher model training
+sbatch -c 2 --gres=gpu:1 -o output_files/mobilenet_training.out -J mbnet  scripts/run_mobilenet_training.sh
+
