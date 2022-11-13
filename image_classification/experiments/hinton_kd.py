@@ -25,7 +25,7 @@ hyper_params = {
     "dataset": args.dataset,
     "model": args.model,
     "num_classes": 10,
-    "batch_size": 64,
+    "batch_size": args.batch_size,
     "num_epochs": args.epoch,
     "learning_rate": 1e-3 if args.learning_rate is None else args.learning_rate,
     "momentum": 0.9,

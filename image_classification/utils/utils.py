@@ -64,7 +64,7 @@ def freeze_student(model, hyper_params, experiment):
 
 
 def get_savename(hyper_params, experiment):
-    assert experiment in ['stagewise-kd', 'traditional-kd', 'simultaneous-kd', 'attention-kd', 'fsp-kd', 'no-teacher', 'hinton-kd', 'ViT-no-teacher']
+    assert experiment in ['stagewise-kd', 'traditional-kd', 'simultaneous-kd', 'attention-kd', 'fsp-kd', 'no-teacher', 'hinton-kd', 'Timm-teacher-training']
     
     dsize = 'full_data' if hyper_params['percentage'] is None else f"less_data{str(hyper_params['percentage'])}"
 
@@ -165,6 +165,7 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
     """
     return_teacher = None
     if update_teacher:
+        print(f"downloading teacher {teacher_name} artifact from wandb")
         api = wandb.Api()
         model_artifact = api.artifact(f'ido-shani-proj/our-awesome-project/{teacher_name}:latest')
         model_artifact.download(root=get_save_teacher_path(teacher_name))

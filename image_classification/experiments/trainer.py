@@ -45,9 +45,6 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
         log_teacher_metrics = True
     labels_train_list = []
     for images, labels in loop:
-        # if idx == 3:
-        #     break
-
         if gpu != 'cpu':
             images = torch.autograd.Variable(images).to(gpu).float()
             labels = torch.autograd.Variable(labels).to(gpu)
@@ -63,7 +60,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             teachers_logits_list = []
             for teacher in teachers_list:
                 teacher_logits = teacher(images)
-                print(f"teacher_logits.shape is: {teacher_logits.shape}")
+                # print(f"teacher_logits.shape is: {teacher_logits.shape}")
                 teachers_logits_list.append(teacher_logits)
                 if log_teacher_metrics:
                     teacher_pred_train_list.append(F.softmax(teacher_logits, dim = 1))
@@ -81,34 +78,19 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             TEMP = hyper_params['temperature']
             ALPHA = hyper_params['alpha']
             
-            teacher_soft_targets = F.softmax(teacher_mean_logits/TEMP,dim=1)
-            distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
+            mean_logits = False
+            if mean_logits:
+                teacher_soft_targets = F.softmax(teacher_mean_logits/TEMP,dim=1)
+                distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
+            else:
+                distillation_loss_list = []
+                for teacher_logits in teachers_logits_list:
+                    multi_teachers_soft_targets = F.softmax(teacher_logits/TEMP,dim=1)
+                    distillation_loss_list.append(loss_function(F.log_softmax(student_logits/TEMP,dim=1), multi_teachers_soft_targets)*(1-ALPHA)*TEMP*TEMP)
+                distillation_loss = torch.mean(torch.stack(distillation_loss_list, dim=0), dim=0)
+
             student_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
             loss = distillation_loss + student_loss
-
-        # elif loss_function2 is None:
-        #     if expt == 'fsp-kd':
-        #         loss = 0
-        #         # 4 intermediate feature maps and taken 2 at a time (thus 3)
-        #         for k in range(3):
-        #             loss += loss_function(fsp_matrix(sf_teacher[k].features, sf_teacher[k + 1].features),
-        #                                   fsp_matrix(sf_student[k].features, sf_student[k + 1].features))
-        #         loss /= 3
-        #     else:
-        #         loss = loss_function(sf_student[hyper_params['stage']].features, sf_teacher[hyper_params['stage']].features)
-        # attention transfer KD
-        # elif expt == 'attention-kd':
-        #     loss = loss_function(student_logits, labels)
-        #     for k in range(4):
-        #         loss += loss_function2(at(sf_student[k].features), at(sf_teacher[k].features))
-        #     loss /= 5
-        # # 2 loss functions and student and teacher are given -> simultaneous training
-        # else:
-        #     loss = loss_function(student_logits, labels)
-        #     for k in range(5):
-        #         loss += loss_function2(sf_student[k].features, sf_teacher[k].features)
-        #     # normalizing factor (doesn't affect optimization theoretically)
-        #     loss /= 6
 
         train_loss_list.append(loss.item())
 
@@ -167,9 +149,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
 
             if log_teacher_metrics:
                 teacher_soft_targets = teachers_list[0](images)
-                ##TODO: delete later
                 teacher_pred_val_list.append(F.softmax(teacher_soft_targets, dim = 1))
-                ##END of delete
             # classifier training
             if teachers_list is None:
                 loss = loss_function(student_logits, labels)
@@ -196,7 +176,6 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
     all_y_pred_val = torch.cat(y_pred_val_list)
     all_labels_val = torch.cat(labels_val_list)
 
-    ##TODO: delete later, only to test accuracy of teacher ResNet34 of paper!!
     if log_teacher_metrics:
         all_teacher_pred_val = torch.cat(teacher_pred_val_list)
         _, teacher_val_pred_final = torch.max(all_teacher_pred_val, 1)
@@ -218,7 +197,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
 
     # save trained teacher model
     if teachers_list is None:
-        if (val_acc * 100) > max_val_acc :
+        if (val_acc * 100) > max_val_acc and not hyper_params['model'].startswith('resnet18'):
             print(f'higher valid acc obtained: {val_acc * 100}')
             max_val_acc = val_acc * 100
             torch.save(student.state_dict(), savename)

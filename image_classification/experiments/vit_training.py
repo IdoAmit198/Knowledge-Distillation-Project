@@ -16,9 +16,8 @@ from timm.data import resolve_data_config, create_transform
 import timm
 
 
-args = get_args(description='ViT no teacher', mode='train')
-expt = 'ViT-no-teacher'
-
+args = get_args(description='Timm teacher training', mode='train')
+expt = 'Timm-teacher-training'
 
 torch.manual_seed(args.seed)
 if args.gpu != 'cpu':
@@ -39,18 +38,19 @@ hyper_params = {
     "seed": args.seed,
     "percentage":args.percentage,
     "gpu": args.gpu,
-    "experiment": "ViT No Teacher",
+    "experiment": "Timm Teacher Training",
     'teacher_training' : args.teacher_training
 }
 
 config= None
 if hyper_params['teacher_training']:
-    # Verify we got 'vit' as model to train.
-    assert hyper_params['model'].startswith('vit'), f"Expected to get \'vit\' as an argument. Instead got {hyper_params['model']}"
-    net = timm.models.create_model('vit_small_patch16_224', pretrained=True, num_classes=10)
-    # Creating the model specific data transformation
+    if hyper_params['model'].startswith('vit'):
+        net = timm.models.create_model('vit_small_patch16_224', pretrained=True, num_classes=10)
+        # Creating the model specific data transformation
+    elif hyper_params['model'].startswith('mobilenet'):
+        net = timm.models.create_model('mobilenetv3_small_100', pretrained=True, num_classes=10)
+        print("loaded mobilenet model")
     config = resolve_data_config({}, model=net)
-    # print(config)
     
 ## Rajid loaded below a student, but we don't use it anymore...
 else:

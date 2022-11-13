@@ -29,7 +29,7 @@ hyper_params = {
     "model": args.model,
     "stage": 0,
     "num_classes": 10,
-    "batch_size": 64,
+    "batch_size": args.batch_size,
     "num_epochs": args.epoch,
     "learning_rate": 1e-4 if args.learning_rate is None else args.learning_rate,
     "seed": args.seed,
@@ -44,12 +44,16 @@ data = get_dataset(dataset=hyper_params['dataset'],
                    percentage=args.percentage)
 
 if hyper_params['teacher_training']:
-    if hyper_params['model'].startswith('resnet34'):
+    if hyper_params['model'].startswith('resnet18'):
+        net = vision_models.resnet18(pretrained=True)
+    elif hyper_params['model'].startswith('resnet34'):
         net = vision_models.resnet34(pretrained=True)
     elif hyper_params['model'].startswith('resnet50'):
         net = vision_models.resnet50(pretrained=True)
     elif hyper_params['model'].startswith('resnet101'):
         net = vision_models.resnet101(pretrained=True)
+    elif hyper_params['model'].startswith('resnet152'):
+        net = vision_models.resnet152(pretrained=True)
 
     fc_in_features = net.fc.in_features
     # for param in net.parameters():
