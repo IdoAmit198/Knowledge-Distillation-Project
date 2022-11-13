@@ -12,6 +12,29 @@ from image_classification.models.custom_resnet import *
 from trainer import *
 from torchvision.models import resnet50
 
+class StudentFC(nn.Module):
+    def __init__(self, model, teachers_num):
+        super(StudentFC, self).__init__()
+        if teachers_num is None:
+            teachers_num = 1
+        self.heads_num = teachers_num + 1
+        # remove last layer of model
+        embedding_size = model.fc2.in_features
+        removed = list(model.children())[:-1]
+        self.model = torch.nn.Sequential(*removed)
+        # replace with a head for each teacher
+        self.fc_heads = nn.ModuleList([nn.Linear(embedding_size, 10) for i in range(self.heads_num)])
+
+    def forward(self, x):
+        # ModuleList can act as an iterable, or be indexed using ints
+        embedding_out = self.model(x)
+        output_list = []
+        for fc_head in self.fc_heads:
+            output_list.append(fc_head(embedding_out))
+        return output_list
+
+
+#####
 args = get_args(description='Hinton KD', mode='train')
 expt = 'hinton-kd'
 
@@ -62,8 +85,8 @@ data = get_dataset(dataset=hyper_params['dataset'],
 
 savename = get_savename(hyper_params, experiment=expt)
 
-learn, net = get_model(hyper_params['model'], hyper_params['dataset'], data, teach=True)
-learn.model, net = learn.model.to(args.gpu), net.to(args.gpu)
+learn, student = get_model(hyper_params['model'], hyper_params['dataset'], data, teach=True)
+learn.model, student = learn.model.to(args.gpu), student.to(args.gpu)
 
 ## Should make it a utility function
 if hyper_params['teachers_num'] and hyper_params['teachers_num']>1:
@@ -74,6 +97,13 @@ elif hyper_params['teacher'] and hyper_params['teachers_num'] is None:
 else:
     teachers_list = [learn.model]
 
+# add FC heads to student
+print(student)
+student = StudentFC(teachers_num=hyper_params['teachers_num'], model=student)
+print("----------our new and improved student----------")
+print(student)
+# print([layer for layer in student.children()])
+
 sf_student = None
 sf_teacher = None
 
@@ -83,7 +113,7 @@ if args.api_key:
     experiment.log_parameters(hyper_params)
 
 # optimizer = torch.optim.SGD(net.parameters(), lr=hyper_params["learning_rate"], momentum=hyper_params["momentum"], weight_decay=hyper_params["weight_decay"])
-optimizer = torch.optim.Adam(net.parameters(), lr=hyper_params["learning_rate"])
+optimizer = torch.optim.Adam(student.parameters(), lr=hyper_params["learning_rate"])
 
 loss_function = nn.KLDivLoss(reduction='mean')
 # loss_function = nn.CrossEntropyLoss()
@@ -91,7 +121,7 @@ loss_function2 = nn.CrossEntropyLoss()
 best_val_loss = 100
 
 for epoch in range(hyper_params["num_epochs"]):
-    net, train_loss, val_loss, _, best_val_loss = train(net,
+    student, train_loss, val_loss, _, best_val_loss = train(student,
                                                         teachers_list,
                                                         data,
                                                         sf_teacher,
