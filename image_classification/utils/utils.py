@@ -175,8 +175,12 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
         return_teacher = vision_models.resnet50()
     elif teacher_name.startswith('resnet101'):
         return_teacher = vision_models.resnet101()
-    elif teacher_name.startswith('vit'):
+    elif teacher_name.startswith('alex'):
+        return_teacher = vision_models.alexnet()
+    elif teacher_name.startswith('vit_small'):
         return_teacher = timm.models.create_model('vit_small_patch16_224', pretrained=False, num_classes=10)
+    elif teacher_name.startswith('vit_tiny'):
+        return_teacher = timm.models.create_model('vit_tiny_patch16_224', pretrained=False, num_classes=10)
 
     models_path_dict = {
         'resnet34_0' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model0.pt' ,
@@ -184,12 +188,17 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
         'resnet34_2' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model84.pt' ,
         'resnet50' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt' ,
         'resnet101' : 'saved_models/imagewoof/full_data/no-teacher/resnet101_classifier/model0.pt',
-        'vit': 'saved_models/imagewoof/full_data/ViT-no-teacher/vit/model0.pt'
+        'vit_small': 'saved_models/imagewoof/full_data/ViT-no-teacher/vit_small/model0.pt',
+        'vit_tiny': 'saved_models/imagewoof/full_data/ViT-no-teacher/vit_tiny/model0.pt',
+        'alexnet': 'saved_models/imagewoof/full_data/no-teacher/alexnet_classifier/model0.pt',
     }
         
     if teacher_name.startswith('resnet'):
         fc_in_features = return_teacher.fc.in_features
         return_teacher.fc = nn.Linear(fc_in_features, 10)
+    elif teacher_name.startswith('alex'):
+        fc_in_features=return_teacher.classifier[6].in_features
+        return_teacher.classifier[6] = nn.Linear(fc_in_features, 10)
     return_teacher.load_state_dict(torch.load(models_path_dict[teacher_name]))
     ## freezing gradiesnt of teacher below to speed up.
     for param in return_teacher.parameters():

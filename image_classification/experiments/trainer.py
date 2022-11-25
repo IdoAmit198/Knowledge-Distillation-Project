@@ -153,7 +153,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             valid_loop = data['valid_dl']
         else:
             valid_loop = data.valid_dl
-        for _, (images, labels) in enumerate(valid_loop):
+        for _, (images, labels) in enumerate(tqdm(valid_loop)):
             if gpu != 'cpu':
                 images = torch.autograd.Variable(images).to(gpu).float()
                 labels = torch.autograd.Variable(labels).to(gpu)
@@ -178,8 +178,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
                 _, pred_ind = torch.max(student_logits, 1)
 
                 total += labels.size(0)
-                correct += (pred_ind == labels).sum().item()
-            
+                correct += (pred_ind == labels).sum().item()                
             elif expt == 'hinton-kd':
                 ALPHA = hyper_params['alpha']
 
@@ -188,14 +187,19 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
 
                 total += labels.size(0)
                 correct += (pred_ind == labels).sum().item()
+                
 
                 loss = loss_function2(student_logits,labels)
 
             val_loss_list.append(loss.item())
     
     all_y_pred_val = torch.cat(y_pred_val_list)
+    _, all_pred_idx = torch.max(all_y_pred_val,1)
     all_labels_val = torch.cat(labels_val_list)
-
+    # print(f"num of pred = {all_y_pred_val.shape}")
+    # print(f"num of labels = {all_labels_val.shape}")
+    correct = (all_pred_idx==all_labels_val).sum().item()
+    print(f"correct = {correct}")
     ##TODO: delete later, only to test accuracy of teacher ResNet34 of paper!!
     if log_teacher_metrics:
         all_teacher_pred_val = torch.cat(teacher_pred_val_list)
@@ -212,7 +216,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
     val_loss = (sum(val_loss_list) / len(val_loss_list))
     if total > 0:
         val_acc = correct / total
-        print(f"## val_acc = val_acc")
+        print(f"## val_acc = {val_acc}")
     else:
         val_acc = None
 
