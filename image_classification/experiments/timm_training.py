@@ -59,7 +59,7 @@ if hyper_params['teacher_training']:
     elif hyper_params['model']=='vit_tiny':
         net = timm.models.create_model('vit_tiny_patch16_224', pretrained=True, num_classes=10)
     elif hyper_params['model']=='gernet_s':
-        net = timm.models.create_model('gernet_s', pretrained=True, num_classes=10)
+        net = timm.models.create_model('gernet_s', pretrained=True, num_classes=10, drop_rate=0.5)
         # print(net)
     # Creating the model specific data transformation
     config = resolve_data_config({}, model=net)

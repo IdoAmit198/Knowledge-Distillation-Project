@@ -53,12 +53,14 @@ if hyper_params['teacher']:
         hyper_params['teacher_architecture'] = 'resnet50'
     elif hyper_params['teacher'].startswith('resnet101'):
         hyper_params['teacher_architecture'] = 'resnet101'
+    elif hyper_params['teacher'].startswith('alex'):
+        hyper_params['teacher_architecture'] = 'alexnet'
     elif hyper_params['teacher'].startswith('vit_small'):
         hyper_params['teacher_architecture'] = 'vit_small'
     elif hyper_params['teacher'].startswith('vit_tiny'):
         hyper_params['teacher_architecture'] = 'vit_tiny'
-    elif hyper_params['teacher'].startswith('gernet'):
-        hyper_params['teacher_architecture'] = 'gernet'
+    elif hyper_params['teacher'].startswith('gernet_s'):
+        hyper_params['teacher_architecture'] = 'gernet_s'
 
 data = get_dataset(dataset=hyper_params['dataset'],
                    batch_size=hyper_params['batch_size'],

@@ -181,6 +181,8 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
         return_teacher = timm.models.create_model('vit_small_patch16_224', pretrained=False, num_classes=10)
     elif teacher_name.startswith('vit_tiny'):
         return_teacher = timm.models.create_model('vit_tiny_patch16_224', pretrained=False, num_classes=10)
+    elif teacher_name.startswith('gernet_s'):
+        return_teacher = timm.models.create_model('gernet_s', pretrained=False, num_classes=10)
 
     models_path_dict = {
         'resnet34_0' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model0.pt' ,
@@ -191,6 +193,7 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
         'vit_small': 'saved_models/imagewoof/full_data/ViT-no-teacher/vit_small/model0.pt',
         'vit_tiny': 'saved_models/imagewoof/full_data/ViT-no-teacher/vit_tiny/model0.pt',
         'alexnet': 'saved_models/imagewoof/full_data/no-teacher/alexnet_classifier/model0.pt',
+        'gernet_s': 'saved_models/imagewoof/full_data/ViT-no-teacher/gernet_s/model0.pt',
     }
         
     if teacher_name.startswith('resnet'):
