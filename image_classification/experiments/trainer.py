@@ -10,7 +10,7 @@ import wandb
 
 from datetime import date, datetime
 
-def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, loss_function2, optimizer, hyper_params, epoch, savename, best_val_acc, expt=None):
+def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, loss_function2, optimizer, hyper_params, epoch, savename, best_val_acc, expt=None, model_index=None):
     now = datetime.now()
     current_time = now.strftime("%H:%M")
     today = date.today().strftime("%d/%m")
@@ -85,6 +85,8 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
             student_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
             loss = distillation_loss + student_loss
+            if (epoch < 20):
+                loss = student_loss
 
         # elif loss_function2 is None:
         #     if expt == 'fsp-kd':
