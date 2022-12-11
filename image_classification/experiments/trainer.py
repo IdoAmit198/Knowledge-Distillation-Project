@@ -11,6 +11,9 @@ import wandb
 from datetime import date, datetime
 
 def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, loss_function2, optimizer, hyper_params, epoch, savename, best_val_acc, expt=None):
+    print(f'student id is: {id(student)}')
+    for teacher in teachers_list:
+        print(f'teacher id is: {id(teacher)}')
     now = datetime.now()
     current_time = now.strftime("%H:%M")
     today = date.today().strftime("%d/%m")
@@ -85,6 +88,8 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
             student_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
             loss = distillation_loss + student_loss
+            # if epoch < 10 :
+            #     loss = student_loss*(ALPHA*1.2)
 
         # elif loss_function2 is None:
         #     if expt == 'fsp-kd':
