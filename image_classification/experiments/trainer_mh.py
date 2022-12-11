@@ -10,7 +10,7 @@ import wandb
 
 from datetime import date, datetime
 
-def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, loss_function2, optimizer, hyper_params, epoch, savename, best_val_acc, expt=None):
+def train(embedding_net, teachers_list, fc_heads, data, loss_function, loss_function2, optimizer, hyper_params, epoch, savename, best_val_acc, expt=None):
     now = datetime.now()
     current_time = now.strftime("%H:%M")
     today = date.today().strftime("%d/%m")
@@ -31,14 +31,17 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
         loop = tqdm(data.train_dl)
     max_val_acc = best_val_acc
     gpu = hyper_params['gpu']
-    student.train()
-    student = student.to(gpu)
+    embedding_net.train()
+    for head in fc_heads:
+        head.train()
+        head = head.to(gpu)
+    embedding_net = embedding_net.to(gpu)
     if teachers_list is not None:
         for teacher in teachers_list:
             teacher.eval()
             teacher = teacher.to(gpu)
     train_loss_list = []
-    student_pred_train_list = []
+    heads_pred_train_list = []
     log_teacher_metrics = False
     if teachers_list and len(teachers_list)==1:
         teacher_pred_train_list = []
@@ -52,9 +55,13 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             images = torch.autograd.Variable(images).float()
             labels = torch.autograd.Variable(labels)
         
-        student_logits = student(images)
-        student_pred_train_list.append(F.softmax(student_logits, dim = 1))
-        labels_train_list.append(labels)
+        embed_logits = embedding_net(images)
+        heads_logits_list = [head(embed_logits) for head in fc_heads]
+        # print(f"there are {len(heads_logits_list)} heads logits")
+        # print(f"heads_logits_list[0].shape is {heads_logits_list[0].shape}") = yielded [BS,num_classes]
+        # student_pred_train_list.append(F.softmax(student_logits, dim = 1))
+        heads_pred_train_list.append([F.softmax(head_logit, dim = 1) for head_logit in heads_logits_list])
+        labels_train_list.append(labels) #Verify
 
         if teachers_list is not None:
             teachers_logits_list = []
@@ -69,43 +76,34 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             teacher_mean_logits = torch.mean(all_teachers_logits,dim=0)
             # print(f"teacher_mean_logits.shape is: {teacher_mean_logits.shape}")
 
-        # classifier training
+        # classifier training, not the case here.
+        # Consider to delete it or assert and throw exception if it is.
         if teachers_list is None:
             loss = loss_function(student_logits, labels)
         # stage training (and assuming sf_teacher and sf_student are given)
 
-        elif expt == 'hinton-kd':
+        # elif expt == 'hinton-kd':
+        #     TEMP = hyper_params['temperature']
+        #     ALPHA = hyper_params['alpha']
+            
+        #     teacher_soft_targets = F.softmax(teacher_mean_logits/TEMP,dim=1)
+        #     distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
+        #     ground_truth_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
+        #     loss = distillation_loss + ground_truth_loss
+        
+        elif expt == 'student_MH_kd':
             TEMP = hyper_params['temperature']
             ALPHA = hyper_params['alpha']
             
             teacher_soft_targets = F.softmax(teacher_mean_logits/TEMP,dim=1)
-            distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
-            student_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
-            loss = distillation_loss + student_loss
-
-        # elif loss_function2 is None:
-        #     if expt == 'fsp-kd':
-        #         loss = 0
-        #         # 4 intermediate feature maps and taken 2 at a time (thus 3)
-        #         for k in range(3):
-        #             loss += loss_function(fsp_matrix(sf_teacher[k].features, sf_teacher[k + 1].features),
-        #                                   fsp_matrix(sf_student[k].features, sf_student[k + 1].features))
-        #         loss /= 3
-        #     else:
-        #         loss = loss_function(sf_student[hyper_params['stage']].features, sf_teacher[hyper_params['stage']].features)
-        # attention transfer KD
-        # elif expt == 'attention-kd':
-        #     loss = loss_function(student_logits, labels)
-        #     for k in range(4):
-        #         loss += loss_function2(at(sf_student[k].features), at(sf_teacher[k].features))
-        #     loss /= 5
-        # # 2 loss functions and student and teacher are given -> simultaneous training
-        # else:
-        #     loss = loss_function(student_logits, labels)
-        #     for k in range(5):
-        #         loss += loss_function2(sf_student[k].features, sf_teacher[k].features)
-        #     # normalizing factor (doesn't affect optimization theoretically)
-        #     loss /= 6
+            distillation_losses_list = [loss_function(F.log_softmax(head_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP \
+                                        for idx,head_logits in enumerate(heads_logits_list) if idx!=0]
+            distillation_losses_list = torch.tensor(distillation_losses_list, device=gpu)
+            ground_truth_loss = loss_function2(F.softmax(heads_logits_list[0],dim=1),labels)*(ALPHA)
+            ground_truth_loss = ground_truth_loss.to(gpu)
+            # print(f"ground_truth_loss.device={ground_truth_loss.device} while distillation_losses_list[0].device={distillation_losses_list[0].device}")
+            loss = torch.sum(distillation_losses_list) + ground_truth_loss
+            loss = loss.to(gpu)
 
         train_loss_list.append(loss.item())
 
