@@ -10,7 +10,7 @@ from image_classification.datasets.dataset import get_dataset
 from image_classification.utils.utils import *
 from image_classification.models.custom_resnet import *
 from trainer import *
-from torchvision.models import resnet50
+from torchvision.models import resnet50, resnet34, resnet18
 
 args = get_args(description='Hinton KD', mode='train')
 expt = 'hinton-kd'
@@ -124,7 +124,7 @@ else:
     mutual_nets = []
     best_val_loss_list = []
     for k in range(args.mutual_learning):
-        mutual_net = 
+        # mutual_net = resnet34(pretrained=False)
         mutual_net = get_model(hyper_params['model'], hyper_params['dataset'], data, teach=False)
         mutual_net = mutual_net.to(args.gpu)
         print(f'mutual_net before list id is: {id(mutual_net)}')

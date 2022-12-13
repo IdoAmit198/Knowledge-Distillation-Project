@@ -11,6 +11,7 @@ import wandb
 from datetime import date, datetime
 
 def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, loss_function2, optimizer, hyper_params, epoch, savename, best_val_acc, expt=None):
+    print(f'student type is: {type(student)}')
     print(f'student id is: {id(student)}')
     for teacher in teachers_list:
         print(f'teacher id is: {id(teacher)}')
