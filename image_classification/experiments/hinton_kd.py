@@ -11,6 +11,7 @@ from image_classification.utils.utils import *
 from image_classification.models.custom_resnet import *
 from trainer import *
 from torchvision.models import resnet50, resnet34, resnet18
+from mutual_trainer import mutual_train
 
 args = get_args(description='Hinton KD', mode='train')
 expt = 'hinton-kd'
@@ -137,34 +138,46 @@ else:
         best_val_loss_list.append(100)
 
     for epoch in range(hyper_params["num_epochs"]):
-        for i in range(args.mutual_learning):
-            student = mutual_nets[i]
-            for param in student.parameters():
-                param.requires_grad = True
+        # for i in range(args.mutual_learning):
+        #     student = mutual_nets[i]
+        #     for param in student.parameters():
+        #         param.requires_grad = True
 
-            teachers_list = [mutual_nets[j] for j in range(args.mutual_learning) if j != i]
-            for teacher in teachers_list:
-                for param in teacher.parameters():
-                    param.requires_grad = False
+        #     teachers_list = [mutual_nets[j] for j in range(args.mutual_learning) if j != i]
+        #     for teacher in teachers_list:
+        #         for param in teacher.parameters():
+        #             param.requires_grad = False
 
-            print(f'student idx is: {i}, teachers_list size is: {len(teachers_list)}')
+        #     print(f'student idx is: {i}, teachers_list size is: {len(teachers_list)}')
 
-            student, train_loss, val_loss, _, best_val_loss_list[i] = train(mutual_nets[i],
-                                                                        teachers_list,
-                                                                        data,
-                                                                        sf_teacher,
-                                                                        sf_student,
-                                                                        loss_function,
-                                                                        loss_function2,
-                                                                        optimizer=optimizers[i],
-                                                                        hyper_params=hyper_params,
-                                                                        epoch=epoch,
-                                                                        savename=savename,
-                                                                        best_val_acc=best_val_loss_list[i],
-                                                                        expt=expt,
-                                                                        )
+            # student, train_loss, val_loss, _, best_val_loss_list[i] = train(mutual_nets[i],
+            #                                                             teachers_list,
+            #                                                             data,
+            #                                                             sf_teacher,
+            #                                                             sf_student,
+            #                                                             loss_function,
+            #                                                             loss_function2,
+            #                                                             optimizer=optimizers[i],
+            #                                                             hyper_params=hyper_params,
+            #                                                             epoch=epoch,
+            #                                                             savename=savename,
+            #                                                             best_val_acc=best_val_loss_list[i],
+            #                                                             expt=expt,
+            #                                                             )
 
-            if args.api_key:
-                experiment.log_metric(f"train_loss_{k}", train_loss)
-                experiment.log_metric(f"val_loss_{k}", val_loss)
+        mutual_nets, train_loss, val_loss, _, best_val_loss_list = mutual_train(mutual_nets,
+                                                                            data,
+                                                                            loss_function,
+                                                                            loss_function2,
+                                                                            optimizers=optimizers,
+                                                                            hyper_params=hyper_params,
+                                                                            epoch=epoch,
+                                                                            savename=savename,
+                                                                            best_val_acc=best_val_loss_list,
+                                                                            expt=expt
+                                                                            )
+
+        if args.api_key:
+            experiment.log_metric(f"train_loss_{k}", train_loss)
+            experiment.log_metric(f"val_loss_{k}", val_loss)
 
