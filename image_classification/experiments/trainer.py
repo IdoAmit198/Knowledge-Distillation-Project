@@ -82,31 +82,6 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
             student_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
             loss = distillation_loss + student_loss
-
-        # elif loss_function2 is None:
-        #     if expt == 'fsp-kd':
-        #         loss = 0
-        #         # 4 intermediate feature maps and taken 2 at a time (thus 3)
-        #         for k in range(3):
-        #             loss += loss_function(fsp_matrix(sf_teacher[k].features, sf_teacher[k + 1].features),
-        #                                   fsp_matrix(sf_student[k].features, sf_student[k + 1].features))
-        #         loss /= 3
-        #     else:
-        #         loss = loss_function(sf_student[hyper_params['stage']].features, sf_teacher[hyper_params['stage']].features)
-        # attention transfer KD
-        # elif expt == 'attention-kd':
-        #     loss = loss_function(student_logits, labels)
-        #     for k in range(4):
-        #         loss += loss_function2(at(sf_student[k].features), at(sf_teacher[k].features))
-        #     loss /= 5
-        # # 2 loss functions and student and teacher are given -> simultaneous training
-        # else:
-        #     loss = loss_function(student_logits, labels)
-        #     for k in range(5):
-        #         loss += loss_function2(sf_student[k].features, sf_teacher[k].features)
-        #     # normalizing factor (doesn't affect optimization theoretically)
-        #     loss /= 6
-
         train_loss_list.append(loss.item())
 
         optimizer.zero_grad()

@@ -33,6 +33,9 @@ def get_args(description, mode='train'):
         parser.add_argument('--no_pre_trained_teacher', action='store_false' ,help='When loading a model to train \
                              as teacher, decide wether to fine-tune a pre-trained model or train from scratch. To load a pretrained model pass True. \
                              Note this should be used in "no-teacher" runs only.' , default=True)
+        parser.add_argument('--aggregate_teachers', action='store_true' ,help=' Whether to aggregate teachers logits, or treate w.r.t each teacher. \
+                             Only relevant in case of multi FC heads of a student, for each teacher, aka student_MH_kd expt! \
+                            If not pass, treat each teacher seperately. If passed, average teachers.', default=False)
 
 
     elif mode == 'eval':
