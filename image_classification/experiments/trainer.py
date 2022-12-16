@@ -17,7 +17,6 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
     run = wandb.init(
     project="our-awesome-project",
     entity = "ido-shani-proj" ,
-    # group=f"{hyper_params.experiment}",
     name= f"{hyper_params['experiment']}-{hyper_params['model']}-{hyper_params['num_epochs']} epochs-{today}-{current_time}",
     config=hyper_params)
     config = wandb.config
@@ -39,15 +38,13 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             teacher = teacher.to(gpu)
     train_loss_list = []
     student_pred_train_list = []
+    grad_list = []
     log_teacher_metrics = False
     if teachers_list and len(teachers_list)==1:
         teacher_pred_train_list = []
         log_teacher_metrics = True
     labels_train_list = []
     for images, labels in loop:
-        # if idx == 3:
-        #     break
-
         if gpu != 'cpu':
             images = torch.autograd.Variable(images).to(gpu).float()
             labels = torch.autograd.Variable(labels).to(gpu)
@@ -63,19 +60,15 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             teachers_logits_list = []
             for teacher in teachers_list:
                 teacher_logits = teacher(images)
-                print(f"teacher_logits.shape is: {teacher_logits.shape}")
                 teachers_logits_list.append(teacher_logits)
                 if log_teacher_metrics:
                     teacher_pred_train_list.append(F.softmax(teacher_logits, dim = 1))
             all_teachers_logits = torch.stack(teachers_logits_list, dim=0)
-            # print(f"all_teachers_logits.shape is: {all_teachers_logits.shape}")
             teacher_mean_logits = torch.mean(all_teachers_logits,dim=0)
-            # print(f"teacher_mean_logits.shape is: {teacher_mean_logits.shape}")
 
         # classifier training
         if teachers_list is None:
             loss = loss_function(student_logits, labels)
-        # stage training (and assuming sf_teacher and sf_student are given)
 
         elif expt == 'hinton-kd':
             TEMP = hyper_params['temperature']
@@ -86,35 +79,22 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             student_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
             loss = distillation_loss + student_loss
 
-        # elif loss_function2 is None:
-        #     if expt == 'fsp-kd':
-        #         loss = 0
-        #         # 4 intermediate feature maps and taken 2 at a time (thus 3)
-        #         for k in range(3):
-        #             loss += loss_function(fsp_matrix(sf_teacher[k].features, sf_teacher[k + 1].features),
-        #                                   fsp_matrix(sf_student[k].features, sf_student[k + 1].features))
-        #         loss /= 3
-        #     else:
-        #         loss = loss_function(sf_student[hyper_params['stage']].features, sf_teacher[hyper_params['stage']].features)
-        # attention transfer KD
-        # elif expt == 'attention-kd':
-        #     loss = loss_function(student_logits, labels)
-        #     for k in range(4):
-        #         loss += loss_function2(at(sf_student[k].features), at(sf_teacher[k].features))
-        #     loss /= 5
-        # # 2 loss functions and student and teacher are given -> simultaneous training
-        # else:
-        #     loss = loss_function(student_logits, labels)
-        #     for k in range(5):
-        #         loss += loss_function2(sf_student[k].features, sf_teacher[k].features)
-        #     # normalizing factor (doesn't affect optimization theoretically)
-        #     loss /= 6
-
         train_loss_list.append(loss.item())
 
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
+
+        # calculate grad size
+        total_norm = 0
+        count_params = 0
+        for p in student.parameters():
+            count_params += 1
+            param_norm = p.grad.detach().data.norm(2)
+            # print(f"param norm item: {param_norm.item()}")
+            total_norm += param_norm.item()
+        # print(f"count params: {count_params}")
+        grad_list.append(total_norm/count_params)
 
         loop.set_description('Epoch {}/{}'.format(epoch + 1, hyper_params['num_epochs']))
         loop.set_postfix(loss=loss.item())
@@ -239,7 +219,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             max_val_acc = val_acc * 100
             torch.save(student.state_dict(), savename)
 
-    wandb.log({"train loss": train_loss, "val loss": val_loss, 'train accuracy': train_acc, 'val accuracy': val_acc, 'epoch':epoch})
+    wandb.log({"train loss": train_loss, "val loss": val_loss, 'train accuracy': train_acc, 'val accuracy': val_acc, 'grad norm2': sum(grad_list)/len(grad_list), 'epoch':epoch})
     if log_teacher_metrics:
         wandb.log({'teacher_train accuracy': teacher_train_acc, 'teacher_val accuracy': teacher_val_acc, 'epoch':epoch})
     return student, train_loss, val_loss, val_acc, max_val_acc
