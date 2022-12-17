@@ -39,31 +39,12 @@ hyper_params = {
     "stage":0,
     "experiment": "student_MH_kd",
     "teacher": args.teacher,
-    "teachers_num": args.teachers_num ,
     "teacher_models": args.teacher_models,
     "update_teacher": args.update_teacher,
     "teacher_training": args.teacher_training,
     "mh_fc_student": args.multi_head_fc_student,
     "aggregate_teachers": args.aggregate_teachers,
 }
-
-# We ended up with multiple teachers of the same architecture (e.g resnet34)
-# But we need a way to group in wandb by architecture, so I add this attribute.
-# if hyper_params['teacher']:
-#     if hyper_params['teacher'].startswith('resnet34'):
-#         hyper_params['teacher_architecture'] = 'resnet34'
-#     elif hyper_params['teacher'].startswith('resnet50'):
-#         hyper_params['teacher_architecture'] = 'resnet50'
-#     elif hyper_params['teacher'].startswith('resnet101'):
-#         hyper_params['teacher_architecture'] = 'resnet101'
-#     elif hyper_params['teacher'].startswith('alex'):
-#         hyper_params['teacher_architecture'] = 'alexnet'
-#     elif hyper_params['teacher'].startswith('vit_small'):
-#         hyper_params['teacher_architecture'] = 'vit_small'
-#     elif hyper_params['teacher'].startswith('vit_tiny'):
-#         hyper_params['teacher_architecture'] = 'vit_tiny'
-#     elif hyper_params['teacher'].startswith('gernet_s'):
-#         hyper_params['teacher_architecture'] = 'gernet_s'
 
 data = get_dataset(dataset=hyper_params['dataset'],
                    batch_size=hyper_params['batch_size'],
@@ -75,19 +56,18 @@ savename = get_savename(hyper_params, experiment=expt)
 ## For now just loading resnet 18, but should make it a utility function.
 ## This solution based on 'childern' will work only for Resnet's torch models.
 student_embedding = vision_models.resnet18()
-# Save the fc input_features and drop the fc head
+# Save the fc input_features and drop the fc head by making it Identity.
 fc_in_features = student_embedding.fc.in_features
-# student_embedding = torch.nn.Sequential(*(list(student_embedding.children())[:-1]))
 student_embedding.fc = torch.nn.Identity()
 
 # Load teachers
-if hyper_params['teachers_num'] and hyper_params['teachers_num']>=1:
-    assert hyper_params['teacher_models'] is not None
-    teachers_list = load_teachers_list(hyper_params['teacher_models'], update_teacher=hyper_params['update_teacher'])
+if hyper_params['teacher_models'] and len(hyper_params['teacher_models'])>=1:
+    hyper_params['teachers_num'] = len(hyper_params['teacher_models'])
+    teachers_dict = load_teachers_list(hyper_params['teacher_models'], update_teacher=hyper_params['update_teacher'])
 elif hyper_params['teacher'] and hyper_params['teachers_num'] is None:
-    teachers_list = [load_teacher(hyper_params['teacher'], hyper_params['update_teacher'])]
+    raise Exception("Provided teachers in \'teacher\' argument, which is deprecated. You should provide it using \'teacher_models\'.")
 else:
-    raise Exception("ERROR! Provided an empty list of teachers in teachers_list and teacher arguments.")
+    raise Exception("ERROR! Provided an empty list of teachers in teacher_models and teacher arguments.")
 
 hyper_params['teacher_architecture'] = get_teachers_architecture(teacher_name=hyper_params['teacher'],\
                                                                 teacher_names_list=hyper_params['teacher_models'])
@@ -114,10 +94,19 @@ loss_function = nn.KLDivLoss(reduction='mean')
 # loss_function = nn.CrossEntropyLoss()
 loss_function2 = nn.CrossEntropyLoss()
 best_val_acc = 10
+batches_train_logits_teachers = []
+batches_val_logits_teachers = []
+all_teachers_samples_certainties_dict = {}
+teachers_train_acc_dict = {}
+mean_teachers_train_acc = None
+teachers_val_acc_dict = {}
+mean_teachers_val_acc = None
 
 for epoch in range(hyper_params["num_epochs"]):
-    student_embedding, fc_heads, train_loss, val_loss, _, best_val_acc = train(student_embedding = student_embedding,
-                                                        teachers_list = teachers_list,
+    student_embedding, fc_heads, train_loss, val_loss, _, best_val_acc,\
+    batches_train_logits_teachers, all_teachers_samples_certainties_dict, \
+    teachers_train_acc_dict, mean_teachers_train_acc = train(student_embedding = student_embedding,
+                                                        teachers_dict = teachers_dict,
                                                         fc_heads = fc_heads,
                                                         data = data,
                                                         loss_function = loss_function,
@@ -127,7 +116,13 @@ for epoch in range(hyper_params["num_epochs"]):
                                                         epoch=epoch,
                                                         savename=savename,
                                                         best_val_acc=best_val_acc,
-                                                        expt=expt
+                                                        expt=expt,
+                                                        batches_train_logits_teachers=batches_train_logits_teachers,
+                                                        batches_val_logits_teachers=batches_val_logits_teachers,
+                                                        all_teachers_samples_certainties_dict=all_teachers_samples_certainties_dict,
+                                                        teachers_train_acc_dict=teachers_train_acc_dict,
+                                                        teachers_val_acc_dict=teachers_val_acc_dict,
+                                                        mean_teachers_train_acc=mean_teachers_train_acc
                                                         )
     if args.api_key:
         experiment.log_metric("train_loss", train_loss)

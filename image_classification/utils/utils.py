@@ -232,7 +232,7 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
     return return_teacher
 
 def load_teachers_list(teachers_names_list, update_teacher=False, teacher_training=False):
-    return [load_teacher(teacher_name, update_teacher, teacher_training) for teacher_name in teachers_names_list]
+    return {teacher_name:load_teacher(teacher_name, update_teacher, teacher_training) for teacher_name in teachers_names_list}
 
 ## Currently not in use.
 def optimized_params_concat(*params):

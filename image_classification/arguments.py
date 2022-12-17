@@ -20,7 +20,6 @@ def get_args(description, mode='train'):
         parser.add_argument('-t', '--teacher', type=str, help='choose teacher or multiple teachers among available teachers. \
                                     If None then use pre-trained ResNet-34 as teacher \
                                     Note it requires teachers_num to be None.', default=None)
-        parser.add_argument('-tn', '--teachers_num', type=int, help = 'Number of teachers for multiple teachers distillation', default=None)
         parser.add_argument('-ta', '--teacher_models', nargs="+", type=str, \
                             help = 'Teachers architecture to use for multipile teachers experiments. \
                                     Note it requires teachers_num to be greater than 1', default=None)
