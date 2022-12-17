@@ -203,7 +203,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             max_val_acc = val_acc * 100
             torch.save(student.state_dict(), savename)
             ## wandb save model
-        if epoch == hyper_params['num_epochs'] -1:
+        if epoch == hyper_params['num_epochs'] -1 and hyper_params['teacher_training']:
             artifact.add_file(savename)
             run.log_artifact(artifact)
     # stage training
