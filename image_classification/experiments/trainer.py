@@ -44,6 +44,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
         teacher_pred_train_list = []
         log_teacher_metrics = True
     labels_train_list = []
+    batch_num = 0
     for images, labels in loop:
         if gpu != 'cpu':
             images = torch.autograd.Variable(images).to(gpu).float()
@@ -77,6 +78,9 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             teacher_soft_targets = F.softmax(teacher_mean_logits/TEMP,dim=1)
             distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
             student_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
+            if batch_num==0: 
+                print(f"distillation_loss: {distillation_loss}")
+                print(f"student_loss: {student_loss}")
             loss = distillation_loss + student_loss
         train_loss_list.append(loss.item())
 
@@ -86,12 +90,13 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
 
         # calculate grad size
         total_norm = 0
-        count_params = 0
-        for p in student.parameters():
-            count_params += 1
+        for i,p in enumerate(student.parameters()):
             param_norm = p.grad.detach().data.norm(2)
             total_norm += param_norm.item()
-        grad_list.append(total_norm/count_params)
+        batch_grad = total_norm/(i+1)
+        if batch_num==0: print(f"batch_grad: {batch_grad}")
+        grad_list.append(batch_grad)
+        batch_num += 1
 
         loop.set_description('Epoch {}/{}'.format(epoch + 1, hyper_params['num_epochs']))
         loop.set_postfix(loss=loss.item())
@@ -150,6 +155,8 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             # classifier training
             if teachers_list is None:
                 loss = loss_function(student_logits, labels)
+                if batch_num==0: 
+                    print(f"loss: {loss}")
                 student_logits = F.log_softmax(student_logits, dim = 1)
 
                 _, pred_ind = torch.max(student_logits, 1)
