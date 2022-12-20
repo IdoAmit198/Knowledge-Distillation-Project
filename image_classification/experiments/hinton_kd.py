@@ -38,7 +38,7 @@ hyper_params = {
     "stage":0,
     "experiment": "Hinton",
     "teacher": args.teacher,
-    "teachers_num": args.teachers_num ,
+    "teachers_num": 1 , # TODO: bad fix
     "teacher_models": args.teacher_models,
     "update_teacher": args.update_teacher,
     "teacher_training": args.teacher_training
