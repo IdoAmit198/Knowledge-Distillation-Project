@@ -17,7 +17,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
     run = wandb.init(
     project="our-awesome-project",
     entity = "ido-shani-proj" ,
-    name= f"{hyper_params['experiment']}-{hyper_params['model']}-{hyper_params['num_epochs']} epochs-{today}-{current_time}",
+    name= f"Grad2-{hyper_params['experiment']}-{hyper_params['model']}-{hyper_params['num_epochs']} epochs-{today}-{current_time}",
     config=hyper_params)
     config = wandb.config
     if hyper_params['teacher_training']:

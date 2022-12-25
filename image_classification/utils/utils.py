@@ -157,22 +157,24 @@ def fsp_matrix(fm1, fm2):
 ### START OF UTIL FUNCTIONS WE ADDED ###
 
 def get_save_teacher_path(teacher_name):
-    split = teacher_name.split('_')
-    model_name = split[0]
-    return f'saved_models/imagewoof/full_data/no-teacher/{model_name}_classifier'
+    model_name = teacher_name
+    if (teacher_name.startswith("resnet34")):
+        split = teacher_name.split('_')
+        model_name = split[0]
+    return f'saved_models/imagewoof/full_data/trained_teachers/{model_name}'
 
 def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
     """
     Loading untrainable teachers either from wandb or from saved models.
     """
-
-    # print(f"\n teacher_name={teacher_name} , update_teacher={update_teacher} \n")
+    teacher_path = get_save_teacher_path(teacher_name)
+    print(f"\n teacher_name={teacher_name} , update_teacher={update_teacher} \n")
 
     return_teacher = None
     if update_teacher:
         api = wandb.Api()
         model_artifact = api.artifact(f'ido-shani-proj/our-awesome-project/{teacher_name}:latest')
-        model_artifact.download(root=get_save_teacher_path(teacher_name))
+        model_artifact.download(root=teacher_path)
     
     if teacher_name.startswith('resnet34'):
         return_teacher = vision_models.resnet34()
@@ -190,27 +192,39 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
         return_teacher = timm.models.create_model('gernet_s', pretrained=False, num_classes=10)
 
     models_path_dict = {
-        'resnet34_0' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model0.pt' ,
-        'resnet34_1' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model42.pt' ,
-        'resnet34_2' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model84.pt' ,
-        'resnet50' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt' ,
-        'resnet101' : 'saved_models/imagewoof/full_data/no-teacher/resnet101_classifier/model0.pt',
-        'vit_small': 'saved_models/imagewoof/full_data/ViT-no-teacher/vit_small/model0.pt',
-        'vit_tiny': 'saved_models/imagewoof/full_data/ViT-no-teacher/vit_tiny/model0.pt',
-        'alexnet': 'saved_models/imagewoof/full_data/no-teacher/alexnet_classifier/model0.pt',
-        'gernet_s': 'saved_models/imagewoof/full_data/ViT-no-teacher/gernet_s/model0.pt',
-        # different resnet50 models for multi-head runs:
-        'resnet50_1' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model1.pt',
-        'resnet50_2' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model2.pt',
-        'resnet50_3' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model3.pt',
-        'resnet50_4' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model4.pt',
-        'resnet50_5' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model5.pt',
-        'resnet50_6' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model6.pt',
-        'resnet50_7' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model7.pt',
-        'resnet50_8' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model8.pt',
-        'resnet50_9' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model9.pt',
-        'resnet50_10' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model10.pt',        
+        'resnet34_0' : f'{teacher_path}/model0.pt' ,
+        'resnet34_1' : f'{teacher_path}/model42.pt' ,
+        'resnet34_2' : f'{teacher_path}/model84.pt' ,
+        'resnet50' : f'{teacher_path}/model0.pt' ,
+        'resnet101' : f'{teacher_path}/model0.pt',
+        'vit_small': f'{teacher_path}/model0.pt',
+        'vit_tiny': f'{teacher_path}/model0.pt',
+        'alexnet': f'{teacher_path}/model0.pt',
+        'gernet_s': f'{teacher_path}/model0.pt',       
     }
+    
+    # models_path_dict = {
+    #     'resnet34_0' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model0.pt' ,
+    #     'resnet34_1' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model42.pt' ,
+    #     'resnet34_2' : 'saved_models/imagewoof/full_data/no-teacher/resnet34_classifier/model84.pt' ,
+    #     'resnet50' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt' ,
+    #     'resnet101' : 'saved_models/imagewoof/full_data/no-teacher/resnet101_classifier/model0.pt',
+    #     'vit_small': 'saved_models/imagewoof/full_data/ViT-no-teacher/vit_small/model0.pt',
+    #     'vit_tiny': 'saved_models/imagewoof/full_data/ViT-no-teacher/vit_tiny/model0.pt',
+    #     'alexnet': 'saved_models/imagewoof/full_data/no-teacher/alexnet_classifier/model0.pt',
+    #     'gernet_s': 'saved_models/imagewoof/full_data/ViT-no-teacher/gernet_s/model0.pt',
+    #     # different resnet50 models for multi-head runs:
+    #     'resnet50_1' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model1.pt',
+    #     'resnet50_2' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model2.pt',
+    #     'resnet50_3' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model3.pt',
+    #     'resnet50_4' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model4.pt',
+    #     'resnet50_5' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model5.pt',
+    #     'resnet50_6' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model6.pt',
+    #     'resnet50_7' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model7.pt',
+    #     'resnet50_8' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model8.pt',
+    #     'resnet50_9' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model9.pt',
+    #     'resnet50_10' :'saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model10.pt',        
+    # }
 
     # print(f"Before loaidng teacher dict, architecture is: \n {return_teacher} \n")
 
