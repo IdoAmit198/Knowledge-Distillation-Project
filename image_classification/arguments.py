@@ -27,6 +27,7 @@ def get_args(description, mode='train'):
         parser.add_argument('-ud', '--update_teacher', action='store_true', help='In case we load a teacher, \
                              then load the teacher from wandb hub before using the local teacher' , default=False)
         parser.add_argument('-ml', '--mutual_learning', type=int, help = 'Number of mutual learning models', default=None)
+        parser.add_argument('-ets', '--num_epochs_training_separately', type=int, help = 'Number of epochs the mutual learning models train separately', default=0)
 
     elif mode == 'eval':
         parser.add_argument('-m', '--model', choices = ['resnet10', 'resnet14', 'resnet18', 'resnet20', 'resnet26'], help = 'Give the model name from the choices')

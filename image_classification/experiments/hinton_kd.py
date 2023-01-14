@@ -11,7 +11,7 @@ from image_classification.utils.utils import *
 from image_classification.models.custom_resnet import *
 from trainer import *
 from torchvision.models import resnet50, resnet34, resnet18
-from mutual_trainer import mutual_train
+from mutual_trainer_new import mutual_train
 
 args = get_args(description='Hinton KD', mode='train')
 expt = 'hinton-kd'
@@ -45,6 +45,8 @@ hyper_params = {
     "teacher_training": args.teacher_training
 }
 
+print()
+
 # We ended up with multiple teachers of the same architecture (e.g resnet34)
 # But we need a way to group in wandb by architecture, so I add this attribute.
 if hyper_params['teacher']:
@@ -72,15 +74,6 @@ if hyper_params['teachers_num'] and hyper_params['teachers_num']>1:
     teachers_list = load_teachers_list(hyper_params['teacher_models'], update_teacher=hyper_params['update_teacher'])
 elif hyper_params['teacher'] and hyper_params['teachers_num'] is None:
     teachers_list = [load_teacher(hyper_params['teacher'], hyper_params['update_teacher'])]
-    # teacher = resnet50()
-    # fc_in_features = teacher.fc.in_features
-    # teacher.fc = nn.Linear(fc_in_features, 10)
-    # teacher.load_state_dict(torch.load('saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt'))
-    # for param in teacher.parameters():
-    #     param.requires_grad = False
-    # print(teacher)
-    # teacher.load_state_dict(torch.load('saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model42.pt'))
-    # print("### Worked to load pre-trained resnet-50!! ###")
 else:
     teachers_list = [learn.model]
 
@@ -95,7 +88,7 @@ if args.api_key:
 # optimizer = torch.optim.SGD(net.parameters(), lr=hyper_params["learning_rate"], momentum=hyper_params["momentum"], weight_decay=hyper_params["weight_decay"])
 optimizer = torch.optim.Adam(net.parameters(), lr=hyper_params["learning_rate"])
 
-loss_function = nn.KLDivLoss(reduction='mean')
+loss_function = nn.KLDivLoss(reduction='batchmean')
 # loss_function = nn.CrossEntropyLoss()
 loss_function2 = nn.CrossEntropyLoss()
 best_val_loss = 100
@@ -124,9 +117,15 @@ else:
     optimizers = []
     mutual_nets = []
     best_val_loss_list = []
+    loss_function = nn.KLDivLoss(reduction='mean')
     for k in range(args.mutual_learning):
+        # if k == 0:
+        #     mutual_net = resnet34(pretrained=False)
+        # else:
+        #     mutual_net = resnet18(pretrained=False)
+        mutual_net = resnet18(pretrained=False)
         # mutual_net = resnet34(pretrained=False)
-        mutual_net = get_model(hyper_params['model'], hyper_params['dataset'], data, teach=False)
+        # mutual_net = get_model(hyper_params['model'], hyper_params['dataset'], data, teach=False)
         mutual_net = mutual_net.to(args.gpu)
         print(f'mutual_net before list id is: {id(mutual_net)}')
         mutual_nets.append(mutual_net)
@@ -150,32 +149,35 @@ else:
 
         #     print(f'student idx is: {i}, teachers_list size is: {len(teachers_list)}')
 
-            # student, train_loss, val_loss, _, best_val_loss_list[i] = train(mutual_nets[i],
-            #                                                             teachers_list,
-            #                                                             data,
-            #                                                             sf_teacher,
-            #                                                             sf_student,
-            #                                                             loss_function,
-            #                                                             loss_function2,
-            #                                                             optimizer=optimizers[i],
-            #                                                             hyper_params=hyper_params,
-            #                                                             epoch=epoch,
-            #                                                             savename=savename,
-            #                                                             best_val_acc=best_val_loss_list[i],
-            #                                                             expt=expt,
-            #                                                             )
+        #     student, train_loss, val_loss, _, best_val_loss_list[i] = train(mutual_nets[i],
+        #                                                                 teachers_list,
+        #                                                                 data,
+        #                                                                 sf_teacher,
+        #                                                                 sf_student,
+        #                                                                 loss_function,
+        #                                                                 loss_function2,
+        #                                                                 optimizer=optimizers[i],
+        #                                                                 hyper_params=hyper_params,
+        #                                                                 epoch=epoch,
+        #                                                                 savename=savename,
+        #                                                                 best_val_acc=best_val_loss_list[i],
+        #                                                                 expt=expt,
+        #                                                                 )
 
-        mutual_nets, train_loss, val_loss, _, best_val_loss_list = mutual_train(mutual_nets,
-                                                                            data,
-                                                                            loss_function,
-                                                                            loss_function2,
-                                                                            optimizers=optimizers,
-                                                                            hyper_params=hyper_params,
-                                                                            epoch=epoch,
-                                                                            savename=savename,
-                                                                            best_val_acc=best_val_loss_list,
-                                                                            expt=expt
-                                                                            )
+
+        # optimizer0 = torch.optim.Adam(mutual_nets[0].parameters(), lr=hyper_params["learning_rate"])
+        # optimizer1 = torch.optim.Adam(mutual_nets[1].parameters(), lr=hyper_params["learning_rate"])
+        student, train_loss, val_loss, _ = mutual_train(mutual_nets,
+                                                            data,
+                                                            loss_function,
+                                                            loss_function2,
+                                                            optimizers,
+                                                            hyper_params=hyper_params,
+                                                            epoch=epoch,
+                                                            savename=savename,
+                                                            expt=expt,
+                                                            num_epochs_training_separately = args.num_epochs_training_separately
+                                                            )
 
         if args.api_key:
             experiment.log_metric(f"train_loss_{k}", train_loss)
