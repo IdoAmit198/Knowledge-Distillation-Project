@@ -17,7 +17,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
     run = wandb.init(
     project="our-awesome-project",
     entity = "ido-shani-proj" ,
-    name= f"Grad2-{hyper_params['experiment']}-{hyper_params['model']}-{hyper_params['num_epochs']} epochs-{today}-{current_time}",
+    name= f"GradientMetrics-{hyper_params['experiment']}-{hyper_params['model']}-{hyper_params['num_epochs']} epochs-{today}-{current_time}",
     config=hyper_params)
     config = wandb.config
     if hyper_params['teacher_training']:
@@ -38,7 +38,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             teacher = teacher.to(gpu)
     train_loss_list = []
     student_pred_train_list = []
-    grad_list = []
+    grads = {'norm_1': [], 'norm_2': [], 'normalized_norm_1': [], 'normalized_norm_2': []}
     log_teacher_metrics = False
     if teachers_list and len(teachers_list)==1:
         teacher_pred_train_list = []
@@ -77,8 +77,8 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             
             teacher_soft_targets = F.softmax(teacher_mean_logits/TEMP,dim=1)
             distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
-            student_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
-            if batch_num==0: 
+            student_loss = loss_function2(student_logits,labels)*(ALPHA)
+            if batch_num==0:
                 print(f"distillation_loss: {distillation_loss}")
                 print(f"student_loss: {student_loss}")
             loss = distillation_loss + student_loss
@@ -89,13 +89,19 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
         optimizer.step()
 
         # calculate grad size
-        total_norm = 0
+        total_norm = {'1': 0, '2': 0}
         for i,p in enumerate(student.parameters()):
-            param_norm = p.grad.detach().data.norm(2)
-            total_norm += param_norm.item()
-        batch_grad = total_norm/(i+1)
-        if batch_num==0: print(f"batch_grad: {batch_grad}")
-        grad_list.append(batch_grad)
+            param_size = p.numel()
+            total_norm['1'] += p.grad.detach().data.norm(1)/param_size
+            total_norm['2'] += p.grad.detach().data.norm(2)/param_size
+        batch_grad_1 = total_norm['1']/(i+1)
+        batch_grad_2 = total_norm['2']/(i+1)
+        if batch_num==0: print(f"batch_grad_1: {batch_grad_1}")
+        if batch_num==0: print(f"batch_grad_2: {batch_grad_2}")
+        grads['norm_1'].append(batch_grad_1)
+        grads['norm_2'].append(batch_grad_2)
+        grads['normalized_norm_1'].append(batch_grad_1/loss.item())
+        grads['normalized_norm_2'].append(batch_grad_2/loss.item())
         batch_num += 1
 
         loop.set_description('Epoch {}/{}'.format(epoch + 1, hyper_params['num_epochs']))
@@ -223,7 +229,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             max_val_acc = val_acc * 100
             torch.save(student.state_dict(), savename)
 
-    wandb.log({"train loss": train_loss, "val loss": val_loss, 'train accuracy': train_acc, 'val accuracy': val_acc, 'grad norm2': sum(grad_list)/len(grad_list), 'epoch':epoch})
+    wandb.log({"train loss": train_loss, "val loss": val_loss, 'train accuracy': train_acc, 'val accuracy': val_acc, 'grad norm 1': sum(grads['norm_1'])/len(grads['norm_1']), 'grad norm 2': sum(grads['norm_2'])/len(grads['norm_2']), 'epoch':epoch, 'grad norm 1 normalized': sum(grads['normalized_norm_1'])/len(grads['normalized_norm_1']), 'grad norm 2 normalized': sum(grads['normalized_norm_2'])/len(grads['normalized_norm_2'])})
     if log_teacher_metrics:
         wandb.log({'teacher_train accuracy': teacher_train_acc, 'teacher_val accuracy': teacher_val_acc, 'epoch':epoch})
     return student, train_loss, val_loss, val_acc, max_val_acc

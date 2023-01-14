@@ -13,7 +13,6 @@ from trainer import *
 import torchvision.models as vision_models
 import wandb
 
-
 args = get_args(description='No Teacher', mode='train')
 expt = 'no-teacher'
 

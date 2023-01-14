@@ -173,10 +173,13 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
     return_teacher = None
     if update_teacher:
         api = wandb.Api()
-        model_artifact = api.artifact(f'ido-shani-proj/our-awesome-project/{teacher_name}:latest')
+        alias = "best" if teacher_name == "resnet50" else "latest"
+        model_artifact = api.artifact(f'ido-shani-proj/our-awesome-project/{teacher_name}:{alias}')
         model_artifact.download(root=teacher_path)
     
-    if teacher_name.startswith('resnet34'):
+    if teacher_name.startswith('resnet18'):
+        return_teacher = vision_models.resnet18()
+    elif teacher_name.startswith('resnet34'):
         return_teacher = vision_models.resnet34()
     elif teacher_name.startswith('resnet50'):
         return_teacher = vision_models.resnet50()
@@ -192,6 +195,7 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
         return_teacher = timm.models.create_model('gernet_s', pretrained=False, num_classes=10)
 
     models_path_dict = {
+        'resnet18' : f'{teacher_path}/model0.pt' ,
         'resnet34_0' : f'{teacher_path}/model0.pt' ,
         'resnet34_1' : f'{teacher_path}/model42.pt' ,
         'resnet34_2' : f'{teacher_path}/model84.pt' ,

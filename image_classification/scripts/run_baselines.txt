@@ -1,9 +1,9 @@
 # hinton to train a student with one or multiple teachers.
-sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet18_resnet_34_0_postfix.out -J hinton scripts/run_hinton.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/our_cross_entropy.out -J hinton scripts/run_hinton.sh
 
-sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet34_batch1.out -J hin1 scripts/run_hinton_1.sh
-sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet34_batch2.out -J hin2 scripts/run_hinton_2.sh
-sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet34_batch3.out -J hin3 scripts/run_hinton_3.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet18_batch1.out -J hin1 scripts/run_hinton_1.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet18_batch2.out -J hin2 scripts/run_hinton_2.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet18_batch3.out -J hin3 scripts/run_hinton_3.sh
 
 sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet18_resnet34_ido.out -J ido scripts/run_hinton.sh
 
@@ -24,3 +24,34 @@ sbatch -c 2 --gres=gpu:1 -o output_files/gernet_training.out -J t_t  scripts/run
 
 # run_timm_training to train a gernet_s teacher.
 sbatch -c 2 --gres=gpu:1 -o output_files/gernet_training.out -J t_t  scripts/run_timm_training.sh
+
+
+
+# GRAD EXPERIMENTS
+sbatch -c 2 --gres=gpu:1 -o output_files/grad_noteacher.out -J no_teacher scripts/run_noteacher_1.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet18_batch1.out -J hin1 scripts/run_hinton_1.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet18_batch2.out -J hin2 scripts/run_hinton_2.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/grad_resnet18_batch3.out -J hin3 scripts/run_hinton_3.sh
+
+# NO SOFTMAX
+sbatch -c 2 --gres=gpu:1 -o output_files/grad_hinton.out -J hinton scripts/run_hinton.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/grad_hinton_no_softmax.out -J hinton scripts/run_hinton.sh
+
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_noteacher_18_1_4.out -J note18 scripts/run_noteacher_0.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_noteacher_34_1_4.out -J note34 scripts/run_noteacher_1.sh
+
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_0.out -J soft0 scripts/nosoftmax_0.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_1.out -J soft1 scripts/nosoftmax_1.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_2.out -J soft2 scripts/nosoftmax_2.sh
+
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_3.out -J soft3 scripts/nosoftmax_3.sh
+
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_4.out -J soft4 scripts/nosoftmax_4.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_5.out -J soft5 scripts/nosoftmax_5.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_6.out -J soft6 scripts/nosoftmax_6.sh
+
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_7.out -J soft7 scripts/nosoftmax_7.sh
+
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_8.out -J soft8 scripts/nosoftmax_8.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_9.out -J soft9 scripts/nosoftmax_9.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_10.out -J soft10 scripts/nosoftmax_10.sh

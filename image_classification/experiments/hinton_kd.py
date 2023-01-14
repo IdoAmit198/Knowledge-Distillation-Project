@@ -88,11 +88,9 @@ if args.api_key:
     experiment = Experiment(api_key=args.api_key, project_name=project_name, workspace=args.workspace)
     experiment.log_parameters(hyper_params)
 
-# optimizer = torch.optim.SGD(net.parameters(), lr=hyper_params["learning_rate"], momentum=hyper_params["momentum"], weight_decay=hyper_params["weight_decay"])
 optimizer = torch.optim.Adam(net.parameters(), lr=hyper_params["learning_rate"])
 
-loss_function = nn.KLDivLoss(reduction='mean')
-# loss_function = nn.CrossEntropyLoss()
+loss_function = nn.KLDivLoss(reduction='batchmean')
 loss_function2 = nn.CrossEntropyLoss()
 best_val_loss = 100
 
