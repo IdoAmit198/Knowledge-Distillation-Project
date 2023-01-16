@@ -173,7 +173,12 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
     return_teacher = None
     if update_teacher:
         api = wandb.Api()
-        alias = "best" if teacher_name == "resnet50" else "latest"
+        if teacher_name == "resnet50":
+            alias = "best"
+        elif teacher_name == "vit_tiny":
+            alias = "v3"
+        else:
+            alias = "latest"
         model_artifact = api.artifact(f'ido-shani-proj/our-awesome-project/{teacher_name}:{alias}')
         model_artifact.download(root=teacher_path)
     
@@ -204,7 +209,7 @@ def load_teacher(teacher_name, update_teacher=False, teacher_training=False):
         'vit_small': f'{teacher_path}/model0.pt',
         'vit_tiny': f'{teacher_path}/model0.pt',
         'alexnet': f'{teacher_path}/model0.pt',
-        'gernet_s': f'{teacher_path}/model0.pt',       
+        'gernet_s': f'{teacher_path}/model0.pt',
     }
     
     # models_path_dict = {

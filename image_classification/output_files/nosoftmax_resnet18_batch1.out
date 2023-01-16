@@ -1,0 +1,7 @@
+wandb: Downloading large artifact resnet34_0:latest, 81.32MB. 1 files... 
+wandb:   1 of 1 files downloaded.  
+Done. 0:0:0.1
+wandb: Currently logged in as: shanigoren (ido-shani-proj). Use `wandb login --relogin` to force relogin
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 190168.0 ON lambda3 CANCELLED AT 2023-01-01T12:24:58 ***
+slurmstepd: error: *** JOB 190168 ON lambda3 CANCELLED AT 2023-01-01T12:24:58 ***

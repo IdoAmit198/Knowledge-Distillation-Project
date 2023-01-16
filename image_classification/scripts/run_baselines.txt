@@ -44,6 +44,8 @@ sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_0.out -J soft0 scripts/
 sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_1.out -J soft1 scripts/nosoftmax_1.sh
 sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_2.out -J soft2 scripts/nosoftmax_2.sh
 
+sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_2_1.out -J soft2 scripts/nosoftmax_2.sh
+
 sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_3.out -J soft3 scripts/nosoftmax_3.sh
 
 sbatch -c 2 --gres=gpu:1 -o output_files/nosoftmax_batch_4.out -J soft4 scripts/nosoftmax_4.sh
