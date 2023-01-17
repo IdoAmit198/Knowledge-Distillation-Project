@@ -209,8 +209,6 @@ class ResNet(nn.Module):
         x = self.avgpool(x)
         x = torch.flatten(x, 1)
         x = self.fc(x)
-        x = self.relu(x)
-        x = self.fc2(x)
 
         return x
 

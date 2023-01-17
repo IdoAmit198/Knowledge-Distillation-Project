@@ -116,6 +116,7 @@ if args.mutual_learning is None:
 
 else:
     optimizers = []
+    schedulers = []
     mutual_nets = []
     best_val_loss_list = []
     for k in range(args.mutual_learning):
@@ -123,65 +124,65 @@ else:
         #     mutual_net = resnet34(pretrained=False)
         # else:
         #     mutual_net = resnet18(pretrained=False)
-        mutual_net = resnet18(pretrained=False)
+        # mutual_net = resnet18(pretrained=False)
         # mutual_net = resnet34(pretrained=False)
-        # mutual_net = get_model(hyper_params['model'], hyper_params['dataset'], data, teach=False)
+        mutual_net = get_model(hyper_params['model'], hyper_params['dataset'], teach=False)
         mutual_net = mutual_net.to(args.gpu)
-        print(f'mutual_net before list id is: {id(mutual_net)}')
         mutual_nets.append(mutual_net)
-        print(f'mutual_nets before list id is: {id(mutual_nets[k])}')
+        # mut_optimizer = torch.optim.SGD(mutual_net.parameters(), lr=0.1, momentum=0.9, nesterov=True)
         mut_optimizer = torch.optim.Adam(mutual_net.parameters(), lr=hyper_params["learning_rate"])
-        print(f'optimizer before list id is: {id(mut_optimizer)}')
+        scheduler = optim.lr_scheduler.StepLR(mut_optimizer, step_size=60, gamma=0.1)
         optimizers.append(mut_optimizer)
-        print(f'optimizers before list id is: {id(optimizers[k])}')
+        schedulers.append(scheduler)
         best_val_loss_list.append(100)
 
     for epoch in range(hyper_params["num_epochs"]):
-        for i in range(args.mutual_learning):
-            student = mutual_nets[i]
-            for param in student.parameters():
-                param.requires_grad = True
+        # for i in range(args.mutual_learning):
+        #     student = mutual_nets[i]
+        #     for param in student.parameters():
+        #         # param.requires_grad = True
+        #         param.grad = torch.zeros_like(param)
 
-            if epoch < args.num_epochs_training_separately:
-                teachers_list = None
-            else:
-                teachers_list = [mutual_nets[j] for j in range(args.mutual_learning) if j != i]
-                for teacher in teachers_list:
-                    for param in teacher.parameters():
-                        param.requires_grad = False
+        #     if epoch < args.num_epochs_training_separately:
+        #         teachers_list = None
+        #     else:
+        #         teachers_list = [mutual_nets[j] for j in range(args.mutual_learning) if j != i]
+        #         for teacher in teachers_list:
+        #             for param in teacher.parameters():
+        #                 param.requires_grad = False
 
-            student, train_loss, val_loss, _, best_val_loss_list[i] = epoch_train(mutual_nets[i],
-                                                                        teachers_list,
-                                                                        data,
-                                                                        sf_teacher,
-                                                                        sf_student,
-                                                                        loss_function,
-                                                                        loss_function2,
-                                                                        optimizer=optimizers[i],
-                                                                        hyper_params=hyper_params,
-                                                                        epoch=epoch,
-                                                                        savename=savename,
-                                                                        best_val_acc=best_val_loss_list[i],
-                                                                        expt=expt,
-                                                                        num_epochs_training_separately = args.num_epochs_training_separately
-                                                                        )
+        #     student, train_loss, val_loss, _, best_val_loss_list[i] = epoch_train(mutual_nets[i],
+        #                                                                 teachers_list,
+        #                                                                 data,
+        #                                                                 sf_teacher,
+        #                                                                 sf_student,
+        #                                                                 loss_function,
+        #                                                                 loss_function2,
+        #                                                                 optimizer=optimizers[i],
+        #                                                                 hyper_params=hyper_params,
+        #                                                                 epoch=epoch,
+        #                                                                 savename=savename,
+        #                                                                 best_val_acc=best_val_loss_list[i],
+        #                                                                 expt=expt,
+        #                                                                 num_epochs_training_separately = args.num_epochs_training_separately
+        #                                                                 )
 
 
         # # optimizer0 = torch.optim.Adam(mutual_nets[0].parameters(), lr=hyper_params["learning_rate"])
         # # optimizer1 = torch.optim.Adam(mutual_nets[1].parameters(), lr=hyper_params["learning_rate"])
-        # student, train_loss, val_loss, _ = mutual_train(mutual_nets,
-        #                                                     data,
-        #                                                     loss_function,
-        #                                                     loss_function2,
-        #                                                     optimizers,
-        #                                                     hyper_params=hyper_params,
-        #                                                     epoch=epoch,
-        #                                                     savename=savename,
-        #                                                     expt=expt,
-        #                                                     num_epochs_training_separately = args.num_epochs_training_separately
-        #                                                     )
+        loss_function = nn.KLDivLoss(reduction='mean')
+        # for scheduler in schedulers:
+        #     scheduler.step(epoch)
+        student, train_loss, val_loss, _ = mutual_train(mutual_nets,
+                                                            data,
+                                                            loss_function,
+                                                            loss_function2,
+                                                            optimizers,
+                                                            hyper_params=hyper_params,
+                                                            epoch=epoch,
+                                                            savename=savename,
+                                                            expt=expt,
+                                                            num_epochs_training_separately = args.num_epochs_training_separately
+                                                            )
 
-        # if args.api_key:
-        #     experiment.log_metric(f"train_loss_{k}", train_loss)
-        #     experiment.log_metric(f"val_loss_{k}", val_loss)
 

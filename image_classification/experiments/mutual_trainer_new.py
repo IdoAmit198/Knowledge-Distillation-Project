@@ -65,14 +65,14 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
             labels = torch.autograd.Variable(labels)
         
         for i in range(len(mutual_nets)):
-            if i == 1:
-                continue
+            # if i == 1:
+            #     continue
             # print(f'student {i} in epoch {epoch}')
 
-            student = mutual_nets[0]
+            student = mutual_nets[i]
             if (epoch >= num_epochs_training_separately) :
                 teachers_list = [mutual_nets[j] for j in range(len(mutual_nets)) if i!=j]
-            optimizer = optimizers[0]
+            optimizer = optimizers[i]
             # student = mutual_nets[i]
             # if (epoch >= num_epochs_training_separately) :
             #     teachers_list = [mutual_nets[j] for j in range(len(mutual_nets)) if i!=j]
@@ -105,12 +105,10 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
                 if (len(teachers_list) == 9):
                     ten_nets_temp = 0
                     for t, teacher in enumerate(teachers_list):
-                        print(f'teacher number: {t}')
+                        # print(f'teacher number: {t}')
                         with torch.no_grad():
                             teacher_logits = teacher(images)
                         ten_nets_temp = torch.add(ten_nets_temp, teacher_logits)
-                        print(f'teacher_logits.shape {teacher_logits.shape}')
-                        print(f'ten_nets_temp.shape {ten_nets_temp.shape}')
                     teacher_mean_logits = ten_nets_temp / 9
                 else: 
                     teachers_logits_list = []
@@ -186,8 +184,8 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
             #     print(p.grad)
 
     for i in range(len(mutual_nets)) :
-        if i == 1:
-            continue
+        # if i == 1:
+        #     continue
 
         all_student_pred_train = torch.cat(student_pred_train_list[i])
         all_labels_train = torch.cat(labels_train_list)

@@ -32,6 +32,7 @@ def epoch_train(student, teachers_list, data, sf_teacher, sf_student, loss_funct
     gpu = hyper_params['gpu']
     student.train()
     student = student.to(gpu)
+    student.zero_grad()
     if teachers_list is not None:
         for teacher in teachers_list:
             teacher.eval()
