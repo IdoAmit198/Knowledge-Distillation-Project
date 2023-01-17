@@ -33,6 +33,7 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
     else:
         loop = tqdm(data.train_dl)
     gpu = hyper_params['gpu']
+    cpu = torch.device("cpu")
     
     train_loss_list = [[] for x in range(len(mutual_nets))]
     student_pred_train_list = [[] for x in range(len(mutual_nets))]
@@ -64,43 +65,59 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
             labels = torch.autograd.Variable(labels)
         
         for i in range(len(mutual_nets)):
-            # if i == 1:
-            #     continue
+            if i == 1:
+                continue
             # print(f'student {i} in epoch {epoch}')
 
-            student = mutual_nets[i]
-            teachers_list = [mutual_nets[j] for j in range(len(mutual_nets)) if i!=j]
-            optimizer = optimizers[i]
+            student = mutual_nets[0]
+            if (epoch >= num_epochs_training_separately) :
+                teachers_list = [mutual_nets[j] for j in range(len(mutual_nets)) if i!=j]
+            optimizer = optimizers[0]
+            # student = mutual_nets[i]
+            # if (epoch >= num_epochs_training_separately) :
+            #     teachers_list = [mutual_nets[j] for j in range(len(mutual_nets)) if i!=j]
+            # optimizer = optimizers[i]
 
             student.train()
             student = student.to(gpu)
             student.zero_grad()
 
-            # for param in student.parameters():
-            #     param.grad = torch.zeros_like(param)
+            for param in student.parameters():
+                param.grad = torch.zeros_like(param)
                 # param.requires_grad = True
-            
-            for teacher in teachers_list:
-                teacher.eval()
-                teacher = teacher.to(gpu)
-                teacher.zero_grad()
-                # for param in teacher.parameters():
-                #     param.grad = None
-                    # param.grad = torch.zeros_like(param)
-                    # param.requires_grad = False
+
+            if (epoch >= num_epochs_training_separately):
+                for teacher in teachers_list:
+                    teacher.eval()
+                    teacher = teacher.to(gpu)
+                    teacher.zero_grad()
+                    # for param in teacher.parameters():
+                    #     param.grad = None
+                    #     param.grad = torch.zeros_like(param)
+                        # param.requires_grad = False
 
             student_logits = student(images)
             student_pred_train_list[i].append(F.softmax(student_logits, dim = 1))
             if i == 0:
                 labels_train_list.append(labels)
 
-            if (epoch >= num_epochs_training_separately) :
-                teachers_logits_list = []
-                for teacher in teachers_list:
-                    teacher_logits = teacher(images)
-                    teachers_logits_list.append(teacher_logits)
-                all_teachers_logits = torch.stack(teachers_logits_list, dim=0)
-                teacher_mean_logits = torch.mean(all_teachers_logits,dim=0)
+            if (epoch >= num_epochs_training_separately):
+                if (len(teachers_list) == 9):
+                    ten_nets_temp = 0
+                    for t, teacher in enumerate(teachers_list):
+                        print(f'teacher number: {t}')
+                        with torch.no_grad():
+                            teacher_logits = teacher(images)
+                        ten_nets_temp = torch.add(ten_nets_temp, teacher_logits)
+                        print(f'teacher_logits.shape {teacher_logits.shape}')
+                        print(f'ten_nets_temp.shape {ten_nets_temp.shape}')
+                    teacher_mean_logits = ten_nets_temp / 9
+                else: 
+                    teachers_logits_list = []
+                    for teacher in teachers_list:
+                        teacher_logits = teacher(images)
+                        teachers_logits_list.append(teacher_logits)
+                    teacher_mean_logits = torch.mean(torch.stack(teachers_logits_list), dim=0)
 
             TEMP = hyper_params['temperature']
             ALPHA = hyper_params['alpha']
@@ -128,6 +145,9 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
             # for param in student.parameters():
             #     param.grad = None
             
+            # for teacher in teachers_list:
+            #     for param in teacher.parameters():
+            #         param.grad = None
             
             optimizer.zero_grad()
             loss.backward()
@@ -166,6 +186,8 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
             #     print(p.grad)
 
     for i in range(len(mutual_nets)) :
+        if i == 1:
+            continue
 
         all_student_pred_train = torch.cat(student_pred_train_list[i])
         all_labels_train = torch.cat(labels_train_list)
