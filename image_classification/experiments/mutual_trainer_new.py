@@ -21,7 +21,6 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
     run = wandb.init(
     project="our-awesome-project",
     entity = "ido-shani-proj" ,
-    # group=f"{hyper_params.experiment}",
     name= f"Mutual-{len(mutual_nets)}nets-{num_epochs_training_separately}sep-{hyper_params['model']}-{hyper_params['num_epochs']} epochs-{today}-{current_time}",
     config=hyper_params)
     config = wandb.config
@@ -40,23 +39,6 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
     labels_train_list = []
     grads = [{'norm_1': [], 'norm_2': [], 'normalized_norm_1': [], 'normalized_norm_2': []} for x in range(len(mutual_nets))]
     for images, labels in loop:
-
-        # print("start of batch")
-        # print("weights 0")
-        # print(mutual_nets[0].conv1.weight)
-        # print("weights 1")
-        # print(mutual_nets[1].conv1.weight)
-        # print("difference")
-        # print(mutual_nets[1].conv1.weight - mutual_nets[0].conv1.weight)
-        # print("start grad 0")
-        # for n,p in enumerate(mutual_nets[0].parameters()):
-        #     if n > 0: continue
-        #     print(p.grad)
-        # print("start grad 1")
-        # for n,p in enumerate(mutual_nets[1].parameters()):
-        #     if n > 0: continue
-        #     print(p.grad)
-
         if gpu != 'cpu':
             images = torch.autograd.Variable(images).to(gpu).float()
             labels = torch.autograd.Variable(labels).to(gpu)
@@ -65,18 +47,12 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
             labels = torch.autograd.Variable(labels)
         
         for i in range(len(mutual_nets)):
-            # if i == 1:
-            #     continue
             # print(f'student {i} in epoch {epoch}')
 
             student = mutual_nets[i]
             if (epoch >= num_epochs_training_separately) :
                 teachers_list = [mutual_nets[j] for j in range(len(mutual_nets)) if i!=j]
             optimizer = optimizers[i]
-            # student = mutual_nets[i]
-            # if (epoch >= num_epochs_training_separately) :
-            #     teachers_list = [mutual_nets[j] for j in range(len(mutual_nets)) if i!=j]
-            # optimizer = optimizers[i]
 
             student.train()
             student = student.to(gpu)
@@ -84,17 +60,12 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
 
             for param in student.parameters():
                 param.grad = torch.zeros_like(param)
-                # param.requires_grad = True
 
             if (epoch >= num_epochs_training_separately):
                 for teacher in teachers_list:
                     teacher.eval()
                     teacher = teacher.to(gpu)
                     teacher.zero_grad()
-                    # for param in teacher.parameters():
-                    #     param.grad = None
-                    #     param.grad = torch.zeros_like(param)
-                        # param.requires_grad = False
 
             student_logits = student(images)
             student_pred_train_list[i].append(F.softmax(student_logits, dim = 1))
@@ -121,31 +92,18 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
             ALPHA = hyper_params['alpha']
             
             if (epoch >= num_epochs_training_separately) :
-                # ALPHA = 1
-                # TEMP = 100
                 teacher_soft_targets = F.softmax(teacher_mean_logits/TEMP,dim=1)
                 student_logits_log_softmax = F.log_softmax(student_logits/TEMP,dim=1)
                 distillation_loss = loss_function(student_logits_log_softmax, teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP
                 student_loss = loss_function2(student_logits, labels)*(ALPHA)
-                print(f'distillation_loss {distillation_loss}')
-                print(f'student_loss {student_loss}')
+                # print(f'distillation_loss {distillation_loss}')
+                # print(f'student_loss {student_loss}')
                 loss = distillation_loss + student_loss
             else :
                 loss = loss_function2(student_logits, labels)
-            # loss.requires_grad_(True)
-            # loss = torch.tensor(distillation_loss + student_loss, requires_grad = True)
-            # loss = torch.autograd.Variable(loss, requires_grad = True)
-            # if epoch < 10 :
-            #     loss = student_loss*(ALPHA*1.2)
 
             train_loss_list[i].append(loss.item())
 
-            # for param in student.parameters():
-            #     param.grad = None
-            
-            # for teacher in teachers_list:
-            #     for param in teacher.parameters():
-            #         param.grad = None
             
             optimizer.zero_grad()
             loss.backward()
@@ -167,26 +125,7 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
             loop.set_description('Epoch {}/{}'.format(epoch + 1, hyper_params['num_epochs']))
             loop.set_postfix(loss=loss.item())
 
-            # print("end of batch")
-            # print("weights 0")
-            # print(mutual_nets[0].conv1.weight)
-            # print("weights 1")
-            # print(mutual_nets[1].conv1.weight)
-            # print("difference")
-            # print(mutual_nets[1].conv1.weight - mutual_nets[0].conv1.weight)
-            # print("end grad 0")
-            # for n,p in enumerate(mutual_nets[0].parameters()):
-            #     if n > 0: continue
-            #     print(p.grad)
-            # print("end grad 1")
-            # for n,p in enumerate(mutual_nets[1].parameters()):
-            #     if n > 0: continue
-            #     print(p.grad)
-
     for i in range(len(mutual_nets)) :
-        # if i == 1:
-        #     continue
-
         all_student_pred_train = torch.cat(student_pred_train_list[i])
         all_labels_train = torch.cat(labels_train_list)
         samples_certainties = get_samples_certainties(all_student_pred_train, all_labels_train)
@@ -261,7 +200,6 @@ def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, h
 
 ### NEW FUNCTION
 def get_samples_certainties(probs, labels):
-    # probs = F.softmax(preds, dim=1)
     confidence = probs.max(dim=1)[0]
     correctness = probs.argmax(dim=1) == labels
     samples_certainties = torch.stack([confidence, correctness.float()], dim=1)
