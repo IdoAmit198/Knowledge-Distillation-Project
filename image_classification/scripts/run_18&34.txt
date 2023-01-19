@@ -1,0 +1,4 @@
+# mutual learning, 18 learning with 34, different order between scripts
+
+sbatch -c 2 --gres=gpu:1 -o output_files/mutual_18_34.out -J 18_34 scripts/run_mutual_18_34.sh
+sbatch -c 2 --gres=gpu:1 -o output_files/mutual_34_18.out -J 34_18 scripts/run_mutual_34_18.sh

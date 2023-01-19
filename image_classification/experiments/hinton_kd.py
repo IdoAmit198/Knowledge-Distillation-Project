@@ -119,15 +119,25 @@ else:
     schedulers = []
     mutual_nets = []
     best_val_loss_list = []
-    for k in range(args.mutual_learning):
-        mutual_net = get_model(hyper_params['model'], hyper_params['dataset'], teach=False)
-        mutual_net = mutual_net.to(args.gpu)
-        mutual_nets.append(mutual_net)
-        mut_optimizer = torch.optim.Adam(mutual_net.parameters(), lr=hyper_params["learning_rate"])
-        scheduler = optim.lr_scheduler.StepLR(mut_optimizer, step_size=60, gamma=0.1)
-        optimizers.append(mut_optimizer)
-        schedulers.append(scheduler)
-        best_val_loss_list.append(100)
+
+    mutual_net_18 = get_model('resnet18', hyper_params['dataset'], teach=False)
+    mut_optimizer_18 = torch.optim.Adam(mutual_net_18.parameters(), lr=hyper_params["learning_rate"])
+    mutual_net_34 = get_model('resnet34', hyper_params['dataset'], teach=False)
+    mut_optimizer_34 = torch.optim.Adam(mutual_net_34.parameters(), lr=hyper_params["learning_rate"])
+    best_val_loss_list.append(100)
+    best_val_loss_list.append(100)
+
+    if (args.18_34):
+        mutual_nets.append(mutual_net_18)
+        mutual_nets.append(mutual_net_34)
+        optimizers.append(mut_optimizer_18)
+        optimizers.append(mut_optimizer_34)
+    elif (args.34_18):
+        mutual_nets.append(mutual_net_34)
+        mutual_nets.append(mutual_net_18)
+        optimizers.append(mut_optimizer_34)
+        optimizers.append(mut_optimizer_18)
+
 
     for epoch in range(hyper_params["num_epochs"]):
         hyper_params["mutual models num"] = args.mutual_learning
@@ -143,7 +153,7 @@ else:
                                                             epoch=epoch,
                                                             savename=savename,
                                                             expt=expt,
-                                                            num_epochs_training_separately = args.num_epochs_training_separately
+                                                            is_18_before_34=args.18_34
                                                             )
 
 
