@@ -28,6 +28,8 @@ def get_args(description, mode='train'):
                              then load the teacher from wandb hub before using the local teacher' , default=False)
         parser.add_argument('-ml', '--mutual_learning', type=int, help = 'Number of mutual learning models', default=None)
         parser.add_argument('-ets', '--num_epochs_training_separately', type=int, help = 'Number of epochs the mutual learning models train separately', default=0)
+        parser.add_argument('-18_34', '--18_34', action='store_true', help='models of resnet18 and 34 learning from each other, order matters' , default=False)
+        parser.add_argument('-34_18', '--34_18', action='store_true', help='models of resnet18 and 34 learning from each other, order matters' , default=False)
 
     elif mode == 'eval':
         parser.add_argument('-m', '--model', choices = ['resnet10', 'resnet14', 'resnet18', 'resnet20', 'resnet26'], help = 'Give the model name from the choices')
