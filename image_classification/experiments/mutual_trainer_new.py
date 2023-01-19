@@ -11,14 +11,16 @@ import wandb
 from datetime import date, datetime
 import torch
 
-def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, hyper_params, epoch, savename, expt=None, num_epochs_training_separately=0, is_18_before_34 = True):
+def mutual_train(mutual_nets, data, loss_function, loss_function2, optimizers, hyper_params, epoch, savename, expt=None, num_epochs_training_separately=0, order1834 = None):
 
     for net in mutual_nets:
         print(f'net id is: {id(net)}')
     now = datetime.now()
     current_time = now.strftime("%H:%M")
     today = date.today().strftime("%d/%m")
-    models_names = "resnet18-resnet34" if is_18_before_34 else "resnet34-resnet18"
+    models_names = hyper_params['model']
+    if order1834 is not None:
+        models_names = "resnet18-resnet34" if order1834=="asc" else "resnet34-resnet18"
     run = wandb.init(
     project="our-awesome-project",
     entity = "ido-shani-proj" ,

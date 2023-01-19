@@ -127,16 +127,20 @@ else:
     best_val_loss_list.append(100)
     best_val_loss_list.append(100)
 
-    if (args.18_34):
-        mutual_nets.append(mutual_net_18)
-        mutual_nets.append(mutual_net_34)
-        optimizers.append(mut_optimizer_18)
-        optimizers.append(mut_optimizer_34)
-    elif (args.34_18):
-        mutual_nets.append(mutual_net_34)
-        mutual_nets.append(mutual_net_18)
-        optimizers.append(mut_optimizer_34)
-        optimizers.append(mut_optimizer_18)
+    hyper_params['experiment'] = "Mutual"
+
+    if (args.exp1834):
+        hyper_params['experiment'] = "Mutual_18_34"
+        if (args.ord == "asc"):
+            mutual_nets.append(mutual_net_18)
+            mutual_nets.append(mutual_net_34)
+            optimizers.append(mut_optimizer_18)
+            optimizers.append(mut_optimizer_34)
+        elif (args.ord == "desc"):
+            mutual_nets.append(mutual_net_34)
+            mutual_nets.append(mutual_net_18)
+            optimizers.append(mut_optimizer_34)
+            optimizers.append(mut_optimizer_18)
 
 
     for epoch in range(hyper_params["num_epochs"]):
@@ -153,7 +157,7 @@ else:
                                                             epoch=epoch,
                                                             savename=savename,
                                                             expt=expt,
-                                                            is_18_before_34=args.18_34
+                                                            order=args.order1834
                                                             )
 
 

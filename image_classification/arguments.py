@@ -26,10 +26,11 @@ def get_args(description, mode='train'):
                             , default=False)
         parser.add_argument('-ud', '--update_teacher', action='store_true', help='In case we load a teacher, \
                              then load the teacher from wandb hub before using the local teacher' , default=False)
+        # mutual learning arguments                     
         parser.add_argument('-ml', '--mutual_learning', type=int, help = 'Number of mutual learning models', default=None)
         parser.add_argument('-ets', '--num_epochs_training_separately', type=int, help = 'Number of epochs the mutual learning models train separately', default=0)
-        parser.add_argument('-18_34', '--18_34', action='store_true', help='models of resnet18 and 34 learning from each other, order matters' , default=False)
-        parser.add_argument('-34_18', '--34_18', action='store_true', help='models of resnet18 and 34 learning from each other, order matters' , default=False)
+        parser.add_argument('-exp1834', '--exp1834', action='store_true', help='resnet18 and 34 learning from each other' , default=False)
+        parser.add_argument('-ord', '--order1834', action='str', help='model1,model2: asc=18,34 desc=34,18' , default="asc")
 
     elif mode == 'eval':
         parser.add_argument('-m', '--model', choices = ['resnet10', 'resnet14', 'resnet18', 'resnet20', 'resnet26'], help = 'Give the model name from the choices')
