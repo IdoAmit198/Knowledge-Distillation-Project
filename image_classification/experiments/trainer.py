@@ -45,9 +45,6 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
         log_teacher_metrics = True
     labels_train_list = []
     for images, labels in loop:
-        # if idx == 3:
-        #     break
-
         if gpu != 'cpu':
             images = torch.autograd.Variable(images).to(gpu).float()
             labels = torch.autograd.Variable(labels).to(gpu)
@@ -63,7 +60,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             teachers_logits_list = []
             for teacher in teachers_list:
                 teacher_logits = teacher(images)
-                print(f"teacher_logits.shape is: {teacher_logits.shape}")
+                # print(f"teacher_logits.shape is: {teacher_logits.shape}")
                 teachers_logits_list.append(teacher_logits)
                 if log_teacher_metrics:
                     teacher_pred_train_list.append(F.softmax(teacher_logits, dim = 1))
@@ -85,31 +82,6 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             distillation_loss = loss_function(F.log_softmax(student_logits/TEMP,dim=1), teacher_soft_targets)*(1-ALPHA)*TEMP*TEMP 
             student_loss = loss_function2(F.softmax(student_logits,dim=1),labels)*(ALPHA)
             loss = distillation_loss + student_loss
-
-        # elif loss_function2 is None:
-        #     if expt == 'fsp-kd':
-        #         loss = 0
-        #         # 4 intermediate feature maps and taken 2 at a time (thus 3)
-        #         for k in range(3):
-        #             loss += loss_function(fsp_matrix(sf_teacher[k].features, sf_teacher[k + 1].features),
-        #                                   fsp_matrix(sf_student[k].features, sf_student[k + 1].features))
-        #         loss /= 3
-        #     else:
-        #         loss = loss_function(sf_student[hyper_params['stage']].features, sf_teacher[hyper_params['stage']].features)
-        # attention transfer KD
-        # elif expt == 'attention-kd':
-        #     loss = loss_function(student_logits, labels)
-        #     for k in range(4):
-        #         loss += loss_function2(at(sf_student[k].features), at(sf_teacher[k].features))
-        #     loss /= 5
-        # # 2 loss functions and student and teacher are given -> simultaneous training
-        # else:
-        #     loss = loss_function(student_logits, labels)
-        #     for k in range(5):
-        #         loss += loss_function2(sf_student[k].features, sf_teacher[k].features)
-        #     # normalizing factor (doesn't affect optimization theoretically)
-        #     loss /= 6
-
         train_loss_list.append(loss.item())
 
         optimizer.zero_grad()
@@ -153,7 +125,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
             valid_loop = data['valid_dl']
         else:
             valid_loop = data.valid_dl
-        for _, (images, labels) in enumerate(valid_loop):
+        for _, (images, labels) in enumerate(tqdm(valid_loop)):
             if gpu != 'cpu':
                 images = torch.autograd.Variable(images).to(gpu).float()
                 labels = torch.autograd.Variable(labels).to(gpu)
@@ -178,8 +150,7 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
                 _, pred_ind = torch.max(student_logits, 1)
 
                 total += labels.size(0)
-                correct += (pred_ind == labels).sum().item()
-            
+                correct += (pred_ind == labels).sum().item()                
             elif expt == 'hinton-kd':
                 ALPHA = hyper_params['alpha']
 
@@ -188,14 +159,16 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
 
                 total += labels.size(0)
                 correct += (pred_ind == labels).sum().item()
+                
 
                 loss = loss_function2(student_logits,labels)
 
             val_loss_list.append(loss.item())
     
     all_y_pred_val = torch.cat(y_pred_val_list)
+    _, all_pred_idx = torch.max(all_y_pred_val,1)
     all_labels_val = torch.cat(labels_val_list)
-
+    correct = (all_pred_idx==all_labels_val).sum().item()
     ##TODO: delete later, only to test accuracy of teacher ResNet34 of paper!!
     if log_teacher_metrics:
         all_teacher_pred_val = torch.cat(teacher_pred_val_list)
@@ -212,7 +185,6 @@ def train(student, teachers_list, data, sf_teacher, sf_student, loss_function, l
     val_loss = (sum(val_loss_list) / len(val_loss_list))
     if total > 0:
         val_acc = correct / total
-        print(f"## val_acc = val_acc")
     else:
         val_acc = None
 

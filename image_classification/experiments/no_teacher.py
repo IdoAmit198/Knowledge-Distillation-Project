@@ -36,25 +36,32 @@ hyper_params = {
     "percentage":args.percentage,
     "gpu": args.gpu,
     "experiment": "No Teacher",
-    'teacher_training' : args.teacher_training
+    'teacher_training' : args.teacher_training,
+    'no_pre_trained_teacher' : args.no_pre_trained_teacher,
 }
 
 data = get_dataset(dataset=hyper_params['dataset'],
                    batch_size=hyper_params['batch_size'],
                    percentage=args.percentage)
-
 if hyper_params['teacher_training']:
     if hyper_params['model'].startswith('resnet34'):
-        net = vision_models.resnet34(pretrained=True)
+        net = vision_models.resnet34(pretrained=hyper_params['no_pre_trained_teacher'])
     elif hyper_params['model'].startswith('resnet50'):
-        net = vision_models.resnet50(pretrained=True)
+        net = vision_models.resnet50(pretrained=hyper_params['no_pre_trained_teacher'])
     elif hyper_params['model'].startswith('resnet101'):
-        net = vision_models.resnet101(pretrained=True)
-
-    fc_in_features = net.fc.in_features
-    # for param in net.parameters():
-    #     param.requires_grad = False
-    net.fc = nn.Linear(fc_in_features, 10)
+        net = vision_models.resnet101(pretrained=hyper_params['no_pre_trained_teacher'])
+    elif hyper_params['model'].startswith('alexnet'):
+        net = vision_models.alexnet(pretrained=hyper_params['no_pre_trained_teacher'])
+    if hyper_params['model'].startswith('resnet'):
+        fc_in_features = net.fc.in_features
+        net.fc = nn.Linear(fc_in_features, 10)
+    elif hyper_params['model'].startswith('alex'):
+        for param in net.parameters():
+            param.requires_grad = False
+        fc_in_features=net.classifier[6].in_features
+        net.classifier[6] = nn.Linear(fc_in_features, 10)
+        for param in net.classifier.parameters():
+            param.requires_grad=True
     
 ## Rajid loaded below a student, but we don't use it anymore...
 else:

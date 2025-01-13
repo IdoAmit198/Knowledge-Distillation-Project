@@ -53,8 +53,14 @@ if hyper_params['teacher']:
         hyper_params['teacher_architecture'] = 'resnet50'
     elif hyper_params['teacher'].startswith('resnet101'):
         hyper_params['teacher_architecture'] = 'resnet101'
-    elif hyper_params['teacher'].startswith('vit'):
-        hyper_params['teacher_architecture'] = 'vit'
+    elif hyper_params['teacher'].startswith('alex'):
+        hyper_params['teacher_architecture'] = 'alexnet'
+    elif hyper_params['teacher'].startswith('vit_small'):
+        hyper_params['teacher_architecture'] = 'vit_small'
+    elif hyper_params['teacher'].startswith('vit_tiny'):
+        hyper_params['teacher_architecture'] = 'vit_tiny'
+    elif hyper_params['teacher'].startswith('gernet_s'):
+        hyper_params['teacher_architecture'] = 'gernet_s'
 
 data = get_dataset(dataset=hyper_params['dataset'],
                    batch_size=hyper_params['batch_size'],
@@ -71,15 +77,6 @@ if hyper_params['teachers_num'] and hyper_params['teachers_num']>1:
     teachers_list = load_teachers_list(hyper_params['teacher_models'], update_teacher=hyper_params['update_teacher'])
 elif hyper_params['teacher'] and hyper_params['teachers_num'] is None:
     teachers_list = [load_teacher(hyper_params['teacher'], hyper_params['update_teacher'])]
-    # teacher = resnet50()
-    # fc_in_features = teacher.fc.in_features
-    # teacher.fc = nn.Linear(fc_in_features, 10)
-    # teacher.load_state_dict(torch.load('saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model0.pt'))
-    # for param in teacher.parameters():
-    #     param.requires_grad = False
-    # print(teacher)
-    # teacher.load_state_dict(torch.load('saved_models/imagewoof/full_data/no-teacher/resnet50_classifier/model42.pt'))
-    # print("### Worked to load pre-trained resnet-50!! ###")
 else:
     teachers_list = [learn.model]
 

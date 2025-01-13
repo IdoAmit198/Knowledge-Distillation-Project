@@ -4,6 +4,9 @@ from timm.data.loader import create_loader
 from timm.data import resolve_data_config, create_transform, create_dataset
 
 def create_datasets(config, train_path, val_path):
+    """
+    Utility funtion to create datasets equiped with the required augmentations for timm models.
+    """
     train_transforms = create_transform(
         **config,
         is_training=True,
@@ -18,7 +21,7 @@ def create_datasets(config, train_path, val_path):
 
     return train_dataset, eval_dataset
 
-def get_dataset(dataset, batch_size, percentage=None, vit_config=None):
+def get_dataset(dataset, batch_size, percentage=None, timm_config=None):
     val = 'val'
     sz = 224
     stats = imagenet_stats
@@ -48,17 +51,17 @@ def get_dataset(dataset, batch_size, percentage=None, vit_config=None):
         stats = cifar_stats
     
 
-    if vit_config:
+    if timm_config:
         # print("*" *20 + "Made it in vit_config" + "*"*20)
         train_dataset, eval_dataset = create_datasets(
-        config = vit_config,
-        train_path=train_path,
-        val_path=val_path,
+            config = timm_config,
+            train_path=train_path,
+            val_path=val_path,
         )
         # print(f"len(train_dataset) = {len(train_dataset)}")
         # print(f"len(eval_dataset) = {len(eval_dataset)}")
-        train_dl = create_loader(train_dataset, vit_config['input_size'], batch_size)
-        valid_dl = create_loader(eval_dataset, vit_config['input_size'], batch_size)
+        train_dl = create_loader(train_dataset, timm_config['input_size'], batch_size)
+        valid_dl = create_loader(eval_dataset, timm_config['input_size'], batch_size)
         return {'train_dl':train_dl, 'valid_dl':valid_dl}
 
     # print("*" *20 + "Didn't make it in vit_config" + "*"*20)
